@@ -1,0 +1,81 @@
+// Prisma schema for GIVID (Preser Gisvalida SL)
+// PostgreSQL (Neon) — same database used for local dev and production,
+// pointed to by DATABASE_URL in .env (local) / Vercel project settings (prod).
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime @default(now())
+}
+
+model Category {
+  id        String    @id @default(cuid())
+  slug      String    @unique
+  nameEs    String
+  nameEn    String
+  nameFr    String
+  products  Product[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Product {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  nameEs       String
+  nameEn       String
+  nameFr       String
+  descriptionEs String?
+  descriptionEn String?
+  descriptionFr String?
+  price        Float
+  unit         String   // e.g. "caja", "saco 25kg", "unidad"
+  imageUrl     String?
+  isActive     Boolean  @default(true)
+  categoryId   String
+  category     Category @relation(fields: [categoryId], references: [id])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model BlogPost {
+  id            String    @id @default(cuid())
+  slug          String    @unique
+  titleEs       String
+  titleEn       String
+  titleFr       String
+  excerptEs     String?
+  excerptEn     String?
+  excerptFr     String?
+  contentEs     String
+  contentEn     String
+  contentFr     String
+  coverImageUrl String?
+  published     Boolean   @default(false)
+  publishedAt   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String
+  service   String? // which service the inquiry relates to
+  createdAt DateTime @default(now())
+  read      Boolean  @default(false)
+}
