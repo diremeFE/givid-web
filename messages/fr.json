@@ -203,6 +203,7 @@
     "legalNotice": "Mentions légales"
   },
   "cookies": {
+    "title": "Nous utilisons des cookies",
     "message": "Nous utilisons des cookies propres et tiers pour améliorer votre expérience et analyser l'utilisation du site.",
     "acceptButton": "Accepter",
     "rejectButton": "Refuser",
