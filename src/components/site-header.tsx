@@ -43,7 +43,10 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-1.5 lg:flex">
           {links.map((link) => {
-            const active = pathname === link.href;
+            const active =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname === link.href || pathname.startsWith(`${link.href}/`);
             return (
               <Link
                 key={link.href}
@@ -85,7 +88,10 @@ export function SiteHeader() {
       {open && (
         <nav className="bg-brand-gradient mx-auto mt-2 flex max-w-7xl flex-col gap-1 rounded-3xl p-3 shadow-xl shadow-black/20 lg:hidden">
           {links.map((link) => {
-            const active = pathname === link.href;
+            const active =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname === link.href || pathname.startsWith(`${link.href}/`);
             return (
               <Link
                 key={link.href}
