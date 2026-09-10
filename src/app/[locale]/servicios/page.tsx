@@ -46,7 +46,7 @@ export default async function ServicesPage() {
           <Reveal>
             <ServiceBlock
               icon={Users}
-              image="/images/service-import.webp"
+              image="/images/service-events.jpg"
               tag={t("events.tag")}
               title={t("events.title")}
               description={t("events.description")}
@@ -77,7 +77,7 @@ export default async function ServicesPage() {
           <Reveal>
             <ServiceBlock
               icon={Package}
-              image="/images/service-wholesale.webp"
+              image="/images/ownbrand-harina.jpg"
               tag={t("ownBrand.tag")}
               title={t("ownBrand.title")}
               description={t("ownBrand.description")}
@@ -88,6 +88,18 @@ export default async function ServicesPage() {
                 t("ownBrand.bullet4"),
               ]}
             />
+          </Reveal>
+
+          <Reveal className="grid grid-cols-3 gap-4 sm:grid-cols-3">
+            {[
+              { src: "/images/ownbrand-arroz.jpg", alt: "GIVID Rice" },
+              { src: "/images/ownbrand-pants.jpg", alt: "GIVID Pants" },
+              { src: "/images/ownbrand-toallitas.jpg", alt: "GIVID Toallitas" },
+            ].map((img) => (
+              <div key={img.src} className="relative aspect-3/4 overflow-hidden rounded-xl border border-border">
+                <Image src={img.src} alt={img.alt} fill sizes="(min-width: 640px) 200px, 33vw" className="object-cover" />
+              </div>
+            ))}
           </Reveal>
         </div>
 

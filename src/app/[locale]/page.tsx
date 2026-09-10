@@ -281,7 +281,7 @@ export default async function HomePage() {
             <Reveal delay={100}>
               <ServiceCard
                 icon={Ship}
-                image="/images/service-import.webp"
+                image="/images/service-events.jpg"
                 title={tServices("events.title")}
                 description={tServices("events.description")}
                 readMore={tServices("readMore")}

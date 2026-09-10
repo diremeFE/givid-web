@@ -204,7 +204,7 @@ export default async function AboutPage() {
           </Reveal>
           <Reveal delay={100} className="relative overflow-hidden rounded-3xl">
             <Image
-              src="/images/service-wholesale.webp"
+              src="/images/service-events.jpg"
               alt=""
               fill
               sizes="(min-width: 1024px) 20vw, 50vw"
@@ -222,7 +222,7 @@ export default async function AboutPage() {
           </Reveal>
           <Reveal delay={300} className="relative col-span-2 overflow-hidden rounded-3xl">
             <Image
-              src="/images/service-import.webp"
+              src="/images/ownbrand-arroz.jpg"
               alt=""
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"
