@@ -270,30 +270,30 @@ export default async function HomePage() {
           <div className="mt-12 grid gap-10 md:grid-cols-3 lg:gap-12">
             <Reveal delay={0}>
               <ServiceCard
-                icon={Boxes}
-                image="/images/service-wholesale.webp"
-                title={tServices("wholesale.title")}
-                description={tServices("wholesale.description")}
+                icon={Sparkles}
+                image="/images/service-maintenance.webp"
+                title={tServices("facilityServices.title")}
+                description={tServices("facilityServices.description")}
                 readMore={tServices("readMore")}
                 href="/servicios"
               />
             </Reveal>
             <Reveal delay={100}>
               <ServiceCard
-                icon={Sparkles}
-                image="/images/service-maintenance.webp"
-                title={tServices("maintenance.title")}
-                description={tServices("maintenance.description")}
+                icon={Ship}
+                image="/images/service-import.webp"
+                title={tServices("events.title")}
+                description={tServices("events.description")}
                 readMore={tServices("readMore")}
                 href="/servicios"
               />
             </Reveal>
             <Reveal delay={200}>
               <ServiceCard
-                icon={Ship}
-                image="/images/service-import.webp"
-                title={tServices("import.title")}
-                description={tServices("import.description")}
+                icon={Boxes}
+                image="/images/service-wholesale.webp"
+                title={tServices("distribution.title")}
+                description={tServices("distribution.description")}
                 readMore={tServices("readMore")}
                 href="/servicios"
               />

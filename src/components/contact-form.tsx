@@ -89,9 +89,9 @@ export function ContactForm() {
           name="service"
           className="mt-1 w-full rounded-lg border border-border bg-white px-3 py-2 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
         >
-          <option value="wholesale">{t("serviceWholesale")}</option>
-          <option value="maintenance">{t("serviceMaintenance")}</option>
-          <option value="import">{t("serviceImport")}</option>
+          <option value="facilityServices">{t("serviceFacilityServices")}</option>
+          <option value="events">{t("serviceEvents")}</option>
+          <option value="distribution">{t("serviceDistribution")}</option>
           <option value="other">{t("serviceOther")}</option>
         </select>
       </div>

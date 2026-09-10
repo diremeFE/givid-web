@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { Boxes, Sparkles, Ship, ArrowRight, Check } from "lucide-react";
+import { Boxes, Sparkles, Users, Package, ArrowRight, Check } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
@@ -28,43 +28,64 @@ export default async function ServicesPage() {
         <div className="space-y-8">
           <Reveal>
             <ServiceBlock
+              icon={Sparkles}
+              image="/images/service-maintenance.webp"
+              tag={t("facilityServices.tag")}
+              title={t("facilityServices.title")}
+              description={t("facilityServices.description")}
+              bullets={[
+                t("facilityServices.bullet1"),
+                t("facilityServices.bullet2"),
+                t("facilityServices.bullet3"),
+                t("facilityServices.bullet4"),
+                t("facilityServices.bullet5"),
+                t("facilityServices.bullet6"),
+              ]}
+            />
+          </Reveal>
+          <Reveal>
+            <ServiceBlock
+              icon={Users}
+              image="/images/service-import.webp"
+              tag={t("events.tag")}
+              title={t("events.title")}
+              description={t("events.description")}
+              bullets={[
+                t("events.bullet1"),
+                t("events.bullet2"),
+                t("events.bullet3"),
+                t("events.bullet4"),
+              ]}
+            />
+          </Reveal>
+          <Reveal>
+            <ServiceBlock
               icon={Boxes}
               image="/images/service-wholesale.webp"
-              tag={t("wholesale.tag")}
-              title={t("wholesale.title")}
-              description={t("wholesale.description")}
+              tag={t("distribution.tag")}
+              title={t("distribution.title")}
+              description={t("distribution.description")}
               bullets={[
-                t("wholesale.bullet1"),
-                t("wholesale.bullet2"),
-                t("wholesale.bullet3"),
-                t("wholesale.bullet4"),
+                t("distribution.bullet1"),
+                t("distribution.bullet2"),
+                t("distribution.bullet3"),
+                t("distribution.bullet4"),
               ]}
               highlighted
             />
           </Reveal>
           <Reveal>
             <ServiceBlock
-              icon={Sparkles}
-              image="/images/service-maintenance.webp"
-              title={t("maintenance.title")}
-              description={t("maintenance.description")}
+              icon={Package}
+              image="/images/service-wholesale.webp"
+              tag={t("ownBrand.tag")}
+              title={t("ownBrand.title")}
+              description={t("ownBrand.description")}
               bullets={[
-                t("maintenance.bullet1"),
-                t("maintenance.bullet2"),
-                t("maintenance.bullet3"),
-              ]}
-            />
-          </Reveal>
-          <Reveal>
-            <ServiceBlock
-              icon={Ship}
-              image="/images/service-import.webp"
-              title={t("import.title")}
-              description={t("import.description")}
-              bullets={[
-                t("import.bullet1"),
-                t("import.bullet2"),
-                t("import.bullet3"),
+                t("ownBrand.bullet1"),
+                t("ownBrand.bullet2"),
+                t("ownBrand.bullet3"),
+                t("ownBrand.bullet4"),
               ]}
             />
           </Reveal>
