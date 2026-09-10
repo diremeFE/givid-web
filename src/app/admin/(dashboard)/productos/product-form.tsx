@@ -1,4 +1,4 @@
-import type { Category, Product } from "@/generated/prisma/client";
+import type { Category, Product, ProductImage } from "@/generated/prisma/client";
 
 export function ProductForm({
   action,
@@ -6,7 +6,7 @@ export function ProductForm({
   categories,
 }: {
   action: (formData: FormData) => void;
-  product?: Product;
+  product?: Product & { images?: ProductImage[] };
   categories: Category[];
 }) {
   return (
@@ -135,7 +135,7 @@ export function ProductForm({
         </div>
         <div>
           <label className="block text-sm font-medium text-neutral-700">
-            URL de imagen (opcional)
+            URL de imagen principal (opcional)
           </label>
           <input
             name="imageUrl"
@@ -143,6 +143,22 @@ export function ProductForm({
             className="mt-1 w-full rounded border border-neutral-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
           />
         </div>
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-neutral-700">
+          Galería — imágenes adicionales (una URL por línea, opcional)
+        </label>
+        <textarea
+          name="galleryUrls"
+          defaultValue={product?.images?.map((img) => img.url).join("\n") ?? ""}
+          rows={4}
+          placeholder={"https://.../foto-1.jpg\nhttps://.../foto-2.jpg"}
+          className="mt-1 w-full rounded border border-neutral-300 px-3 py-2 font-mono text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+        />
+        <p className="mt-1 text-xs text-neutral-500">
+          La imagen principal se muestra siempre primero en la galería del producto. Estas se añaden después, en el orden en que las escribas.
+        </p>
       </div>
 
       <div>

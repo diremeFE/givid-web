@@ -26,6 +26,10 @@ function readProductForm(formData: FormData) {
   const imageUrl = String(formData.get("imageUrl") || "").trim();
   const categoryId = String(formData.get("categoryId") || "");
   const isActive = formData.get("isActive") === "on";
+  const galleryUrls = String(formData.get("galleryUrls") || "")
+    .split("\n")
+    .map((url) => url.trim())
+    .filter(Boolean);
 
   return {
     nameEs,
@@ -40,12 +44,20 @@ function readProductForm(formData: FormData) {
     imageUrl: imageUrl || null,
     categoryId,
     isActive,
+    galleryUrls,
   };
 }
 
 export async function createProduct(formData: FormData) {
-  const data = readProductForm(formData);
-  await prisma.product.create({ data });
+  const { galleryUrls, ...data } = readProductForm(formData);
+  await prisma.product.create({
+    data: {
+      ...data,
+      images: {
+        create: galleryUrls.map((url, position) => ({ url, position })),
+      },
+    },
+  });
   revalidatePath("/admin/productos");
   revalidatePath("/[locale]/productos", "page");
   revalidatePath("/[locale]", "page");
@@ -53,8 +65,19 @@ export async function createProduct(formData: FormData) {
 }
 
 export async function updateProduct(id: string, formData: FormData) {
-  const data = readProductForm(formData);
-  await prisma.product.update({ where: { id }, data });
+  const { galleryUrls, ...data } = readProductForm(formData);
+  await prisma.$transaction([
+    prisma.productImage.deleteMany({ where: { productId: id } }),
+    prisma.product.update({
+      where: { id },
+      data: {
+        ...data,
+        images: {
+          create: galleryUrls.map((url, position) => ({ url, position })),
+        },
+      },
+    }),
+  ]);
   revalidatePath("/admin/productos");
   revalidatePath("/[locale]/productos", "page");
   revalidatePath("/[locale]", "page");

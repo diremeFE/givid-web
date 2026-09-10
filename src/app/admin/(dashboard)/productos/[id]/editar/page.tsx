@@ -10,7 +10,10 @@ export default async function EditProductPage({
 }) {
   const { id } = await params;
   const [product, categories] = await Promise.all([
-    prisma.product.findUnique({ where: { id } }),
+    prisma.product.findUnique({
+      where: { id },
+      include: { images: { orderBy: { position: "asc" } } },
+    }),
     prisma.category.findMany({ orderBy: { nameEs: "asc" } }),
   ]);
 

@@ -24,6 +24,16 @@ export function getFeaturedProducts(limit = 4) {
   });
 }
 
+export function getProductBySlug(slug: string) {
+  return prisma.product.findUnique({
+    where: { slug },
+    include: {
+      category: true,
+      images: { orderBy: { position: "asc" } },
+    },
+  });
+}
+
 export function getPublishedPosts() {
   return prisma.blogPost.findMany({
     where: { published: true },

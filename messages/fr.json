@@ -142,7 +142,10 @@
     "unitLabel": "Format",
     "noProducts": "Nous ajouterons bientôt des produits à ce catalogue.",
     "orderNotice": "Ces prix sont indicatifs et ne constituent pas une vente en ligne. Pour commander, contactez-nous par WhatsApp, e-mail ou rendez-nous visite en magasin.",
-    "orderButton": "Commander via WhatsApp"
+    "orderButton": "Commander via WhatsApp",
+    "backToCatalog": "Retour au catalogue",
+    "emailButton": "Demander par e-mail",
+    "otherProductsTitle": "Autres produits de cette catégorie"
   },
   "about": {
     "pageTitle": "À propos de nous",
