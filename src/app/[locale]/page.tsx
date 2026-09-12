@@ -303,20 +303,20 @@ export default async function HomePage() {
       </section>
 
       {/* How it works */}
-      <section className="bg-brand-light py-20">
+      <section className="bg-brand-darker py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal className="relative mx-auto max-w-xl text-center">
-          <div className="relative mx-auto mb-4 h-8 w-16 text-neutral-800" aria-hidden="true">
+          <div className="relative mx-auto mb-4 h-8 w-16 text-white/40" aria-hidden="true">
             <X className="absolute left-1 top-0 h-3 w-3 -rotate-12" />
             <X className="absolute left-5 top-2 h-4 w-4 rotate-6" />
             <X className="absolute left-10 top-0 h-3 w-3 rotate-12" />
             <X className="absolute left-3 top-5 h-2.5 w-2.5 rotate-45" />
             <X className="absolute left-8 top-5 h-2.5 w-2.5 -rotate-45" />
           </div>
-          <h2 className="text-2xl font-black text-neutral-900 sm:text-3xl">
+          <h2 className="text-2xl font-black text-white sm:text-3xl">
             {t("processTitle")}
           </h2>
-          <p className="mt-3 text-neutral-600">{t("processSubtitle")}</p>
+          <p className="mt-3 text-white/70">{t("processSubtitle")}</p>
         </Reveal>
 
         <div className="mt-16 grid gap-12 sm:grid-cols-3 sm:gap-6">
@@ -327,6 +327,7 @@ export default async function HomePage() {
             text={t("process1Text")}
             startLabel={t("processStartLabel")}
             connector
+            dark
           />
           <ProcessStep
             index={2}
@@ -334,12 +335,14 @@ export default async function HomePage() {
             title={t("process2Title")}
             text={t("process2Text")}
             connector
+            dark
           />
           <ProcessStep
             index={3}
             icon={PackageCheck}
             title={t("process3Title")}
             text={t("process3Text")}
+            dark
           />
         </div>
         </div>
@@ -564,6 +567,7 @@ function ProcessStep({
   text,
   startLabel,
   connector = false,
+  dark = false,
 }: {
   index: number;
   icon: React.ComponentType<{ className?: string }>;
@@ -571,6 +575,7 @@ function ProcessStep({
   text: string;
   startLabel?: string;
   connector?: boolean;
+  dark?: boolean;
 }) {
   const isStart = Boolean(startLabel);
 
@@ -578,7 +583,11 @@ function ProcessStep({
     <Reveal delay={(index - 1) * 100} className="relative text-center">
       <div className="mb-3 flex h-7 items-center justify-center">
         {isStart && (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-light px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand-dark">
+          <span
+            className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide ${
+              dark ? "bg-white/15 text-white" : "bg-brand-light text-brand-dark"
+            }`}
+          >
             <ArrowDown className="h-3 w-3 -rotate-90" aria-hidden="true" />
             {startLabel}
           </span>
@@ -591,36 +600,42 @@ function ProcessStep({
         <span
           className={`absolute -left-1 -top-1 z-10 flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold shadow-md ring-1 ${
             isStart
-              ? "bg-brand-dark text-white ring-brand-darker/30"
-              : "bg-white text-neutral-800 ring-border"
+              ? "bg-accent text-white ring-white/30"
+              : dark
+                ? "bg-white/10 text-white ring-white/20"
+                : "bg-white text-neutral-800 ring-border"
           }`}
         >
           {index}
         </span>
         {isStart ? (
-          <div className="relative flex h-full w-full items-center justify-center rounded-full bg-brand-dark shadow-xl shadow-brand-dark/30">
+          <div className="relative flex h-full w-full items-center justify-center rounded-full bg-accent shadow-xl shadow-accent-dark/40">
             <Icon className="h-9 w-9 text-white" aria-hidden="true" />
           </div>
         ) : (
-          <div className="flex h-full w-full items-center justify-center rounded-full border-2 border-dashed border-neutral-300 p-2.5">
-            <div className="flex h-full w-full items-center justify-center rounded-full bg-brand-light">
-              <Icon className="h-7 w-7 text-brand-dark" aria-hidden="true" />
+          <div
+            className={`flex h-full w-full items-center justify-center rounded-full border-2 border-dashed p-2.5 ${
+              dark ? "border-white/25" : "border-neutral-300"
+            }`}
+          >
+            <div className={`flex h-full w-full items-center justify-center rounded-full ${dark ? "bg-white/10" : "bg-brand-light"}`}>
+              <Icon className={`h-7 w-7 ${dark ? "text-white" : "text-brand-dark"}`} aria-hidden="true" />
             </div>
           </div>
         )}
       </div>
-      <h3 className="mt-6 font-bold text-neutral-900">{title}</h3>
-      <p className="mx-auto mt-2 max-w-55 text-sm text-neutral-600">{text}</p>
+      <h3 className={`mt-6 font-bold ${dark ? "text-white" : "text-neutral-900"}`}>{title}</h3>
+      <p className={`mx-auto mt-2 max-w-55 text-sm ${dark ? "text-white/70" : "text-neutral-600"}`}>{text}</p>
 
       {connector && (
         <div
           className="absolute left-full top-24 hidden h-0.5 w-6 -translate-y-1/2 sm:block"
           aria-hidden="true"
         >
-          <div className="h-full w-full border-t-2 border-dashed border-neutral-300" />
+          <div className={`h-full w-full border-t-2 border-dashed ${dark ? "border-white/25" : "border-neutral-300"}`} />
           {isStart && (
             <div className="absolute inset-0 overflow-hidden">
-              <div className="animate-progress-line h-full w-full bg-brand-dark" />
+              <div className="animate-progress-line h-full w-full bg-accent" />
             </div>
           )}
         </div>
