@@ -205,6 +205,11 @@
     "cookiesPolicy": "Cookie policy",
     "legalNotice": "Legal notice"
   },
+  "whatsappWidget": {
+    "title": "Let's talk",
+    "text": "Message us on WhatsApp and we'll reply right away: orders, quotes, or any question.",
+    "message": "Hi, I have a question for GIVID."
+  },
   "cookies": {
     "title": "We use cookies",
     "message": "We use our own and third-party cookies to improve your experience and analyze site usage.",

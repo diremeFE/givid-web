@@ -6,6 +6,7 @@ import { routing } from "@/i18n/routing";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { CookieBanner } from "@/components/cookie-banner";
+import { WhatsAppWidget } from "@/components/whatsapp-widget";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import "./globals.css";
 
@@ -52,6 +53,7 @@ export default async function LocaleLayout({
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />
+          <WhatsAppWidget />
           <CookieBanner />
           <GoogleAnalytics />
         </NextIntlClientProvider>

@@ -205,6 +205,11 @@
     "cookiesPolicy": "Política de cookies",
     "legalNotice": "Aviso legal"
   },
+  "whatsappWidget": {
+    "title": "¿Hablamos?",
+    "text": "Escríbenos por WhatsApp y te respondemos al momento: pedidos, presupuestos o cualquier duda.",
+    "message": "Hola, tengo una consulta para GIVID."
+  },
   "cookies": {
     "title": "Utilizamos cookies",
     "message": "Utilizamos cookies propias y de terceros para mejorar tu experiencia y analizar el uso de la web.",

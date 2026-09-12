@@ -10,7 +10,6 @@ import {
   ArrowRight,
   Sparkle,
   MessageCircle,
-  Mail,
   ArrowDown,
   ShoppingBasket,
   PackageCheck,
@@ -21,7 +20,6 @@ import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { ProductCard } from "@/components/product-card";
 import { getFeaturedProducts } from "@/lib/data";
-import { siteConfig, whatsappLink } from "@/lib/site-config";
 import type { Locale } from "@/i18n/routing";
 
 export default async function HomePage() {
@@ -103,25 +101,6 @@ export default async function HomePage() {
           <div className="absolute bottom-6 left-6 hidden items-center gap-2 text-xs font-semibold uppercase tracking-wide text-white/80 sm:flex">
             {t("heroScroll")}
             <ArrowDown className="h-3.5 w-3.5 animate-bounce" aria-hidden="true" />
-          </div>
-
-          <div className="absolute bottom-6 right-6 hidden gap-2 sm:flex">
-            <a
-              href={whatsappLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-sm transition-colors hover:bg-white/20"
-            >
-              <MessageCircle className="h-4 w-4" aria-hidden="true" />
-            </a>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              aria-label="Email"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-sm transition-colors hover:bg-white/20"
-            >
-              <Mail className="h-4 w-4" aria-hidden="true" />
-            </a>
           </div>
         </div>
 
