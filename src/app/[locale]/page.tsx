@@ -473,13 +473,15 @@ export default async function HomePage() {
             { question: t("faq4Question"), answer: t("faq4Answer") },
           ].map((item, i) => (
             <Reveal key={item.question} delay={i * 60}>
-              <details className="group rounded-2xl border border-border bg-white p-5 shadow-sm shadow-black/2 open:shadow-md">
+              <details className="group rounded-2xl border border-white bg-white p-5 shadow-lg shadow-brand-darker/10 ring-1 ring-black/4 transition-shadow open:shadow-xl open:shadow-brand-darker/15 open:ring-brand/15">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-neutral-900">
                   {item.question}
-                  <ChevronDown
-                    className="h-4 w-4 shrink-0 text-brand-dark transition-transform duration-300 group-open:rotate-180"
-                    aria-hidden="true"
-                  />
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-light transition-transform duration-300 group-open:rotate-180 group-open:bg-brand-dark">
+                    <ChevronDown
+                      className="h-4 w-4 text-brand-dark group-open:text-white"
+                      aria-hidden="true"
+                    />
+                  </span>
                 </summary>
                 <p className="mt-3 text-sm leading-relaxed text-neutral-600">
                   {item.answer}
