@@ -10,8 +10,6 @@ import {
   UserRound,
   Boxes,
   Check,
-  Target,
-  Eye,
   ArrowRight,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -246,30 +244,50 @@ export default async function AboutPage() {
 
       {/* Misión y visión */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <Reveal className="mx-auto max-w-xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark">
-            {t("whoTitle")}
-          </p>
-          <h2 className="mt-3 text-2xl font-black text-neutral-900 sm:text-3xl">
-            {t("missionTitle")} &amp; {t("visionTitle")}
-          </h2>
-        </Reveal>
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+          <Reveal>
+            <h2 className="max-w-md text-2xl font-black leading-tight text-neutral-900 sm:text-3xl">
+              {t("storyTitle")}
+            </h2>
+            <Link
+              href="/contacto"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-dark px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-dark/25 transition-transform hover:-translate-y-0.5"
+            >
+              {t("storyButton")}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </Reveal>
+          <Reveal delay={100} className="max-w-sm text-sm text-neutral-600 lg:pt-2">
+            {t("storySubtitle")}
+          </Reveal>
+        </div>
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-2">
-          <Reveal delay={0} className="rounded-3xl border border-border bg-white p-8 shadow-sm shadow-black/3">
-            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-light">
-              <Target className="h-6 w-6 text-brand-dark" aria-hidden="true" />
-            </span>
-            <h3 className="mt-5 text-lg font-bold text-neutral-900">{t("missionTitle")}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-neutral-600">{t("missionText")}</p>
+        <div className="mt-12 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
+          <Reveal className="relative min-h-100 overflow-hidden rounded-3xl">
+            <Image
+              src="/images/about-team.webp"
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/10 to-transparent" aria-hidden="true" />
+            <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+              <h3 className="text-lg font-bold text-white">{t("historyTitle")}</h3>
+              <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/85">{t("historyText")}</p>
+            </div>
           </Reveal>
-          <Reveal delay={100} className="rounded-3xl bg-brand-darker p-8 text-white">
-            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/15">
-              <Eye className="h-6 w-6 text-white" aria-hidden="true" />
-            </span>
-            <h3 className="mt-5 text-lg font-bold">{t("visionTitle")}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-white/75">{t("visionText")}</p>
-          </Reveal>
+
+          <div className="grid gap-6 sm:grid-rows-2">
+            <Reveal delay={100} className="flex flex-col justify-center rounded-3xl bg-brand-light p-8">
+              <h3 className="text-lg font-bold text-neutral-900">{t("missionTitle")}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-700">{t("missionText")}</p>
+            </Reveal>
+            <Reveal delay={200} className="flex flex-col justify-center rounded-3xl bg-brand-dark p-8 text-white">
+              <h3 className="text-lg font-bold">{t("visionTitle")}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/85">{t("visionText")}</p>
+            </Reveal>
+          </div>
         </div>
       </section>
 
