@@ -303,7 +303,8 @@ export default async function HomePage() {
       </section>
 
       {/* How it works */}
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <section className="bg-brand-lighter py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal className="relative mx-auto max-w-xl text-center">
           <div className="relative mx-auto mb-4 h-8 w-16 text-neutral-800" aria-hidden="true">
             <X className="absolute left-1 top-0 h-3 w-3 -rotate-12" />
@@ -340,6 +341,7 @@ export default async function HomePage() {
             title={t("process3Title")}
             text={t("process3Text")}
           />
+        </div>
         </div>
       </section>
 
@@ -449,7 +451,8 @@ export default async function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6">
+      <section className="bg-accent-light/60 py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <Reveal className="mx-auto max-w-xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark">
             {t("faqEyebrow")}
@@ -481,6 +484,7 @@ export default async function HomePage() {
               </details>
             </Reveal>
           ))}
+        </div>
         </div>
       </section>
 
