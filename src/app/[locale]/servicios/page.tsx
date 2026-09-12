@@ -29,7 +29,7 @@ export default async function ServicesPage() {
           <Reveal>
             <ServiceBlock
               icon={Sparkles}
-              image="/images/service-maintenance.webp"
+              image="/images/placeholder.jpg"
               tag={t("facilityServices.tag")}
               title={t("facilityServices.title")}
               description={t("facilityServices.description")}
@@ -46,7 +46,7 @@ export default async function ServicesPage() {
           <Reveal>
             <ServiceBlock
               icon={Users}
-              image="/images/service-events.jpg"
+              image="/images/placeholder.jpg"
               tag={t("events.tag")}
               title={t("events.title")}
               description={t("events.description")}
@@ -61,7 +61,7 @@ export default async function ServicesPage() {
           <Reveal>
             <ServiceBlock
               icon={Boxes}
-              image="/images/service-wholesale.webp"
+              image="/images/placeholder.jpg"
               tag={t("distribution.tag")}
               title={t("distribution.title")}
               description={t("distribution.description")}
@@ -77,7 +77,7 @@ export default async function ServicesPage() {
           <Reveal>
             <ServiceBlock
               icon={Package}
-              image="/images/ownbrand-harina.jpg"
+              image="/images/placeholder.jpg"
               tag={t("ownBrand.tag")}
               title={t("ownBrand.title")}
               description={t("ownBrand.description")}
@@ -92,9 +92,9 @@ export default async function ServicesPage() {
 
           <Reveal className="grid grid-cols-3 gap-4 sm:grid-cols-3">
             {[
-              { src: "/images/ownbrand-arroz.jpg", alt: "GIVID Rice" },
-              { src: "/images/ownbrand-pants.jpg", alt: "GIVID Pants" },
-              { src: "/images/ownbrand-toallitas.jpg", alt: "GIVID Toallitas" },
+              { src: "/images/placeholder.jpg", alt: "GIVID Rice" },
+              { src: "/images/placeholder.jpg", alt: "GIVID Pants" },
+              { src: "/images/placeholder.jpg", alt: "GIVID Toallitas" },
             ].map((img) => (
               <div key={img.src} className="relative aspect-3/4 overflow-hidden rounded-xl border border-border">
                 <Image src={img.src} alt={img.alt} fill sizes="(min-width: 640px) 200px, 33vw" className="object-cover" />

@@ -80,7 +80,7 @@ export default async function AboutPage() {
             <div className="relative aspect-4/5 w-full">
               <div className="absolute inset-0 right-14 top-0 overflow-hidden rounded-3xl shadow-xl shadow-black/10">
                 <Image
-                  src="/images/about-team.webp"
+                  src="/images/placeholder.jpg"
                   alt="Equipo de GIVID"
                   fill
                   sizes="(min-width: 1024px) 30vw, 70vw"
@@ -89,7 +89,7 @@ export default async function AboutPage() {
               </div>
               <div className="absolute bottom-0 right-0 h-3/5 w-3/5 overflow-hidden rounded-3xl shadow-xl shadow-black/15 ring-4 ring-white">
                 <Image
-                  src="/images/service-events.jpg"
+                  src="/images/placeholder.jpg"
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 18vw, 42vw"
@@ -188,7 +188,7 @@ export default async function AboutPage() {
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
           <Reveal className="relative min-h-100 overflow-hidden rounded-3xl">
             <Image
-              src="/images/about-team.webp"
+              src="/images/placeholder.jpg"
               alt=""
               fill
               sizes="(min-width: 1024px) 45vw, 100vw"
@@ -221,7 +221,7 @@ export default async function AboutPage() {
             <Reveal delay={100} className="order-2 lg:order-1">
               <div className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-xl shadow-brand-dark/10">
                 <Image
-                  src="/images/hero-warehouse.webp"
+                  src="/images/placeholder.jpg"
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"

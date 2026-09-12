@@ -171,7 +171,7 @@ export default async function HomePage() {
           <Reveal className="relative mx-auto w-full max-w-sm px-6 py-6 lg:mx-0 lg:max-w-none">
             <div className="blob-shape relative aspect-square w-full overflow-hidden shadow-xl shadow-black/10 ring-4 ring-white">
               <Image
-                src="/images/about-team.webp"
+                src="/images/placeholder.jpg"
                 alt="Equipo de GIVID"
                 fill
                 sizes="(min-width: 1024px) 35vw, 80vw"
@@ -250,7 +250,7 @@ export default async function HomePage() {
             <Reveal delay={0}>
               <ServiceCard
                 icon={Sparkles}
-                image="/images/service-maintenance.webp"
+                image="/images/placeholder.jpg"
                 title={tServices("facilityServices.title")}
                 description={tServices("facilityServices.description")}
                 readMore={tServices("readMore")}
@@ -260,7 +260,7 @@ export default async function HomePage() {
             <Reveal delay={100}>
               <ServiceCard
                 icon={Ship}
-                image="/images/service-events.jpg"
+                image="/images/placeholder.jpg"
                 title={tServices("events.title")}
                 description={tServices("events.description")}
                 readMore={tServices("readMore")}
@@ -270,7 +270,7 @@ export default async function HomePage() {
             <Reveal delay={200}>
               <ServiceCard
                 icon={Boxes}
-                image="/images/service-wholesale.webp"
+                image="/images/placeholder.jpg"
                 title={tServices("distribution.title")}
                 description={tServices("distribution.description")}
                 readMore={tServices("readMore")}
