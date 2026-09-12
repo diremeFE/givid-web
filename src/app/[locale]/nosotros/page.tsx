@@ -175,61 +175,72 @@ export default async function AboutPage() {
           </h2>
         </Reveal>
 
-        <div className="mt-10 grid auto-rows-35 grid-cols-2 gap-4 sm:auto-rows-40 sm:grid-cols-4">
-          <Reveal delay={0} className="relative col-start-1 row-start-1 overflow-hidden rounded-2xl sm:col-start-1 sm:row-start-2">
-            <Image
-              src="/images/service-maintenance.webp"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 22vw, 50vw"
-              className="object-cover"
-            />
-          </Reveal>
-          <Reveal delay={80} className="relative col-start-2 row-start-1 overflow-hidden rounded-2xl sm:col-start-2 sm:row-start-1">
-            <Image
-              src="/images/service-wholesale.webp"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 22vw, 50vw"
-              className="object-cover"
-            />
-          </Reveal>
-          <Reveal delay={160} className="relative col-start-1 row-start-2 overflow-hidden rounded-2xl sm:col-start-3 sm:row-start-1 sm:row-span-2">
-            <Image
-              src="/images/about-team.webp"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 25vw, 50vw"
-              className="object-cover"
-            />
-          </Reveal>
-          <Reveal delay={240} className="relative col-start-2 row-start-2 overflow-hidden rounded-2xl sm:col-start-4 sm:row-start-1">
-            <Image
-              src="/images/product-aceite.jpg"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 22vw, 50vw"
-              className="object-cover"
-            />
-          </Reveal>
-          <Reveal delay={320} className="relative col-start-1 row-start-3 overflow-hidden rounded-2xl sm:col-start-2 sm:row-start-2">
-            <Image
-              src="/images/service-events.jpg"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 22vw, 50vw"
-              className="object-cover"
-            />
-          </Reveal>
-          <Reveal delay={400} className="relative col-start-2 row-start-3 overflow-hidden rounded-2xl sm:col-start-4 sm:row-start-2">
-            <Image
-              src="/images/service-import.webp"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 22vw, 50vw"
-              className="object-cover"
-            />
-          </Reveal>
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:flex sm:items-start">
+          <div className="flex flex-col gap-4 sm:flex-1">
+            <Reveal delay={0} className="relative aspect-4/5 w-full overflow-hidden rounded-2xl">
+              <Image
+                src="/images/service-maintenance.webp"
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 22vw, 50vw"
+                className="object-cover"
+              />
+            </Reveal>
+            <Reveal delay={80} className="relative aspect-square w-full overflow-hidden rounded-2xl">
+              <Image
+                src="/images/service-events.jpg"
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 22vw, 50vw"
+                className="object-cover"
+              />
+            </Reveal>
+          </div>
+
+          <div className="flex flex-col gap-4 sm:flex-1">
+            <Reveal delay={120} className="relative aspect-square w-full overflow-hidden rounded-2xl">
+              <Image
+                src="/images/service-wholesale.webp"
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 22vw, 50vw"
+                className="object-cover"
+              />
+            </Reveal>
+            <Reveal delay={200} className="relative aspect-4/3 w-full overflow-hidden rounded-2xl">
+              <Image
+                src="/images/service-import.webp"
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 22vw, 50vw"
+                className="object-cover"
+              />
+            </Reveal>
+          </div>
+
+          <div className="col-span-2 sm:flex-[1.15] sm:-mt-10">
+            <Reveal delay={280} className="relative aspect-4/5 w-full overflow-hidden rounded-2xl shadow-xl shadow-black/15 sm:aspect-3/4">
+              <Image
+                src="/images/about-team.webp"
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 25vw, 100vw"
+                className="object-cover"
+              />
+            </Reveal>
+          </div>
+
+          <div className="sm:flex-[0.7]">
+            <Reveal delay={360} className="relative aspect-3/5 w-full overflow-hidden rounded-2xl">
+              <Image
+                src="/images/product-aceite.jpg"
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 16vw, 50vw"
+                className="object-cover"
+              />
+            </Reveal>
+          </div>
         </div>
       </section>
 
