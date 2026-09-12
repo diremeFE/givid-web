@@ -79,6 +79,15 @@ body {
     radial-gradient(55% 50% at 85% 85%, rgba(232, 137, 12, 0.1) 0%, rgba(232, 137, 12, 0) 70%);
 }
 
+.bg-brand-aurora {
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(48% 60% at 6% 8%, rgba(28, 122, 74, 0.55) 0%, rgba(28, 122, 74, 0) 70%),
+    radial-gradient(50% 55% at 98% 5%, rgba(63, 174, 122, 0.45) 0%, rgba(63, 174, 122, 0) 70%),
+    radial-gradient(55% 65% at 100% 100%, rgba(232, 137, 12, 0.5) 0%, rgba(232, 137, 12, 0) 70%),
+    radial-gradient(50% 60% at 0% 95%, rgba(16, 80, 47, 0.4) 0%, rgba(16, 80, 47, 0) 70%);
+}
+
 .bg-brand-mesh {
   background-color: var(--brand-darker);
   background-image:

@@ -454,7 +454,7 @@ export default async function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-accent-light py-20">
+      <section className="bg-brand-aurora py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <Reveal className="mx-auto max-w-xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark">
