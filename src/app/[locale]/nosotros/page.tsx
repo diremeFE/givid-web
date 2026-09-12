@@ -165,6 +165,72 @@ export default async function AboutPage() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal className="mt-20 max-w-lg">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark">
+            Galería
+          </p>
+          <h2 className="mt-3 text-2xl font-black leading-snug text-neutral-900 sm:text-3xl">
+            {tServices("homeShortDescription")}
+          </h2>
+        </Reveal>
+
+        <div className="mt-10 grid auto-rows-35 grid-cols-2 gap-4 sm:auto-rows-40 sm:grid-cols-4">
+          <Reveal delay={0} className="relative col-start-1 row-start-1 overflow-hidden rounded-2xl sm:col-start-1 sm:row-start-2">
+            <Image
+              src="/images/service-maintenance.webp"
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 22vw, 50vw"
+              className="object-cover"
+            />
+          </Reveal>
+          <Reveal delay={80} className="relative col-start-2 row-start-1 overflow-hidden rounded-2xl sm:col-start-2 sm:row-start-1">
+            <Image
+              src="/images/service-wholesale.webp"
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 22vw, 50vw"
+              className="object-cover"
+            />
+          </Reveal>
+          <Reveal delay={160} className="relative col-start-1 row-start-2 overflow-hidden rounded-2xl sm:col-start-3 sm:row-start-1 sm:row-span-2">
+            <Image
+              src="/images/about-team.webp"
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 25vw, 50vw"
+              className="object-cover"
+            />
+          </Reveal>
+          <Reveal delay={240} className="relative col-start-2 row-start-2 overflow-hidden rounded-2xl sm:col-start-4 sm:row-start-1">
+            <Image
+              src="/images/product-aceite.jpg"
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 22vw, 50vw"
+              className="object-cover"
+            />
+          </Reveal>
+          <Reveal delay={320} className="relative col-start-1 row-start-3 overflow-hidden rounded-2xl sm:col-start-2 sm:row-start-2">
+            <Image
+              src="/images/service-events.jpg"
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 22vw, 50vw"
+              className="object-cover"
+            />
+          </Reveal>
+          <Reveal delay={400} className="relative col-start-2 row-start-3 overflow-hidden rounded-2xl sm:col-start-4 sm:row-start-2">
+            <Image
+              src="/images/service-import.webp"
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 22vw, 50vw"
+              className="object-cover"
+            />
+          </Reveal>
+        </div>
       </section>
 
       {/* Misión y visión */}
@@ -233,57 +299,6 @@ export default async function AboutPage() {
               </ul>
             </Reveal>
           </div>
-        </div>
-      </section>
-
-      {/* Gallery */}
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <Reveal className="mx-auto max-w-xl text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark">
-            Galería
-          </p>
-          <h2 className="mt-3 text-2xl font-black text-neutral-900 sm:text-3xl">
-            Nuestro día a día
-          </h2>
-        </Reveal>
-
-        <div className="mt-12 grid auto-rows-40 grid-cols-2 gap-4 sm:auto-rows-45 sm:grid-cols-4">
-          <Reveal className="relative col-span-2 row-span-2 overflow-hidden rounded-3xl">
-            <Image
-              src="/images/about-team.webp"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover"
-            />
-          </Reveal>
-          <Reveal delay={100} className="relative overflow-hidden rounded-3xl">
-            <Image
-              src="/images/service-events.jpg"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 20vw, 50vw"
-              className="object-cover"
-            />
-          </Reveal>
-          <Reveal delay={200} className="relative overflow-hidden rounded-3xl">
-            <Image
-              src="/images/service-maintenance.webp"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 20vw, 50vw"
-              className="object-cover"
-            />
-          </Reveal>
-          <Reveal delay={300} className="relative col-span-2 overflow-hidden rounded-3xl">
-            <Image
-              src="/images/ownbrand-arroz.jpg"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover"
-            />
-          </Reveal>
         </div>
       </section>
 
