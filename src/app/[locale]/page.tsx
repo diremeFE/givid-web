@@ -151,10 +151,10 @@ export default async function HomePage() {
       </section>
 
       {/* Company intro */}
-      <section className="bg-brand-lighter relative overflow-hidden py-20">
+      <section className="bg-brand-light relative overflow-hidden py-20">
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="dot-grid pointer-events-none absolute -left-2 top-16 h-64 w-20 text-brand-light sm:h-80 sm:w-28" aria-hidden="true" />
-        <div className="dot-grid pointer-events-none absolute -right-2 bottom-0 h-40 w-24 text-brand-light sm:h-52 sm:w-32" aria-hidden="true" />
+        <div className="dot-grid pointer-events-none absolute -left-2 top-16 h-64 w-20 text-brand/30 sm:h-80 sm:w-28" aria-hidden="true" />
+        <div className="dot-grid pointer-events-none absolute -right-2 bottom-0 h-40 w-24 text-brand/30 sm:h-52 sm:w-32" aria-hidden="true" />
 
         {/* Centered heading */}
         <Reveal className="relative mx-auto max-w-2xl text-center">
@@ -303,7 +303,7 @@ export default async function HomePage() {
       </section>
 
       {/* How it works */}
-      <section className="bg-brand-lighter py-20">
+      <section className="bg-brand-light py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal className="relative mx-auto max-w-xl text-center">
           <div className="relative mx-auto mb-4 h-8 w-16 text-neutral-800" aria-hidden="true">
@@ -346,7 +346,7 @@ export default async function HomePage() {
       </section>
 
       {/* Featured products */}
-      <section className="bg-brand-gradient-soft py-20">
+      <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <Reveal className="flex flex-wrap items-end justify-between gap-4">
             <div>
@@ -398,7 +398,7 @@ export default async function HomePage() {
       </section>
 
       {/* Why us */}
-      <section className="bg-brand-lighter py-20">
+      <section className="bg-brand-light py-20">
         <div className="mx-auto max-w-6xl overflow-visible px-4 sm:px-6">
           <Reveal className="mx-auto max-w-xl text-center">
             <h2 className="text-2xl font-black text-neutral-900 sm:text-3xl">
@@ -451,7 +451,7 @@ export default async function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-accent-light/60 py-20">
+      <section className="bg-accent-light py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <Reveal className="mx-auto max-w-xl text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark">
