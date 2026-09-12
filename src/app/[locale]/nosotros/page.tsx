@@ -12,7 +12,9 @@ import {
   Check,
   Target,
   Eye,
+  ArrowRight,
 } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
 
@@ -56,6 +58,13 @@ export default async function AboutPage() {
     tServices("facilityServices.bullet5"),
   ];
 
+  const whoChecklist = [
+    tHome("introBullet1"),
+    tHome("introBullet2"),
+    tHome("introBullet3"),
+    tHome("introBullet4"),
+  ];
+
   return (
     <div>
       <PageHero
@@ -68,22 +77,68 @@ export default async function AboutPage() {
 
       {/* Quiénes somos */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-          <Reveal>
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
+          <Reveal className="relative mx-auto w-full max-w-md lg:mx-0">
+            <div className="relative aspect-4/5 w-full">
+              <div className="absolute inset-0 right-14 top-0 overflow-hidden rounded-3xl shadow-xl shadow-black/10">
+                <Image
+                  src="/images/about-team.webp"
+                  alt="Equipo de GIVID"
+                  fill
+                  sizes="(min-width: 1024px) 30vw, 70vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute bottom-0 right-0 h-3/5 w-3/5 overflow-hidden rounded-3xl shadow-xl shadow-black/15 ring-4 ring-white">
+                <Image
+                  src="/images/service-events.jpg"
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 18vw, 42vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute -left-4 top-4 rounded-2xl bg-brand-dark px-5 py-4 text-white shadow-xl shadow-brand-dark/25 sm:-left-6">
+                <p className="text-3xl font-black leading-none">{tHome("heroStatValue")}</p>
+                <p className="mt-1 max-w-24 text-[11px] font-bold uppercase leading-tight tracking-wide text-white/80">
+                  {tHome("heroStatLabel")}
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={100}>
             <span className="inline-flex items-center gap-2 rounded-full bg-brand-light px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-dark">
               <Sparkle className="h-3.5 w-3.5" aria-hidden="true" />
               {t("whoTitle")}
             </span>
-            <h2 className="mt-4 max-w-md text-2xl font-black leading-tight text-neutral-900 sm:text-3xl">
+            <h2 className="mt-4 text-2xl font-black leading-tight text-neutral-900 sm:text-3xl">
               {t("slogan")}
             </h2>
-          </Reveal>
-          <Reveal delay={100} className="max-w-sm text-sm text-neutral-600 lg:pt-2 lg:text-right">
-            {t("whoText")}
+            <p className="mt-4 text-sm leading-relaxed text-neutral-600">{t("whoText")}</p>
+
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+              {whoChecklist.map((bullet) => (
+                <li key={bullet} className="flex items-center gap-2.5 text-sm font-semibold text-neutral-800">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-light text-brand-dark">
+                    <Check className="h-3.5 w-3.5" aria-hidden="true" />
+                  </span>
+                  {bullet}
+                </li>
+              ))}
+            </ul>
+
+            <Link
+              href="/contacto"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-dark px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-dark/25 transition-transform hover:-translate-y-0.5"
+            >
+              {tHome("ctaBannerButton")}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
           </Reveal>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-20 grid gap-6 lg:grid-cols-3">
           {businessLines.map(({ icon: Icon, title, text }, i) => (
             <Reveal
               key={title}
