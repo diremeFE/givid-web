@@ -211,6 +211,7 @@
     "legalNotice": "Aviso legal"
   },
   "whatsappWidget": {
+    "close": "Cerrar",
     "title": "¿Hablamos?",
     "text": "Escríbenos por WhatsApp y te respondemos al momento: pedidos, presupuestos o cualquier duda.",
     "message": "Hola, tengo una consulta para GIVID."

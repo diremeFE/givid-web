@@ -211,6 +211,7 @@
     "legalNotice": "Mentions légales"
   },
   "whatsappWidget": {
+    "close": "Fermer",
     "title": "On en discute ?",
     "text": "Écrivez-nous sur WhatsApp, réponse immédiate : commandes, devis ou toute question.",
     "message": "Bonjour, j'ai une question pour GIVID."

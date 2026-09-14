@@ -211,6 +211,7 @@
     "legalNotice": "Legal notice"
   },
   "whatsappWidget": {
+    "close": "Close",
     "title": "Let's talk",
     "text": "Message us on WhatsApp and we'll reply right away: orders, quotes, or any question.",
     "message": "Hi, I have a question for GIVID."
