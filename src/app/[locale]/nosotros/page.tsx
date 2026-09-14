@@ -143,17 +143,23 @@ export default async function AboutPage() {
               delay={i * 100}
               className={`flex h-full flex-col rounded-3xl p-8 ${
                 i === 0
-                  ? "border border-border bg-white shadow-sm shadow-black/3"
+                  ? "border border-border border-b-4 border-b-brand bg-white shadow-sm shadow-black/3"
                   : i === 1
                     ? "bg-brand-light"
                     : "bg-brand-darker text-white"
               }`}
             >
-              <Icon
-                className={`h-11 w-11 ${i === 1 ? "text-brand-dark" : i === 2 ? "text-brand-light" : "text-brand-dark"}`}
-                strokeWidth={1.5}
-                aria-hidden="true"
-              />
+              {i === 0 ? (
+                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-light">
+                  <Icon className="h-7 w-7 text-brand-dark" strokeWidth={1.5} aria-hidden="true" />
+                </span>
+              ) : (
+                <Icon
+                  className={`h-11 w-11 ${i === 1 ? "text-brand-dark" : "text-brand-light"}`}
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                />
+              )}
               <h3 className={`mt-6 text-lg font-bold leading-snug ${i === 2 ? "" : "text-neutral-900"}`}>
                 {title}
               </h3>
