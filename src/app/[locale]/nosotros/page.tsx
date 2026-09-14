@@ -143,22 +143,18 @@ export default async function AboutPage() {
               delay={i * 100}
               className={`flex h-full flex-col rounded-3xl p-8 ${
                 i === 0
-                  ? "border border-border border-b-4 border-b-brand bg-white shadow-sm shadow-black/3"
+                  ? "border border-border border-b-4 border-b-brand bg-white shadow-lg shadow-black/5"
                   : i === 1
-                    ? "bg-brand-light"
+                    ? "border border-brand/15 border-b-4 border-b-brand-dark bg-brand-light shadow-lg shadow-black/5"
                     : "bg-brand-darker text-white"
               }`}
             >
-              {i === 0 ? (
-                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-light">
+              {i === 2 ? (
+                <Icon className="h-11 w-11 text-brand-light" strokeWidth={1.5} aria-hidden="true" />
+              ) : (
+                <span className={`flex h-14 w-14 items-center justify-center rounded-2xl ${i === 1 ? "bg-white" : "bg-brand-light"}`}>
                   <Icon className="h-7 w-7 text-brand-dark" strokeWidth={1.5} aria-hidden="true" />
                 </span>
-              ) : (
-                <Icon
-                  className={`h-11 w-11 ${i === 1 ? "text-brand-dark" : "text-brand-light"}`}
-                  strokeWidth={1.5}
-                  aria-hidden="true"
-                />
               )}
               <h3 className={`mt-6 text-lg font-bold leading-snug ${i === 2 ? "" : "text-neutral-900"}`}>
                 {title}
@@ -208,7 +204,7 @@ export default async function AboutPage() {
           </Reveal>
 
           <div className="grid gap-6 sm:grid-rows-2">
-            <Reveal delay={100} className="flex flex-col justify-center rounded-3xl bg-brand-light p-8">
+            <Reveal delay={100} className="flex flex-col justify-center rounded-3xl border border-brand/15 border-b-4 border-b-brand-dark bg-brand-light p-8 shadow-lg shadow-black/5">
               <h3 className="text-lg font-bold text-neutral-900">{t("missionTitle")}</h3>
               <p className="mt-2 text-sm leading-relaxed text-neutral-700">{t("missionText")}</p>
             </Reveal>
