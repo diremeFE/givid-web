@@ -25,7 +25,47 @@ export default async function ServicesPage() {
       />
 
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <div className="space-y-8">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-12">
+          <Reveal className="relative aspect-4/3 overflow-hidden rounded-3xl">
+            <Image
+              src="/images/placeholder.jpg"
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-cover"
+            />
+          </Reveal>
+          <Reveal delay={100}>
+            <span className="inline-flex items-center rounded-full bg-brand-light px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-dark">
+              {t("aboutBadge")}
+            </span>
+            <h2 className="mt-4 text-2xl font-black leading-tight text-neutral-900 sm:text-3xl">
+              {t("aboutTitle")}
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-neutral-600">{t("aboutText1")}</p>
+            <p className="mt-4 text-sm leading-relaxed text-neutral-600">{t("aboutText2")}</p>
+          </Reveal>
+        </div>
+
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {[
+            { value: t("stat1Value"), label: t("stat1Label") },
+            { value: t("stat2Value"), label: t("stat2Label") },
+            { value: t("stat3Value"), label: t("stat3Label") },
+            { value: t("stat4Value"), label: t("stat4Label") },
+          ].map((stat, i) => (
+            <Reveal
+              key={stat.label}
+              delay={i * 60}
+              className="rounded-2xl bg-neutral-100 p-6 text-center"
+            >
+              <p className="text-2xl font-black text-neutral-900 sm:text-3xl">{stat.value}</p>
+              <p className="mt-1 text-xs text-neutral-500">{stat.label}</p>
+            </Reveal>
+          ))}
+        </div>
+
+        <div className="mt-16 space-y-8">
           <Reveal>
             <ServiceBlock
               icon={Sparkles}
