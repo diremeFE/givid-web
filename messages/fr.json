@@ -127,10 +127,19 @@
       "title": "GIVID Distribution",
       "tag": "Service principal",
       "description": "Nous commercialisons en gros des produits destinés aussi bien à la consommation familiale qu'à l'approvisionnement de commerces, d'entreprises et d'autres distributeurs. Consultez notre catalogue avec des prix indicatifs ; les commandes se font par WhatsApp, e-mail ou dans notre magasin physique.",
-      "bullet1": "Alimentation : riz, farine de blé et huile",
-      "bullet2": "Puériculture : couches et lingettes",
-      "bullet3": "Eau Bezoya",
-      "bullet4": "Entretien du foyer : lessive pour le linge, eau de javel, nettoyants pour sols, désodorisants, liquide vaisselle, sacs poubelle et essuie-tout"
+      "bullet1": "Riz",
+      "bullet2": "Farine de blé",
+      "bullet3": "Huile",
+      "bullet4": "Couches",
+      "bullet5": "Lingettes",
+      "bullet6": "Eau Bezoya",
+      "bullet7": "Lessive pour le linge",
+      "bullet8": "Eau de javel",
+      "bullet9": "Nettoyants pour sols",
+      "bullet10": "Désodorisants",
+      "bullet11": "Liquide vaisselle",
+      "bullet12": "Sacs poubelle",
+      "bullet13": "Essuie-tout"
     },
     "ownBrand": {
       "title": "Marque propre GIVID",

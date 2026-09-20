@@ -114,6 +114,15 @@ export default async function ServicesPage() {
               t("distribution.bullet2"),
               t("distribution.bullet3"),
               t("distribution.bullet4"),
+              t("distribution.bullet5"),
+              t("distribution.bullet6"),
+              t("distribution.bullet7"),
+              t("distribution.bullet8"),
+              t("distribution.bullet9"),
+              t("distribution.bullet10"),
+              t("distribution.bullet11"),
+              t("distribution.bullet12"),
+              t("distribution.bullet13"),
             ]}
             highlighted
           />

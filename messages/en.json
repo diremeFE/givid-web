@@ -127,10 +127,19 @@
       "title": "GIVID Distribution",
       "tag": "Main service",
       "description": "We sell essential goods at wholesale prices, for family consumption as well as for shops, businesses and other distributors. Check our catalog for indicative prices; orders are placed via WhatsApp, email, or at our physical store.",
-      "bullet1": "Food: rice, wheat flour and oil",
-      "bullet2": "Childcare: diapers and baby wipes",
-      "bullet3": "Water: Bezoya",
-      "bullet4": "Household cleaning: laundry detergent, bleach, floor cleaners, air fresheners, dish soap, garbage bags and kitchen roll"
+      "bullet1": "Rice",
+      "bullet2": "Wheat flour",
+      "bullet3": "Oil",
+      "bullet4": "Diapers",
+      "bullet5": "Baby wipes",
+      "bullet6": "Bezoya water",
+      "bullet7": "Laundry detergent",
+      "bullet8": "Bleach",
+      "bullet9": "Floor cleaners",
+      "bullet10": "Air fresheners",
+      "bullet11": "Dish soap",
+      "bullet12": "Garbage bags",
+      "bullet13": "Kitchen roll"
     },
     "ownBrand": {
       "title": "GIVID own brand",
