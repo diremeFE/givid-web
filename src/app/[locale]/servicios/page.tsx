@@ -8,7 +8,7 @@ import { PageHero } from "@/components/page-hero";
 
 export async function generateMetadata() {
   const t = await getTranslations("services");
-  return { title: t("pageTitle") };
+  return { title: t("pageTitle"), description: t("pageSubtitle") };
 }
 
 export default async function ServicesPage() {

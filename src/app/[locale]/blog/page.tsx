@@ -9,7 +9,7 @@ import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata() {
   const t = await getTranslations("blog");
-  return { title: t("pageTitle") };
+  return { title: t("pageTitle"), description: t("pageSubtitle") };
 }
 
 export default async function BlogPage() {

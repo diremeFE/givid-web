@@ -7,7 +7,7 @@ import { siteConfig, whatsappLink } from "@/lib/site-config";
 
 export async function generateMetadata() {
   const t = await getTranslations("contact");
-  return { title: t("pageTitle") };
+  return { title: t("pageTitle"), description: t("pageSubtitle") };
 }
 
 export default async function ContactPage() {

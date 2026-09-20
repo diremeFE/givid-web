@@ -1,6 +1,7 @@
 export const siteConfig = {
   brandName: "GIVID",
   legalName: "Preser Gisvalida SL",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://givid-web.vercel.app",
   whatsappNumber: "240555779621",
   whatsappNumberDisplay: "+240 555 779 621",
   phoneSecondary: "240555801897",

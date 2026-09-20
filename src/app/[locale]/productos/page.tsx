@@ -10,7 +10,7 @@ import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata() {
   const t = await getTranslations("products");
-  return { title: t("pageTitle") };
+  return { title: t("pageTitle"), description: t("pageSubtitle") };
 }
 
 export default async function ProductsPage({
