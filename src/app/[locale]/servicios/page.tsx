@@ -153,15 +153,20 @@ export default async function ServicesPage() {
             </div>
           </ServiceBlock>
 
-          <Reveal className="mt-20 rounded-2xl bg-accent p-8 text-center sm:p-10">
-            <p className="text-lg font-semibold text-white">{t("ctaText")}</p>
-            <Link
-              href="/contacto"
-              className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-accent-dark shadow-md transition-transform hover:-translate-y-0.5"
-            >
-              {t("ctaButton")}
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
+          <Reveal className="bg-brand-mesh relative mt-20 overflow-hidden rounded-3xl px-6 py-16 text-center shadow-xl shadow-brand-darker/20 sm:py-20">
+            <div className="bg-noise absolute inset-0 opacity-20" aria-hidden="true" />
+            <div className="relative mx-auto max-w-2xl">
+              <h2 className="text-2xl font-black leading-tight text-white sm:text-4xl">
+                {t("ctaText")}
+              </h2>
+              <Link
+                href="/contacto"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-darker shadow-lg shadow-black/15 transition-transform hover:-translate-y-0.5"
+              >
+                {t("ctaButton")}
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
           </Reveal>
         </div>
       </section>
