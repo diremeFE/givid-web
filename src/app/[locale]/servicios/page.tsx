@@ -24,48 +24,52 @@ export default async function ServicesPage() {
         image="/images/about-team.webp"
       />
 
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-12">
-          <Reveal className="relative aspect-4/3 overflow-hidden rounded-3xl">
-            <Image
-              src="/images/placeholder.jpg"
-              alt=""
-              fill
-              sizes="(min-width: 1024px) 45vw, 100vw"
-              className="object-cover"
-            />
-          </Reveal>
-          <Reveal delay={100}>
-            <span className="inline-flex items-center rounded-full bg-brand-light px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-dark">
-              {t("aboutBadge")}
-            </span>
-            <h2 className="mt-4 text-2xl font-black leading-tight text-neutral-900 sm:text-3xl">
-              {t("aboutTitle")}
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-600">{t("aboutText1")}</p>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-600">{t("aboutText2")}</p>
-          </Reveal>
-        </div>
-
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {[
-            { value: t("stat1Value"), label: t("stat1Label") },
-            { value: t("stat2Value"), label: t("stat2Label") },
-            { value: t("stat3Value"), label: t("stat3Label") },
-            { value: t("stat4Value"), label: t("stat4Label") },
-          ].map((stat, i) => (
-            <Reveal
-              key={stat.label}
-              delay={i * 60}
-              className="rounded-2xl bg-neutral-100 p-6 text-center"
-            >
-              <p className="text-2xl font-black text-neutral-900 sm:text-3xl">{stat.value}</p>
-              <p className="mt-1 text-xs text-neutral-500">{stat.label}</p>
+      <section className="py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-12">
+            <Reveal className="relative aspect-4/3 overflow-hidden rounded-3xl">
+              <Image
+                src="/images/placeholder.jpg"
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+              />
             </Reveal>
-          ))}
-        </div>
+            <Reveal delay={100}>
+              <span className="inline-flex items-center rounded-full bg-brand-light px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-dark">
+                {t("aboutBadge")}
+              </span>
+              <h2 className="mt-4 text-2xl font-black leading-tight text-neutral-900 sm:text-3xl">
+                {t("aboutTitle")}
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-neutral-600">{t("aboutText1")}</p>
+              <p className="mt-4 text-sm leading-relaxed text-neutral-600">{t("aboutText2")}</p>
+            </Reveal>
+          </div>
 
-        <div className="mt-20 space-y-20">
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {[
+              { value: t("stat1Value"), label: t("stat1Label") },
+              { value: t("stat2Value"), label: t("stat2Label") },
+              { value: t("stat3Value"), label: t("stat3Label") },
+              { value: t("stat4Value"), label: t("stat4Label") },
+            ].map((stat, i) => (
+              <Reveal
+                key={stat.label}
+                delay={i * 60}
+                className="rounded-2xl bg-neutral-100 p-6 text-center"
+              >
+                <p className="text-2xl font-black text-neutral-900 sm:text-3xl">{stat.value}</p>
+                <p className="mt-1 text-xs text-neutral-500">{stat.label}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-light py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ServiceBlock
             icon={Sparkles}
             image="/images/placeholder.jpg"
@@ -81,6 +85,11 @@ export default async function ServicesPage() {
               t("facilityServices.bullet6"),
             ]}
           />
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ServiceBlock
             icon={Users}
             image="/images/placeholder.jpg"
@@ -95,6 +104,11 @@ export default async function ServicesPage() {
             ]}
             reverse
           />
+        </div>
+      </section>
+
+      <section className="bg-brand-darker py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ServiceBlock
             icon={Boxes}
             image="/images/placeholder.jpg"
@@ -109,6 +123,11 @@ export default async function ServicesPage() {
             ]}
             highlighted
           />
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ServiceBlock
             icon={Package}
             image="/images/placeholder.jpg"
@@ -128,26 +147,30 @@ export default async function ServicesPage() {
                 { src: "/images/placeholder.jpg", alt: "GIVID Arroz" },
                 { src: "/images/placeholder.jpg", alt: "GIVID Pants" },
                 { src: "/images/placeholder.jpg", alt: "GIVID Toallitas" },
-              ].map((img) => (
-                <div key={img.alt} className="relative aspect-3/4 overflow-hidden rounded-xl border border-border">
+              ].map((img, i) => (
+                <Reveal
+                  key={img.alt}
+                  delay={200 + i * 80}
+                  className="relative aspect-3/4 overflow-hidden rounded-xl border border-border"
+                >
                   <Image src={img.src} alt={img.alt} fill sizes="(min-width: 640px) 150px, 33vw" className="object-cover" />
-                </div>
+                </Reveal>
               ))}
             </div>
           </ServiceBlock>
-        </div>
 
-        <Reveal className="mt-16 rounded-2xl bg-accent p-8 text-center sm:p-10">
-          <p className="text-lg font-semibold text-white">{t("ctaText")}</p>
-          <Link
-            href="/contacto"
-            className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-accent-dark shadow-md transition-transform hover:-translate-y-0.5"
-          >
-            {t("ctaButton")}
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
-        </Reveal>
-      </div>
+          <Reveal className="mt-20 rounded-2xl bg-accent p-8 text-center sm:p-10">
+            <p className="text-lg font-semibold text-white">{t("ctaText")}</p>
+            <Link
+              href="/contacto"
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-accent-dark shadow-md transition-transform hover:-translate-y-0.5"
+            >
+              {t("ctaButton")}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
     </div>
   );
 }
@@ -227,14 +250,6 @@ function ServiceBlock({
       </Reveal>
     </>
   );
-
-  if (highlighted) {
-    return (
-      <div className="rounded-3xl bg-brand-gradient p-6 sm:p-10">
-        <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">{content}</div>
-      </div>
-    );
-  }
 
   return <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">{content}</div>;
 }
