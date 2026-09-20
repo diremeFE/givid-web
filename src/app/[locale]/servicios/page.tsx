@@ -65,82 +65,76 @@ export default async function ServicesPage() {
           ))}
         </div>
 
-        <div className="mt-16 space-y-8">
-          <Reveal>
-            <ServiceBlock
-              icon={Sparkles}
-              image="/images/placeholder.jpg"
-              tag={t("facilityServices.tag")}
-              title={t("facilityServices.title")}
-              description={t("facilityServices.description")}
-              bullets={[
-                t("facilityServices.bullet1"),
-                t("facilityServices.bullet2"),
-                t("facilityServices.bullet3"),
-                t("facilityServices.bullet4"),
-                t("facilityServices.bullet5"),
-                t("facilityServices.bullet6"),
-              ]}
-            />
-          </Reveal>
-          <Reveal>
-            <ServiceBlock
-              icon={Users}
-              image="/images/placeholder.jpg"
-              tag={t("events.tag")}
-              title={t("events.title")}
-              description={t("events.description")}
-              bullets={[
-                t("events.bullet1"),
-                t("events.bullet2"),
-                t("events.bullet3"),
-                t("events.bullet4"),
-              ]}
-            />
-          </Reveal>
-          <Reveal>
-            <ServiceBlock
-              icon={Boxes}
-              image="/images/placeholder.jpg"
-              tag={t("distribution.tag")}
-              title={t("distribution.title")}
-              description={t("distribution.description")}
-              bullets={[
-                t("distribution.bullet1"),
-                t("distribution.bullet2"),
-                t("distribution.bullet3"),
-                t("distribution.bullet4"),
-              ]}
-              highlighted
-            />
-          </Reveal>
-          <Reveal>
-            <ServiceBlock
-              icon={Package}
-              image="/images/placeholder.jpg"
-              tag={t("ownBrand.tag")}
-              title={t("ownBrand.title")}
-              description={t("ownBrand.description")}
-              bullets={[
-                t("ownBrand.bullet1"),
-                t("ownBrand.bullet2"),
-                t("ownBrand.bullet3"),
-                t("ownBrand.bullet4"),
-              ]}
-            />
-          </Reveal>
-
-          <Reveal className="grid grid-cols-3 gap-4 sm:grid-cols-3">
-            {[
-              { src: "/images/placeholder.jpg", alt: "GIVID Rice" },
-              { src: "/images/placeholder.jpg", alt: "GIVID Pants" },
-              { src: "/images/placeholder.jpg", alt: "GIVID Toallitas" },
-            ].map((img) => (
-              <div key={img.src} className="relative aspect-3/4 overflow-hidden rounded-xl border border-border">
-                <Image src={img.src} alt={img.alt} fill sizes="(min-width: 640px) 200px, 33vw" className="object-cover" />
-              </div>
-            ))}
-          </Reveal>
+        <div className="mt-20 space-y-20">
+          <ServiceBlock
+            icon={Sparkles}
+            image="/images/placeholder.jpg"
+            tag={t("facilityServices.tag")}
+            title={t("facilityServices.title")}
+            description={t("facilityServices.description")}
+            bullets={[
+              t("facilityServices.bullet1"),
+              t("facilityServices.bullet2"),
+              t("facilityServices.bullet3"),
+              t("facilityServices.bullet4"),
+              t("facilityServices.bullet5"),
+              t("facilityServices.bullet6"),
+            ]}
+          />
+          <ServiceBlock
+            icon={Users}
+            image="/images/placeholder.jpg"
+            tag={t("events.tag")}
+            title={t("events.title")}
+            description={t("events.description")}
+            bullets={[
+              t("events.bullet1"),
+              t("events.bullet2"),
+              t("events.bullet3"),
+              t("events.bullet4"),
+            ]}
+            reverse
+          />
+          <ServiceBlock
+            icon={Boxes}
+            image="/images/placeholder.jpg"
+            tag={t("distribution.tag")}
+            title={t("distribution.title")}
+            description={t("distribution.description")}
+            bullets={[
+              t("distribution.bullet1"),
+              t("distribution.bullet2"),
+              t("distribution.bullet3"),
+              t("distribution.bullet4"),
+            ]}
+            highlighted
+          />
+          <ServiceBlock
+            icon={Package}
+            image="/images/placeholder.jpg"
+            tag={t("ownBrand.tag")}
+            title={t("ownBrand.title")}
+            description={t("ownBrand.description")}
+            bullets={[
+              t("ownBrand.bullet1"),
+              t("ownBrand.bullet2"),
+              t("ownBrand.bullet3"),
+              t("ownBrand.bullet4"),
+            ]}
+            reverse
+          >
+            <div className="mt-6 grid grid-cols-3 gap-4">
+              {[
+                { src: "/images/placeholder.jpg", alt: "GIVID Arroz" },
+                { src: "/images/placeholder.jpg", alt: "GIVID Pants" },
+                { src: "/images/placeholder.jpg", alt: "GIVID Toallitas" },
+              ].map((img) => (
+                <div key={img.alt} className="relative aspect-3/4 overflow-hidden rounded-xl border border-border">
+                  <Image src={img.src} alt={img.alt} fill sizes="(min-width: 640px) 150px, 33vw" className="object-cover" />
+                </div>
+              ))}
+            </div>
+          </ServiceBlock>
         </div>
 
         <Reveal className="mt-16 rounded-2xl bg-accent p-8 text-center sm:p-10">
@@ -166,6 +160,8 @@ function ServiceBlock({
   description,
   bullets,
   highlighted,
+  reverse,
+  children,
 }: {
   icon: React.ComponentType<{ className?: string }>;
   image: string;
@@ -174,72 +170,71 @@ function ServiceBlock({
   description: string;
   bullets: string[];
   highlighted?: boolean;
+  reverse?: boolean;
+  children?: React.ReactNode;
 }) {
-  return (
-    <div
-      className={`group overflow-hidden rounded-2xl border transition-shadow hover:shadow-lg ${
-        highlighted ? "border-brand/20" : "border-border"
-      }`}
-    >
-      <div className="grid sm:grid-cols-[minmax(0,280px)_1fr]">
-        <div className="relative h-44 sm:h-full">
-          <Image
-            src={image}
-            alt=""
-            fill
-            sizes="(min-width: 640px) 280px, 100vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        </div>
-        <div
-          className={`flex flex-col gap-4 p-8 ${
-            highlighted ? "bg-brand-gradient text-white" : "bg-white"
+  const content = (
+    <>
+      <Reveal className={`relative aspect-4/3 overflow-hidden rounded-3xl ${reverse ? "lg:order-2" : ""}`}>
+        <Image
+          src={image}
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 45vw, 100vw"
+          className="object-cover"
+        />
+      </Reveal>
+      <Reveal delay={100} className={reverse ? "lg:order-1" : ""}>
+        <span
+          className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${
+            highlighted ? "bg-white/15" : "bg-brand-light"
           }`}
         >
+          <Icon className={`h-6 w-6 ${highlighted ? "text-white" : "text-brand-dark"}`} aria-hidden="true" />
+        </span>
+        {tag && (
           <span
-            className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${
-              highlighted ? "bg-white/15" : "bg-brand-light"
+            className={`mt-4 inline-flex w-fit items-center rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wide ${
+              highlighted ? "bg-white/15 text-white" : "bg-brand-light text-brand-dark"
             }`}
           >
-            <Icon className={`h-6 w-6 ${highlighted ? "text-white" : "text-brand-dark"}`} />
+            {tag}
           </span>
-          <div>
-            {tag && (
-              <span
-                className={`mb-2 inline-block w-fit rounded-full px-3 py-1 text-xs font-semibold ${
-                  highlighted ? "bg-white/20 text-white" : "bg-accent-light text-accent-dark"
-                }`}
-              >
-                {tag}
-              </span>
-            )}
-            <h2 className={`text-2xl font-bold ${highlighted ? "text-white" : "text-neutral-900"}`}>
-              {title}
-            </h2>
-            <p className={`mt-3 max-w-3xl ${highlighted ? "text-white/85" : "text-neutral-600"}`}>
-              {description}
-            </p>
-            <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
-              {bullets.map((bullet) => (
-                <li
-                  key={bullet}
-                  className={`flex items-start gap-2 text-sm ${
-                    highlighted ? "text-white/90" : "text-neutral-700"
-                  }`}
-                >
-                  <Check
-                    className={`mt-0.5 h-4 w-4 shrink-0 ${
-                      highlighted ? "text-white" : "text-brand"
-                    }`}
-                    aria-hidden="true"
-                  />
-                  {bullet}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+        )}
+        <h2 className={`mt-4 text-2xl font-black leading-tight sm:text-3xl ${highlighted ? "text-white" : "text-neutral-900"}`}>
+          {title}
+        </h2>
+        <p className={`mt-4 text-sm leading-relaxed ${highlighted ? "text-white/85" : "text-neutral-600"}`}>
+          {description}
+        </p>
+        <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
+          {bullets.map((bullet) => (
+            <li
+              key={bullet}
+              className={`flex items-start gap-2 text-sm ${
+                highlighted ? "text-white/90" : "text-neutral-700"
+              }`}
+            >
+              <Check
+                className={`mt-0.5 h-4 w-4 shrink-0 ${highlighted ? "text-white" : "text-brand"}`}
+                aria-hidden="true"
+              />
+              {bullet}
+            </li>
+          ))}
+        </ul>
+        {children}
+      </Reveal>
+    </>
   );
+
+  if (highlighted) {
+    return (
+      <div className="rounded-3xl bg-brand-gradient p-6 sm:p-10">
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">{content}</div>
+      </div>
+    );
+  }
+
+  return <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">{content}</div>;
 }
