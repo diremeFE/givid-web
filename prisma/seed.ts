@@ -22,6 +22,13 @@ async function main() {
   });
   console.log(`Admin user ready: ${adminEmail}`);
 
+  // Old demo catalog (hygiene category) doesn't match GIVID's real product
+  // list — remove it so the live catalog only shows real GIVID products.
+  await prisma.product.deleteMany({
+    where: { slug: { in: ["jabon-de-lavar-caja", "papel-higienico-paquete"] } },
+  });
+  await prisma.category.deleteMany({ where: { slug: "higiene" } });
+
   const alimentacion = await prisma.category.upsert({
     where: { slug: "alimentacion" },
     update: {},
@@ -33,14 +40,36 @@ async function main() {
     },
   });
 
-  const higiene = await prisma.category.upsert({
-    where: { slug: "higiene" },
+  const cuidadoInfantil = await prisma.category.upsert({
+    where: { slug: "cuidado-infantil" },
     update: {},
     create: {
-      slug: "higiene",
-      nameEs: "Higiene",
-      nameEn: "Hygiene",
-      nameFr: "Hygiène",
+      slug: "cuidado-infantil",
+      nameEs: "Cuidado infantil",
+      nameEn: "Childcare",
+      nameFr: "Puériculture",
+    },
+  });
+
+  const agua = await prisma.category.upsert({
+    where: { slug: "agua" },
+    update: {},
+    create: {
+      slug: "agua",
+      nameEs: "Agua",
+      nameEn: "Water",
+      nameFr: "Eau",
+    },
+  });
+
+  const limpiezaHogar = await prisma.category.upsert({
+    where: { slug: "limpieza-hogar" },
+    update: {},
+    create: {
+      slug: "limpieza-hogar",
+      nameEs: "Limpieza del hogar",
+      nameEn: "Household cleaning",
+      nameFr: "Entretien du foyer",
     },
   });
 
@@ -59,9 +88,9 @@ async function main() {
     },
     {
       slug: "aceite-vegetal-caja",
-      nameEs: "Aceite vegetal",
-      nameEn: "Vegetable oil",
-      nameFr: "Huile végétale",
+      nameEs: "Aceite",
+      nameEn: "Oil",
+      nameFr: "Huile",
       descriptionEs: "Caja de 12 botellas de 1L.",
       descriptionEn: "Box of 12 x 1L bottles.",
       descriptionFr: "Carton de 12 bouteilles de 1L.",
@@ -82,35 +111,131 @@ async function main() {
       categoryId: alimentacion.id,
     },
     {
-      slug: "jabon-de-lavar-caja",
-      nameEs: "Jabón de lavar",
-      nameEn: "Laundry soap",
-      nameFr: "Savon à lessive",
-      descriptionEs: "Caja de 24 unidades.",
-      descriptionEn: "Box of 24 units.",
-      descriptionFr: "Carton de 24 unités.",
-      price: 9000,
-      unit: "caja (24 uds)",
-      categoryId: higiene.id,
+      slug: "panales-paquete",
+      nameEs: "Pañales",
+      nameEn: "Diapers",
+      nameFr: "Couches",
+      descriptionEs: "Pañales para bebé, varias tallas.",
+      descriptionEn: "Baby diapers, several sizes.",
+      descriptionFr: "Couches pour bébé, plusieurs tailles.",
+      price: 8000,
+      unit: "paquete",
+      categoryId: cuidadoInfantil.id,
     },
     {
-      slug: "papel-higienico-paquete",
-      nameEs: "Papel higiénico",
-      nameEn: "Toilet paper",
-      nameFr: "Papier toilette",
-      descriptionEs: "Paquete de 12 rollos.",
-      descriptionEn: "Pack of 12 rolls.",
-      descriptionFr: "Paquet de 12 rouleaux.",
-      price: 6000,
-      unit: "paquete (12 rollos)",
-      categoryId: higiene.id,
+      slug: "toallitas-humedas-paquete",
+      nameEs: "Toallitas húmedas",
+      nameEn: "Baby wipes",
+      nameFr: "Lingettes",
+      descriptionEs: "Paquete de 80 toallitas húmedas para bebé.",
+      descriptionEn: "Pack of 80 baby wipes.",
+      descriptionFr: "Paquet de 80 lingettes pour bébé.",
+      price: 3000,
+      unit: "paquete 80 uds",
+      categoryId: cuidadoInfantil.id,
+    },
+    {
+      slug: "agua-bezoya-caja",
+      nameEs: "Agua Bezoya",
+      nameEn: "Bezoya water",
+      nameFr: "Eau Bezoya",
+      descriptionEs: "Caja de 24 botellas de 500ml.",
+      descriptionEn: "Box of 24 x 500ml bottles.",
+      descriptionFr: "Carton de 24 bouteilles de 500ml.",
+      price: 5000,
+      unit: "caja (24x500ml)",
+      categoryId: agua.id,
+    },
+    {
+      slug: "detergente-ropa",
+      nameEs: "Detergente para ropa",
+      nameEn: "Laundry detergent",
+      nameFr: "Lessive pour le linge",
+      descriptionEs: "Saco de 10+1kg.",
+      descriptionEn: "10+1kg sack.",
+      descriptionFr: "Sac de 10+1kg.",
+      price: 12000,
+      unit: "saco 10+1kg",
+      categoryId: limpiezaHogar.id,
+    },
+    {
+      slug: "lejia",
+      nameEs: "Lejía",
+      nameEn: "Bleach",
+      nameFr: "Eau de javel",
+      descriptionEs: "Garrafa de 2L.",
+      descriptionEn: "2L bottle.",
+      descriptionFr: "Bidon de 2L.",
+      price: 2500,
+      unit: "garrafa 2L",
+      categoryId: limpiezaHogar.id,
+    },
+    {
+      slug: "fregasuelos",
+      nameEs: "Fregasuelos",
+      nameEn: "Floor cleaner",
+      nameFr: "Nettoyant pour sols",
+      descriptionEs: "Botella de 1,5L.",
+      descriptionEn: "1.5L bottle.",
+      descriptionFr: "Bouteille de 1,5L.",
+      price: 3000,
+      unit: "botella 1,5L",
+      categoryId: limpiezaHogar.id,
+    },
+    {
+      slug: "ambientador",
+      nameEs: "Ambientador",
+      nameEn: "Air freshener",
+      nameFr: "Désodorisant",
+      descriptionEs: "Botella de 750ml.",
+      descriptionEn: "750ml bottle.",
+      descriptionFr: "Bouteille de 750ml.",
+      price: 2500,
+      unit: "botella 750ml",
+      categoryId: limpiezaHogar.id,
+    },
+    {
+      slug: "lavavajillas",
+      nameEs: "Lavavajillas",
+      nameEn: "Dish soap",
+      nameFr: "Liquide vaisselle",
+      descriptionEs: "Botella concentrada de 750ml.",
+      descriptionEn: "750ml concentrated bottle.",
+      descriptionFr: "Bouteille concentrée de 750ml.",
+      price: 3000,
+      unit: "botella 750ml",
+      categoryId: limpiezaHogar.id,
+    },
+    {
+      slug: "bolsas-basura",
+      nameEs: "Bolsas de basura",
+      nameEn: "Garbage bags",
+      nameFr: "Sacs poubelle",
+      descriptionEs: "Rollo de bolsas 70x70cm.",
+      descriptionEn: "Roll of 70x70cm bags.",
+      descriptionFr: "Rouleau de sacs 70x70cm.",
+      price: 2000,
+      unit: "rollo 70x70cm",
+      categoryId: limpiezaHogar.id,
+    },
+    {
+      slug: "rollos-cocina",
+      nameEs: "Rollos de cocina",
+      nameEn: "Kitchen roll",
+      nameFr: "Essuie-tout",
+      descriptionEs: "Paquete de 2 rollos.",
+      descriptionEn: "Pack of 2 rolls.",
+      descriptionFr: "Paquet de 2 rouleaux.",
+      price: 1500,
+      unit: "paquete 2 rollos",
+      categoryId: limpiezaHogar.id,
     },
   ];
 
   for (const product of products) {
     await prisma.product.upsert({
       where: { slug: product.slug },
-      update: {},
+      update: product,
       create: product,
     });
   }
