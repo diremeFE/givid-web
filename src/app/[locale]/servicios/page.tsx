@@ -232,10 +232,9 @@ function ServiceBlock({
                 highlighted ? "text-white/90" : "text-neutral-700"
               }`}
             >
-              <Check
-                className={`mt-0.5 h-4 w-4 shrink-0 ${highlighted ? "text-white" : "text-brand"}`}
-                aria-hidden="true"
-              />
+              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand">
+                <Check className="h-3 w-3 text-white" aria-hidden="true" strokeWidth={3} />
+              </span>
               {bullet}
             </li>
           ))}
