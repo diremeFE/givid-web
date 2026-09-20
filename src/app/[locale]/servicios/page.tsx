@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { Boxes, Sparkles, Users, Package, ArrowRight, Check } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
+import { CountUpStat } from "@/components/count-up-stat";
 import { PageHero } from "@/components/page-hero";
 
 export async function generateMetadata() {
@@ -55,14 +56,7 @@ export default async function ServicesPage() {
               { value: t("stat3Value"), label: t("stat3Label") },
               { value: t("stat4Value"), label: t("stat4Label") },
             ].map((stat, i) => (
-              <Reveal
-                key={stat.label}
-                delay={i * 60}
-                className="rounded-2xl bg-neutral-100 p-6 text-center"
-              >
-                <p className="text-2xl font-black text-neutral-900 sm:text-3xl">{stat.value}</p>
-                <p className="mt-1 text-xs text-neutral-500">{stat.label}</p>
-              </Reveal>
+              <CountUpStat key={stat.label} value={stat.value} label={stat.label} delay={i * 60} />
             ))}
           </div>
         </div>
