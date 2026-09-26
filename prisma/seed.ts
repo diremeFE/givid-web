@@ -84,6 +84,7 @@ async function main() {
       descriptionFr: "Riz à grain long, sac de 25kg.",
       price: 15000,
       unit: "saco 25kg",
+      imageUrl: "/images/product-arroz-frontal.jpg",
       categoryId: alimentacion.id,
     },
     {
@@ -241,6 +242,14 @@ async function main() {
     });
   }
   console.log(`Seeded ${products.length} products`);
+
+  const arroz = await prisma.product.findUnique({ where: { slug: "arroz-saco-25kg" } });
+  if (arroz) {
+    await prisma.productImage.deleteMany({ where: { productId: arroz.id } });
+    await prisma.productImage.create({
+      data: { productId: arroz.id, url: "/images/product-arroz-trasera.jpg", position: 0 },
+    });
+  }
 
   const now = new Date();
 
