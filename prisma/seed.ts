@@ -122,6 +122,7 @@ async function main() {
       descriptionFr: "Couches pour bébé, plusieurs tailles.",
       price: 8000,
       unit: "paquete",
+      imageUrl: "/images/product-panales-xg5.jpg",
       categoryId: cuidadoInfantil.id,
     },
     {
