@@ -249,6 +249,18 @@ export default async function HomePage() {
           <div className="mt-12 grid gap-10 md:grid-cols-3 lg:gap-12">
             <Reveal delay={0}>
               <ServiceCard
+                icon={Boxes}
+                image="/images/placeholder.jpg"
+                tag={tServices("distribution.tag")}
+                title={tServices("distribution.title")}
+                description={tServices("distribution.description")}
+                readMore={tServices("readMore")}
+                href="/servicios"
+                highlighted
+              />
+            </Reveal>
+            <Reveal delay={100}>
+              <ServiceCard
                 icon={Sparkles}
                 image="/images/placeholder.jpg"
                 title={tServices("facilityServices.title")}
@@ -257,22 +269,12 @@ export default async function HomePage() {
                 href="/servicios"
               />
             </Reveal>
-            <Reveal delay={100}>
+            <Reveal delay={200}>
               <ServiceCard
                 icon={Ship}
                 image="/images/placeholder.jpg"
                 title={tServices("events.title")}
                 description={tServices("events.description")}
-                readMore={tServices("readMore")}
-                href="/servicios"
-              />
-            </Reveal>
-            <Reveal delay={200}>
-              <ServiceCard
-                icon={Boxes}
-                image="/images/placeholder.jpg"
-                title={tServices("distribution.title")}
-                description={tServices("distribution.description")}
                 readMore={tServices("readMore")}
                 href="/servicios"
               />
@@ -332,7 +334,10 @@ export default async function HomePage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <Reveal className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <h2 className="text-2xl font-bold text-neutral-900 sm:text-3xl">
+              <span className="inline-flex items-center rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-white">
+                {t("featuredProductsBadge")}
+              </span>
+              <h2 className="mt-4 text-2xl font-black text-neutral-900 sm:text-3xl">
                 {t("featuredProductsTitle")}
               </h2>
               <p className="mt-2 max-w-2xl text-neutral-600">
@@ -500,23 +505,36 @@ export default async function HomePage() {
 function ServiceCard({
   icon: Icon,
   image,
+  tag,
   title,
   description,
   readMore,
   href,
+  highlighted = false,
 }: {
   icon: React.ComponentType<{ className?: string }>;
   image: string;
+  tag?: string;
   title: string;
   description: string;
   readMore: string;
   href: string;
+  highlighted?: boolean;
 }) {
   return (
     <Link
       href={href}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-xl shadow-brand/25 transition-all hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-brand/35"
+      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-white shadow-xl transition-all hover:-translate-y-1.5 hover:shadow-2xl ${
+        highlighted
+          ? "border-accent/40 shadow-accent/25 ring-2 ring-accent/60 hover:shadow-accent/35"
+          : "border-border shadow-brand/25 hover:shadow-brand/35"
+      }`}
     >
+      {tag && (
+        <span className="absolute left-5 top-5 z-10 inline-flex items-center rounded-full bg-accent px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-md">
+          {tag}
+        </span>
+      )}
       <div className="relative h-44 overflow-hidden rounded-2xl m-3 mb-0">
         <Image
           src={image}
@@ -525,14 +543,22 @@ function ServiceCard({
           sizes="(min-width: 768px) 33vw, 100vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <span className="absolute -bottom-5 right-5 flex h-12 w-12 items-center justify-center rounded-full bg-brand-dark shadow-lg shadow-black/20 ring-4 ring-white transition-transform duration-300 group-hover:scale-110">
+        <span
+          className={`absolute -bottom-5 right-5 flex h-12 w-12 items-center justify-center rounded-full shadow-lg shadow-black/20 ring-4 ring-white transition-transform duration-300 group-hover:scale-110 ${
+            highlighted ? "bg-accent" : "bg-brand-dark"
+          }`}
+        >
           <Icon className="h-5 w-5 text-white" aria-hidden="true" />
         </span>
       </div>
       <div className="flex flex-1 flex-col p-6 pt-7">
         <h3 className="text-lg font-bold text-neutral-900">{title}</h3>
         <p className="mt-2 line-clamp-3 text-sm text-neutral-600">{description}</p>
-        <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-dark">
+        <span
+          className={`mt-4 inline-flex items-center gap-1.5 text-sm font-semibold ${
+            highlighted ? "text-accent-dark" : "text-brand-dark"
+          }`}
+        >
           {readMore}
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
         </span>

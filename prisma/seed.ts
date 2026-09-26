@@ -108,6 +108,7 @@ async function main() {
       descriptionFr: "Sac de 50kg.",
       price: 22000,
       unit: "saco 50kg",
+      imageUrl: "/images/product-harina.webp",
       categoryId: alimentacion.id,
     },
     {
