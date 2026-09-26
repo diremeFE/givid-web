@@ -134,6 +134,7 @@ async function main() {
       descriptionFr: "Paquet de 80 lingettes pour bébé.",
       price: 3000,
       unit: "paquete 80 uds",
+      imageUrl: "/images/product-toallitas-frontal.jpg",
       categoryId: cuidadoInfantil.id,
     },
     {
@@ -242,6 +243,18 @@ async function main() {
     });
   }
   console.log(`Seeded ${products.length} products`);
+
+  const toallitas = await prisma.product.findUnique({ where: { slug: "toallitas-humedas-paquete" } });
+  if (toallitas) {
+    await prisma.productImage.deleteMany({ where: { productId: toallitas.id } });
+    await prisma.productImage.createMany({
+      data: [
+        "/images/product-toallitas-lateral.jpg",
+        "/images/product-toallitas-perfil.jpg",
+        "/images/product-toallitas-abierta.jpg",
+      ].map((url, position) => ({ productId: toallitas.id, url, position })),
+    });
+  }
 
   const arroz = await prisma.product.findUnique({ where: { slug: "arroz-saco-25kg" } });
   if (arroz) {
