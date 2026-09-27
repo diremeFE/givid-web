@@ -31,7 +31,7 @@ export default async function HomePage() {
   const featured = await getFeaturedProducts(4);
 
   const currency = new Intl.NumberFormat(
-    locale === "es" ? "es-ES" : locale === "fr" ? "fr-FR" : "en-US",
+    locale === "es" ? "es-ES" : locale === "fr" ? "fr-FR" : locale === "pt" ? "pt-PT" : "en-US",
     { style: "currency", currency: "XAF", maximumFractionDigits: 0 },
   );
 

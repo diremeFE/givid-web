@@ -6,12 +6,13 @@ import { ChevronDown } from "lucide-react";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
-import { FlagES, FlagFR, FlagGB } from "./flags";
+import { FlagES, FlagFR, FlagGB, FlagPT } from "./flags";
 
 const OPTIONS: Record<Locale, { label: string; short: string; Flag: React.ComponentType<{ className?: string }> }> = {
   es: { label: "Español", short: "ES", Flag: FlagES },
   en: { label: "English", short: "EN", Flag: FlagGB },
   fr: { label: "Français", short: "FR", Flag: FlagFR },
+  pt: { label: "Português", short: "PT", Flag: FlagPT },
 };
 
 export function LocaleSwitcher({ variant = "light" }: { variant?: "light" | "dark" }) {

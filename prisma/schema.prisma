@@ -25,6 +25,7 @@ model Category {
   nameEs    String
   nameEn    String
   nameFr    String
+  namePt    String
   products  Product[]
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
@@ -36,9 +37,11 @@ model Product {
   nameEs       String
   nameEn       String
   nameFr       String
+  namePt       String
   descriptionEs String?
   descriptionEn String?
   descriptionFr String?
+  descriptionPt String?
   price        Float
   unit         String   // e.g. "caja", "saco 25kg", "unidad"
   imageUrl     String?
@@ -65,12 +68,15 @@ model BlogPost {
   titleEs       String
   titleEn       String
   titleFr       String
+  titlePt       String
   excerptEs     String?
   excerptEn     String?
   excerptFr     String?
+  excerptPt     String?
   contentEs     String
   contentEn     String
   contentFr     String
+  contentPt     String
   coverImageUrl String?
   published     Boolean   @default(false)
   publishedAt   DateTime?

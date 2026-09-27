@@ -9,22 +9,25 @@ export function PostForm({
 }) {
   return (
     <form action={action} className="max-w-3xl space-y-4">
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-4">
         <Field label="Título (ES)" name="titleEs" defaultValue={post?.titleEs} required />
         <Field label="Título (EN)" name="titleEn" defaultValue={post?.titleEn} required />
         <Field label="Título (FR)" name="titleFr" defaultValue={post?.titleFr} required />
+        <Field label="Título (PT)" name="titlePt" defaultValue={post?.titlePt} required />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-4">
         <TextAreaField label="Extracto (ES)" name="excerptEs" defaultValue={post?.excerptEs ?? ""} rows={2} />
         <TextAreaField label="Extracto (EN)" name="excerptEn" defaultValue={post?.excerptEn ?? ""} rows={2} />
         <TextAreaField label="Extracto (FR)" name="excerptFr" defaultValue={post?.excerptFr ?? ""} rows={2} />
+        <TextAreaField label="Extracto (PT)" name="excerptPt" defaultValue={post?.excerptPt ?? ""} rows={2} />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-4">
         <TextAreaField label="Contenido (ES)" name="contentEs" defaultValue={post?.contentEs} rows={8} required />
         <TextAreaField label="Contenido (EN)" name="contentEn" defaultValue={post?.contentEn} rows={8} required />
         <TextAreaField label="Contenido (FR)" name="contentFr" defaultValue={post?.contentFr} rows={8} required />
+        <TextAreaField label="Contenido (PT)" name="contentPt" defaultValue={post?.contentPt} rows={8} required />
       </div>
 
       <Field

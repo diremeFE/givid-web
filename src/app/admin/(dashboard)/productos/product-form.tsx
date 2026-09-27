@@ -11,7 +11,7 @@ export function ProductForm({
 }) {
   return (
     <form action={action} className="max-w-2xl space-y-4">
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-4">
         <div>
           <label className="block text-sm font-medium text-neutral-700">
             Nombre (ES)
@@ -45,9 +45,20 @@ export function ProductForm({
             className="mt-1 w-full rounded border border-neutral-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
           />
         </div>
+        <div>
+          <label className="block text-sm font-medium text-neutral-700">
+            Nombre (PT)
+          </label>
+          <input
+            name="namePt"
+            defaultValue={product?.namePt}
+            required
+            className="mt-1 w-full rounded border border-neutral-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+          />
+        </div>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-4">
         <div>
           <label className="block text-sm font-medium text-neutral-700">
             Descripción (ES)
@@ -77,6 +88,17 @@ export function ProductForm({
           <textarea
             name="descriptionFr"
             defaultValue={product?.descriptionFr ?? ""}
+            rows={2}
+            className="mt-1 w-full rounded border border-neutral-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-neutral-700">
+            Descripción (PT)
+          </label>
+          <textarea
+            name="descriptionPt"
+            defaultValue={product?.descriptionPt ?? ""}
             rows={2}
             className="mt-1 w-full rounded border border-neutral-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
           />

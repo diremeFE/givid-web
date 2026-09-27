@@ -17,10 +17,12 @@ function readProductForm(formData: FormData) {
   const nameEs = String(formData.get("nameEs") || "").trim();
   const nameEn = String(formData.get("nameEn") || "").trim();
   const nameFr = String(formData.get("nameFr") || "").trim();
+  const namePt = String(formData.get("namePt") || "").trim();
   const slugInput = String(formData.get("slug") || "").trim();
   const descriptionEs = String(formData.get("descriptionEs") || "").trim();
   const descriptionEn = String(formData.get("descriptionEn") || "").trim();
   const descriptionFr = String(formData.get("descriptionFr") || "").trim();
+  const descriptionPt = String(formData.get("descriptionPt") || "").trim();
   const price = Number(formData.get("price") || 0);
   const unit = String(formData.get("unit") || "").trim();
   const imageUrl = String(formData.get("imageUrl") || "").trim();
@@ -35,10 +37,12 @@ function readProductForm(formData: FormData) {
     nameEs,
     nameEn,
     nameFr,
+    namePt,
     slug: slugify(slugInput || nameEs),
     descriptionEs: descriptionEs || null,
     descriptionEn: descriptionEn || null,
     descriptionFr: descriptionFr || null,
+    descriptionPt: descriptionPt || null,
     price,
     unit,
     imageUrl: imageUrl || null,

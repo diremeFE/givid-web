@@ -17,9 +17,10 @@ function readCategoryForm(formData: FormData) {
   const nameEs = String(formData.get("nameEs") || "").trim();
   const nameEn = String(formData.get("nameEn") || "").trim();
   const nameFr = String(formData.get("nameFr") || "").trim();
+  const namePt = String(formData.get("namePt") || "").trim();
   const slugInput = String(formData.get("slug") || "").trim();
   const slug = slugify(slugInput || nameEs);
-  return { nameEs, nameEn, nameFr, slug };
+  return { nameEs, nameEn, nameFr, namePt, slug };
 }
 
 export async function createCategory(formData: FormData) {

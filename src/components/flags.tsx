@@ -17,6 +17,16 @@ export function FlagFR({ className = "h-3.5 w-5" }: { className?: string }) {
   );
 }
 
+export function FlagPT({ className = "h-3.5 w-5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 30 20" className={className} aria-hidden="true">
+      <rect width="30" height="20" fill="#FF0000" />
+      <rect width="12" height="20" fill="#046A38" />
+      <circle cx="12" cy="10" r="4" fill="#FFCC00" stroke="#000" strokeWidth="0.5" />
+    </svg>
+  );
+}
+
 export function FlagGB({ className = "h-3.5 w-5" }: { className?: string }) {
   return (
     <svg viewBox="0 0 30 20" className={className} aria-hidden="true">

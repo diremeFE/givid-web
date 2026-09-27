@@ -17,13 +17,16 @@ function readPostForm(formData: FormData) {
   const titleEs = String(formData.get("titleEs") || "").trim();
   const titleEn = String(formData.get("titleEn") || "").trim();
   const titleFr = String(formData.get("titleFr") || "").trim();
+  const titlePt = String(formData.get("titlePt") || "").trim();
   const slugInput = String(formData.get("slug") || "").trim();
   const excerptEs = String(formData.get("excerptEs") || "").trim();
   const excerptEn = String(formData.get("excerptEn") || "").trim();
   const excerptFr = String(formData.get("excerptFr") || "").trim();
+  const excerptPt = String(formData.get("excerptPt") || "").trim();
   const contentEs = String(formData.get("contentEs") || "").trim();
   const contentEn = String(formData.get("contentEn") || "").trim();
   const contentFr = String(formData.get("contentFr") || "").trim();
+  const contentPt = String(formData.get("contentPt") || "").trim();
   const coverImageUrl = String(formData.get("coverImageUrl") || "").trim();
   const published = formData.get("published") === "on";
 
@@ -31,13 +34,16 @@ function readPostForm(formData: FormData) {
     titleEs,
     titleEn,
     titleFr,
+    titlePt,
     slug: slugify(slugInput || titleEs),
     excerptEs: excerptEs || null,
     excerptEn: excerptEn || null,
     excerptFr: excerptFr || null,
+    excerptPt: excerptPt || null,
     contentEs,
     contentEn,
     contentFr,
+    contentPt,
     coverImageUrl: coverImageUrl || null,
     published,
     publishedAt: published ? new Date() : null,

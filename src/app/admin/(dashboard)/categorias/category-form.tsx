@@ -44,6 +44,17 @@ export function CategoryForm({
       </div>
       <div>
         <label className="block text-sm font-medium text-neutral-700">
+          Nombre (Portugués)
+        </label>
+        <input
+          name="namePt"
+          defaultValue={category?.namePt}
+          required
+          className="mt-1 w-full rounded border border-neutral-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-neutral-700">
           Slug (opcional, se genera automáticamente)
         </label>
         <input
