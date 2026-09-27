@@ -11,10 +11,10 @@
   --brand-light: #e8f4ee;
   --brand-lighter: #f4faf7;
 
-  /* Warm accent for highlights/CTAs, kept sparing so green stays dominant */
-  --accent: #e8890c;
-  --accent-dark: #c26f05;
-  --accent-light: #fdf1de;
+  /* Corporate green accent for highlights/CTAs, matched to the logo mark */
+  --accent: #127f4c;
+  --accent-dark: #0c5c37;
+  --accent-light: #e4f3ea;
 
   --ink: #0f1913;
   --border: #e3e8e5;
@@ -84,7 +84,7 @@ body {
   background-image:
     radial-gradient(48% 60% at 6% 8%, rgba(28, 122, 74, 0.55) 0%, rgba(28, 122, 74, 0) 70%),
     radial-gradient(50% 55% at 98% 5%, rgba(63, 174, 122, 0.45) 0%, rgba(63, 174, 122, 0) 70%),
-    radial-gradient(55% 65% at 100% 100%, rgba(232, 137, 12, 0.5) 0%, rgba(232, 137, 12, 0) 70%),
+    radial-gradient(55% 65% at 100% 100%, rgba(18, 127, 76, 0.5) 0%, rgba(18, 127, 76, 0) 70%),
     radial-gradient(50% 60% at 0% 95%, rgba(16, 80, 47, 0.4) 0%, rgba(16, 80, 47, 0) 70%);
 }
 
