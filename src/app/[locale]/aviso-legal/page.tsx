@@ -16,9 +16,12 @@ export default async function AvisoLegalPage() {
 
 - Denominación social: ${siteConfig.legalName}
 - Nombre comercial: ${siteConfig.brandName}
-- NIF / RUC: [dato pendiente de facilitar por la clienta]
-- Nº de inscripción en el Registro Mercantil de Guinea Ecuatorial: [dato pendiente de facilitar por la clienta]
-- Domicilio social / dirección de la actividad: ${siteConfig.address}
+- Representante legal: Matutina Mia Alo Nsang
+- Número de Identificación Fiscal (NIF): 0069PG-19
+- Nº de Registro de Comercio: 0649
+- Nº de Registro en el Padrón Empresarial: PE-10.888
+- Domicilio social: B/ Alcaide (Apartahotel Preguis), s/n, Malabo, Bioko Norte, Guinea Ecuatorial
+- Dirección de la actividad / tienda física: ${siteConfig.address}
 - Correo electrónico de contacto: ${siteConfig.email}
 - Teléfono / WhatsApp: ${siteConfig.whatsappNumberDisplay}
 

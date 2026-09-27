@@ -16,7 +16,7 @@ export default async function PoliticaPrivacidadPage() {
 
 - Denominación social: ${siteConfig.legalName}
 - Nombre comercial: ${siteConfig.brandName}
-- NIF / RUC: [dato pendiente de facilitar por la clienta]
+- NIF: 0069PG-19
 - Dirección: ${siteConfig.address}
 - Correo electrónico: ${siteConfig.email}
 
