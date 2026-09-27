@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Cookie } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { useCookieConsent } from "@/lib/use-cookie-consent";
 
 export function CookieBanner() {
@@ -31,6 +32,12 @@ export function CookieBanner() {
           {t("title")}
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-neutral-600">{t("message")}</p>
+        <Link
+          href="/politica-cookies"
+          className="mt-2 inline-block text-sm font-semibold text-brand-dark hover:underline"
+        >
+          {t("moreInfo")}
+        </Link>
         <div className="mt-6 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
           <button
             type="button"

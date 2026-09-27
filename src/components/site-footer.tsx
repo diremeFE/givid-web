@@ -11,7 +11,7 @@ export function SiteFooter() {
 
   return (
     <footer className="mt-16 bg-section-dark text-neutral-300">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.2fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.1fr_0.8fr_1fr_1fr]">
         <div>
           <div className="inline-block rounded-lg bg-white px-3 py-2">
             <Image
@@ -84,6 +84,29 @@ export function SiteFooter() {
             <li className="flex items-start gap-2.5">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-light" aria-hidden="true" />
               {siteConfig.address}
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-neutral-100">
+            {t("legalTitle")}
+          </h3>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            <li>
+              <Link href="/aviso-legal" className="text-neutral-400 transition-colors hover:text-white">
+                {t("legalNotice")}
+              </Link>
+            </li>
+            <li>
+              <Link href="/politica-privacidad" className="text-neutral-400 transition-colors hover:text-white">
+                {t("privacyPolicy")}
+              </Link>
+            </li>
+            <li>
+              <Link href="/politica-cookies" className="text-neutral-400 transition-colors hover:text-white">
+                {t("cookiesPolicy")}
+              </Link>
             </li>
           </ul>
         </div>

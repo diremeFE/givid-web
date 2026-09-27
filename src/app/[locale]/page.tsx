@@ -250,7 +250,7 @@ export default async function HomePage() {
             <Reveal delay={0}>
               <ServiceCard
                 icon={Boxes}
-                image="/images/placeholder.jpg"
+                image="/images/service-distribution.png"
                 tag={tServices("distribution.tag")}
                 title={tServices("distribution.title")}
                 description={tServices("distribution.description")}
@@ -262,7 +262,7 @@ export default async function HomePage() {
             <Reveal delay={100}>
               <ServiceCard
                 icon={Sparkles}
-                image="/images/placeholder.jpg"
+                image="/images/service-facility.png"
                 title={tServices("facilityServices.title")}
                 description={tServices("facilityServices.description")}
                 readMore={tServices("readMore")}
