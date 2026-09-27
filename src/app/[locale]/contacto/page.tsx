@@ -21,7 +21,7 @@ export default async function ContactPage() {
         title={t("pageTitle")}
         subtitle={t("pageSubtitle")}
         icon={MessageCircle}
-        image="/images/hero-warehouse.webp"
+        image="/images/hero-warehouse.png"
       />
 
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
