@@ -44,6 +44,7 @@ Si tienes cualquier duda sobre el uso de cookies en este sitio web, puedes escri
 
   return (
     <LegalPage
+      eyebrow={t("legalTitle")}
       title={t("cookiesPolicy")}
       updatedAt="Última actualización: 27 de septiembre de 2026"
       content={content}

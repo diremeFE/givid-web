@@ -64,6 +64,7 @@ Podemos actualizar esta política de privacidad para adaptarla a novedades legis
 
   return (
     <LegalPage
+      eyebrow={t("legalTitle")}
       title={t("privacyPolicy")}
       updatedAt="Última actualización: 27 de septiembre de 2026"
       content={content}

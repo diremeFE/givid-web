@@ -59,6 +59,7 @@ ${siteConfig.brandName} se reserva el derecho a modificar el presente aviso lega
 
   return (
     <LegalPage
+      eyebrow={t("legalTitle")}
       title={t("legalNotice")}
       updatedAt="Última actualización: 27 de septiembre de 2026"
       content={content}

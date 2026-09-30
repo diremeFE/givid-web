@@ -257,8 +257,18 @@ export default async function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="bg-neutral-950 py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <section className="bg-section-dark relative overflow-hidden py-20">
+        <div className="bg-noise absolute inset-0 opacity-20" aria-hidden="true" />
+        <div
+          className="pointer-events-none absolute -left-24 top-0 h-80 w-80 rounded-full bg-brand/25 blur-3xl"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-accent/15 blur-3xl"
+          aria-hidden="true"
+        />
+
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <Reveal className="max-w-xl">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-light">
               {t("valuesTitle")}
@@ -268,18 +278,19 @@ export default async function AboutPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid gap-px overflow-hidden rounded-3xl bg-white/10 sm:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {values.map(({ icon: Icon, label, text }, i) => (
               <Reveal key={label} delay={i * 80} className="h-full">
-                <div className="group relative flex h-full flex-col bg-neutral-950 p-7 transition-colors duration-300 hover:bg-white/5">
-                  <span className="text-sm font-black text-white/15">
+                <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/4 p-7 shadow-xl shadow-black/20 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/7">
+                  <span className="absolute right-6 top-6 text-sm font-black text-white/10">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="mt-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand transition-transform duration-300 group-hover:scale-110">
-                    <Icon className="h-5 w-5 text-white" aria-hidden="true" />
+                  <span className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-brand to-brand-dark shadow-lg shadow-brand-darker/40 ring-1 ring-white/20 transition-transform duration-300 group-hover:scale-105">
+                    <span className="absolute -inset-2 -z-10 rounded-full bg-brand/30 blur-lg" aria-hidden="true" />
+                    <Icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </span>
                   <h3 className="mt-5 font-bold text-white">{label}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-neutral-400">
+                  <p className="mt-2 text-sm leading-relaxed text-neutral-300">
                     {text}
                   </p>
                 </div>
