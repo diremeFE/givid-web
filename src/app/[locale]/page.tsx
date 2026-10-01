@@ -41,7 +41,7 @@ export default async function HomePage() {
       <section data-hero className="relative overflow-hidden">
         <div className="relative flex min-h-dvh flex-col items-center justify-center px-4 py-28 text-center sm:px-6">
           <Image
-            src="/images/hero-warehouse.png"
+            src="/images/hero-production.jpg"
             alt=""
             fill
             priority
