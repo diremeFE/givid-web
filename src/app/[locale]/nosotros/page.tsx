@@ -5,9 +5,6 @@ import {
   Handshake,
   Heart,
   Users,
-  Sparkles,
-  UserRound,
-  Boxes,
   Check,
   ArrowRight,
 } from "lucide-react";
@@ -31,24 +28,6 @@ export default async function AboutPage() {
     { icon: Heart, label: t("value3"), text: t("value3Text") },
   ];
 
-  const businessLines = [
-    {
-      icon: Sparkles,
-      title: tServices("facilityServices.title"),
-      text: tServices("facilityServices.tag"),
-    },
-    {
-      icon: UserRound,
-      title: tServices("events.title"),
-      text: tServices("events.tag"),
-    },
-    {
-      icon: Boxes,
-      title: tServices("distribution.title"),
-      text: tServices("distribution.tag"),
-    },
-  ];
-
   const facilitiesBullets = [
     tServices("facilityServices.bullet1"),
     tServices("facilityServices.bullet4"),
@@ -65,11 +44,11 @@ export default async function AboutPage() {
   return (
     <div>
       <PageHero
-        eyebrow={tHome("heroTagline")}
         title={t("pageTitle")}
         subtitle={t("intro")}
         icon={Users}
-        image="/images/about-team.webp"
+        image="/images/nosotros-hero-team.jpg"
+        size="full"
       />
 
       {/* Quiénes somos */}
@@ -127,38 +106,6 @@ export default async function AboutPage() {
               <p className="text-3xl font-black text-brand-dark sm:text-4xl">{stat.value}</p>
               <p className="mt-1.5 text-xs font-semibold uppercase tracking-wide text-neutral-500">
                 {stat.label}
-              </p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
-        <div className="grid gap-6 lg:grid-cols-3">
-          {businessLines.map(({ icon: Icon, title, text }, i) => (
-            <Reveal
-              key={title}
-              delay={i * 100}
-              className={`flex h-full flex-col rounded-3xl p-8 ${
-                i === 0
-                  ? "border border-border border-b-4 border-b-brand bg-white shadow-lg shadow-black/5"
-                  : i === 1
-                    ? "border border-brand/15 border-b-4 border-b-brand-dark bg-brand-light shadow-lg shadow-black/5"
-                    : "bg-brand-darker text-white"
-              }`}
-            >
-              {i === 2 ? (
-                <Icon className="h-11 w-11 text-brand-light" strokeWidth={1.5} aria-hidden="true" />
-              ) : (
-                <span className={`flex h-14 w-14 items-center justify-center rounded-2xl ${i === 1 ? "bg-white" : "bg-brand-light"}`}>
-                  <Icon className="h-7 w-7 text-brand-dark" strokeWidth={1.5} aria-hidden="true" />
-                </span>
-              )}
-              <h3 className={`mt-6 text-lg font-bold leading-snug ${i === 2 ? "" : "text-neutral-900"}`}>
-                {title}
-              </h3>
-              <p className={`mt-3 text-sm ${i === 2 ? "text-white/70" : "text-neutral-600"}`}>
-                {text}
               </p>
             </Reveal>
           ))}

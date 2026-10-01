@@ -62,7 +62,7 @@ export default async function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-brand-darker py-20">
+      <section id="distribucion" className="bg-brand-darker py-20 scroll-mt-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ServiceBlock
             icon={Boxes}
@@ -90,7 +90,7 @@ export default async function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-brand-light py-20">
+      <section id="facility-services" className="bg-brand-light py-20 scroll-mt-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ServiceBlock
             icon={Sparkles}
@@ -111,7 +111,7 @@ export default async function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section id="events" className="py-20 scroll-mt-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ServiceBlock
             icon={Users}

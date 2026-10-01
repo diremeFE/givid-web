@@ -51,7 +51,7 @@ export default async function HomePage() {
           <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/55 to-black/75" aria-hidden="true" />
 
           <Reveal className="relative mx-auto max-w-4xl">
-            <h1 className="text-5xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="text-[2.25rem] font-black leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-7xl lg:leading-[1.05]">
               {t("heroTitlePrefix")}{" "}
               <span className="relative text-accent-light">
                 {t("heroTitleHighlight")}
