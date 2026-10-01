@@ -14,6 +14,7 @@ import {
   ShoppingBasket,
   PackageCheck,
   X,
+  Quote,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
@@ -40,7 +41,7 @@ export default async function HomePage() {
       <section data-hero className="relative overflow-hidden">
         <div className="relative flex min-h-dvh flex-col items-center justify-center px-4 py-28 text-center sm:px-6">
           <Image
-            src="/images/hero-warehouse.png"
+            src="/images/hero-production.jpg"
             alt=""
             fill
             priority
@@ -163,16 +164,14 @@ export default async function HomePage() {
 
         {/* Images + text grid */}
         <div className="relative mt-14 grid items-center gap-16 lg:grid-cols-[1fr_1.2fr] lg:gap-10">
-          <Reveal className="relative mx-auto w-full max-w-sm px-6 py-6 lg:mx-0 lg:max-w-none">
-            <div className="blob-shape relative aspect-square w-full overflow-hidden shadow-xl shadow-black/10 ring-4 ring-white">
-              <Image
-                src="/images/about-team.webp"
-                alt="Equipo de GIVID"
-                fill
-                sizes="(min-width: 1024px) 35vw, 80vw"
-                className="object-cover"
-              />
-            </div>
+          <Reveal className="relative mx-auto aspect-4/5 w-full max-w-sm overflow-hidden rounded-3xl shadow-xl shadow-black/10 lg:mx-0 lg:max-w-none">
+            <Image
+              src="/images/about-team.webp"
+              alt="Equipo de GIVID"
+              fill
+              sizes="(min-width: 1024px) 35vw, 80vw"
+              className="object-cover"
+            />
           </Reveal>
 
           <Reveal delay={100}>
@@ -183,33 +182,17 @@ export default async function HomePage() {
               {t("introExtra")}
             </p>
 
-            <div className="mt-8 space-y-5">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark">
-                {t("introFocusTitle")}
+            <div className="relative mt-8 border-l-4 border-brand py-1 pl-6">
+              <Quote className="absolute -left-1 -top-1 h-7 w-7 -translate-x-1/2 text-brand/25" strokeWidth={1.5} aria-hidden="true" />
+              <p
+                className="text-lg font-semibold italic leading-snug text-neutral-800 sm:text-xl"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                {t("introQuote")}
               </p>
-              {[
-                { label: t("introFocus1Label"), value: t("introFocus1Value") },
-                { label: t("introFocus2Label"), value: t("introFocus2Value") },
-                { label: t("introFocus3Label"), value: t("introFocus3Value") },
-              ].map((focus) => (
-                <div key={focus.label}>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="font-semibold text-neutral-800">{focus.label}</span>
-                    <span className="font-bold text-brand-dark">{focus.value}%</span>
-                  </div>
-                  <div className="relative mt-2 h-1.5 rounded-full bg-neutral-100">
-                    <div
-                      className="h-full rounded-full bg-brand-dark"
-                      style={{ width: `${focus.value}%` }}
-                    />
-                    <span
-                      className="absolute top-1/2 h-3.5 w-3.5 -translate-y-1/2 rounded-full border-2 border-brand-dark bg-white shadow"
-                      style={{ left: `calc(${focus.value}% - 7px)` }}
-                      aria-hidden="true"
-                    />
-                  </div>
-                </div>
-              ))}
+              <p className="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-brand-dark">
+                {t("introQuoteAuthor")}
+              </p>
             </div>
 
             <Link

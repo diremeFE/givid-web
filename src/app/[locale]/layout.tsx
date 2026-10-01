@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -13,13 +13,8 @@ import { GoogleAnalytics } from "@/components/google-analytics";
 import { LocalBusinessSchema } from "@/components/local-business-schema";
 import "./globals.css";
 
-const fontHeading = Plus_Jakarta_Sans({
+const fontMontserrat = Montserrat({
   variable: "--font-heading",
-  subsets: ["latin"],
-});
-
-const fontBody = Inter({
-  variable: "--font-body",
   subsets: ["latin"],
 });
 
@@ -81,7 +76,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${fontHeading.variable} ${fontBody.variable} h-full antialiased`}
+      className={`${fontMontserrat.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <LocalBusinessSchema />
