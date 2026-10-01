@@ -87,7 +87,7 @@ export default async function AboutPage() {
         <div className="mt-12 grid gap-4 sm:grid-cols-3">
           {[
             { src: "/images/about-team-v2.jpg", alt: "Equipo de GIVID" },
-            { src: "/images/service-distribution.png", alt: "Almacén de distribución GIVID" },
+            { src: "/images/givid-box.jpg", alt: "Caja de producto con el logotipo GIVID" },
             { src: "/images/service-facility.png", alt: "Servicio de limpieza GIVID" },
           ].map((img, i) => (
             <Reveal key={img.src} delay={i * 80} className="relative aspect-4/3 overflow-hidden rounded-2xl shadow-lg shadow-black/10">
