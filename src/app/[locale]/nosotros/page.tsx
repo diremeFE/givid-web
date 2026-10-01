@@ -88,7 +88,7 @@ export default async function AboutPage() {
           {[
             { src: "/images/about-team-v2.jpg", alt: "Equipo de GIVID" },
             { src: "/images/givid-box.jpg", alt: "Caja de producto con el logotipo GIVID" },
-            { src: "/images/service-facility.png", alt: "Servicio de limpieza GIVID" },
+            { src: "/images/garden-maintenance.jpg", alt: "Mantenimiento de espacios verdes GIVID" },
           ].map((img, i) => (
             <Reveal key={img.src} delay={i * 80} className="relative aspect-4/3 overflow-hidden rounded-2xl shadow-lg shadow-black/10">
               <Image
