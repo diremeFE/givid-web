@@ -21,7 +21,7 @@ export default async function ServicesPage() {
         title={t("pageTitle")}
         subtitle={t("pageSubtitle")}
         icon={Boxes}
-        image="/images/hero-production.jpg"
+        image="/images/servicios-hero.jpg"
         size="full"
       />
 
