@@ -221,7 +221,7 @@ export default async function AboutPage() {
             <Reveal delay={100} className="order-2 lg:order-1">
               <div className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-xl shadow-brand-dark/10">
                 <Image
-                  src="/images/service-facility.png"
+                  src="/images/facility-glass.jpg"
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
