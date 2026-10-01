@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -13,13 +13,8 @@ import { GoogleAnalytics } from "@/components/google-analytics";
 import { LocalBusinessSchema } from "@/components/local-business-schema";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fontSans = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
 
@@ -81,7 +76,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${fontSans.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <LocalBusinessSchema />
