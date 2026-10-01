@@ -38,7 +38,7 @@ export default async function HomePage() {
     <>
       {/* Hero */}
       <section data-hero className="relative overflow-hidden">
-        <div className="relative flex min-h-140 flex-col items-center justify-center px-4 pb-20 pt-28 text-center sm:min-h-170 sm:px-6 sm:pt-32">
+        <div className="relative flex min-h-dvh flex-col items-center justify-center px-4 py-28 text-center sm:px-6">
           <Image
             src="/images/hero-warehouse.png"
             alt=""
@@ -49,12 +49,12 @@ export default async function HomePage() {
           />
           <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/55 to-black/75" aria-hidden="true" />
 
-          <Reveal className="relative mx-auto max-w-3xl">
+          <Reveal className="relative mx-auto max-w-4xl">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-white ring-1 ring-white/25 backdrop-blur-sm">
               <Sparkle className="h-3.5 w-3.5" aria-hidden="true" />
               {t("heroBadge")}
             </span>
-            <h1 className="mt-5 text-4xl font-black leading-[1.1] tracking-tight text-white sm:text-5xl">
+            <h1 className="mt-6 text-5xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
               {t("heroTitlePrefix")}{" "}
               <span className="relative text-accent-light">
                 {t("heroTitleHighlight")}
