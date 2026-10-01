@@ -266,7 +266,18 @@
     "whyTitle": "Why choose us",
     "backToServices": "Back to services",
     "distribution": {
-      "overviewExtra": "We work with shops, restaurants, hotels, institutions and individuals who need a steady, reliable supply. We manage every order directly, without intermediaries, to offer you the best possible price and availability."
+      "overviewExtra": "We work with shops, restaurants, hotels, institutions and individuals who need a steady, reliable supply. We manage every order directly, without intermediaries, to offer you the best possible price and availability.",
+      "statProducts": "16",
+      "statProductsLabel": "Products in catalog",
+      "statCategories": "4",
+      "statCategoriesLabel": "Categories",
+      "statAvailability": "100%",
+      "statAvailabilityLabel": "Direct management",
+      "categoryFood": "Food",
+      "categoryChildcare": "Childcare",
+      "categoryWater": "Water",
+      "categoryHome": "Household cleaning",
+      "quote": "We don't distribute to fill a warehouse: we distribute so you never run out of the essentials."
     },
     "facilityServices": {
       "overviewExtra": "We tailor every cleaning and maintenance plan to the type of facility, its size and its activity, with trained staff and professional products, so your spaces are always in the best condition.",
@@ -275,7 +286,8 @@
       "process2Title": "We design your plan",
       "process2Text": "We prepare a tailored proposal with the right staff, products and schedule.",
       "process3Title": "Ongoing maintenance",
-      "process3Text": "Our team takes care of everything on a recurring basis, with follow-up and adjustments whenever you need them."
+      "process3Text": "Our team takes care of everything on a recurring basis, with follow-up and adjustments whenever you need them.",
+      "quote": "We take care of every corner so your business doesn't have to worry about anything else."
     },
     "events": {
       "overviewExtra": "From corporate conferences to weddings and private celebrations, our hostess and protocol team adapts to every type of event, taking care of every detail so everything goes exactly as you imagined.",
@@ -284,7 +296,8 @@
       "process2Title": "We prepare the proposal",
       "process2Text": "We send you a quote, assigned staff and furniture plan, tailored to your event.",
       "process3Title": "The big day",
-      "process3Text": "Our team arrives early, sets up the furniture and looks after your guests with professionalism."
+      "process3Text": "Our team arrives early, sets up the furniture and looks after your guests with professionalism.",
+      "quote": "Every event is unique: our job is to make everything flow without the effort ever showing."
     }
   }
 }

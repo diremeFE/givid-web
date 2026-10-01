@@ -266,7 +266,18 @@
     "whyTitle": "Por qué elegirnos",
     "backToServices": "Volver a servicios",
     "distribution": {
-      "overviewExtra": "Trabajamos con comercios, restaurantes, hoteles, instituciones y particulares que necesitan un suministro constante y fiable. Gestionamos cada pedido de forma directa, sin intermediarios, para ofrecerte el mejor precio y la mejor disponibilidad posible."
+      "overviewExtra": "Trabajamos con comercios, restaurantes, hoteles, instituciones y particulares que necesitan un suministro constante y fiable. Gestionamos cada pedido de forma directa, sin intermediarios, para ofrecerte el mejor precio y la mejor disponibilidad posible.",
+      "statProducts": "16",
+      "statProductsLabel": "Productos en catálogo",
+      "statCategories": "4",
+      "statCategoriesLabel": "Categorías",
+      "statAvailability": "100%",
+      "statAvailabilityLabel": "Gestión directa",
+      "categoryFood": "Alimentación",
+      "categoryChildcare": "Cuidado infantil",
+      "categoryWater": "Agua",
+      "categoryHome": "Limpieza del hogar",
+      "quote": "No distribuimos para quedarnos en el almacén: distribuimos para que nunca te falte lo esencial."
     },
     "facilityServices": {
       "overviewExtra": "Adaptamos cada plan de limpieza y mantenimiento al tipo de instalación, su tamaño y su actividad, con personal formado y productos profesionales, para que tus espacios estén siempre en las mejores condiciones.",
@@ -275,7 +286,8 @@
       "process2Title": "Diseñamos tu plan",
       "process2Text": "Preparamos una propuesta a medida con el personal, los productos y el calendario adecuados.",
       "process3Title": "Mantenimiento continuo",
-      "process3Text": "Nuestro equipo se encarga de todo de forma recurrente, con seguimiento y ajustes cuando lo necesites."
+      "process3Text": "Nuestro equipo se encarga de todo de forma recurrente, con seguimiento y ajustes cuando lo necesites.",
+      "quote": "Cuidamos cada rincón para que tu negocio no tenga que preocuparse por nada más."
     },
     "events": {
       "overviewExtra": "Desde congresos corporativos hasta bodas y celebraciones privadas, nuestro equipo de azafatas y protocolo se adapta a cada tipo de evento, cuidando cada detalle para que todo salga como lo has imaginado.",
@@ -284,7 +296,8 @@
       "process2Title": "Preparamos la propuesta",
       "process2Text": "Te enviamos presupuesto, personal asignado y plan de mobiliario, ajustado a tu evento.",
       "process3Title": "El gran día",
-      "process3Text": "Nuestro equipo llega con antelación, monta el mobiliario y atiende a tus invitados con profesionalidad."
+      "process3Text": "Nuestro equipo llega con antelación, monta el mobiliario y atiende a tus invitados con profesionalidad.",
+      "quote": "Cada evento es único: nuestro trabajo es que todo fluya sin que se note el esfuerzo."
     }
   }
 }

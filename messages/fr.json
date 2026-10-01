@@ -266,7 +266,18 @@
     "whyTitle": "Pourquoi nous choisir",
     "backToServices": "Retour aux services",
     "distribution": {
-      "overviewExtra": "Nous travaillons avec des commerces, restaurants, hôtels, institutions et particuliers ayant besoin d'un approvisionnement constant et fiable. Nous gérons chaque commande directement, sans intermédiaires, pour vous offrir le meilleur prix et la meilleure disponibilité possible."
+      "overviewExtra": "Nous travaillons avec des commerces, restaurants, hôtels, institutions et particuliers ayant besoin d'un approvisionnement constant et fiable. Nous gérons chaque commande directement, sans intermédiaires, pour vous offrir le meilleur prix et la meilleure disponibilité possible.",
+      "statProducts": "16",
+      "statProductsLabel": "Produits au catalogue",
+      "statCategories": "4",
+      "statCategoriesLabel": "Catégories",
+      "statAvailability": "100%",
+      "statAvailabilityLabel": "Gestion directe",
+      "categoryFood": "Alimentation",
+      "categoryChildcare": "Puériculture",
+      "categoryWater": "Eau",
+      "categoryHome": "Entretien du foyer",
+      "quote": "Nous ne distribuons pas pour remplir un entrepôt : nous distribuons pour que l'essentiel ne vous manque jamais."
     },
     "facilityServices": {
       "overviewExtra": "Nous adaptons chaque plan de nettoyage et d'entretien au type d'installation, à sa taille et à son activité, avec un personnel formé et des produits professionnels, pour que vos espaces soient toujours dans les meilleures conditions.",
@@ -275,7 +286,8 @@
       "process2Title": "Nous concevons votre plan",
       "process2Text": "Nous préparons une proposition sur mesure avec le personnel, les produits et le calendrier adaptés.",
       "process3Title": "Entretien continu",
-      "process3Text": "Notre équipe s'occupe de tout de façon récurrente, avec suivi et ajustements selon vos besoins."
+      "process3Text": "Notre équipe s'occupe de tout de façon récurrente, avec suivi et ajustements selon vos besoins.",
+      "quote": "Nous prenons soin de chaque recoin pour que votre entreprise n'ait à se soucier de rien d'autre."
     },
     "events": {
       "overviewExtra": "Des congrès d'entreprise aux mariages et célébrations privées, notre équipe d'hôtesses et de protocole s'adapte à chaque type d'événement, en soignant chaque détail pour que tout se déroule comme vous l'aviez imaginé.",
@@ -284,7 +296,8 @@
       "process2Title": "Nous préparons la proposition",
       "process2Text": "Nous vous envoyons un devis, le personnel assigné et le plan de mobilier, adaptés à votre événement.",
       "process3Title": "Le grand jour",
-      "process3Text": "Notre équipe arrive à l'avance, installe le mobilier et accueille vos invités avec professionnalisme."
+      "process3Text": "Notre équipe arrive à l'avance, installe le mobilier et accueille vos invités avec professionnalisme.",
+      "quote": "Chaque événement est unique : notre travail est de faire en sorte que tout se déroule sans que l'effort ne se voie."
     }
   }
 }

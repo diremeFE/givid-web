@@ -266,7 +266,18 @@
     "whyTitle": "Porquê escolher-nos",
     "backToServices": "Voltar aos serviços",
     "distribution": {
-      "overviewExtra": "Trabalhamos com comércios, restaurantes, hotéis, instituições e particulares que precisam de um fornecimento constante e fiável. Gerimos cada encomenda diretamente, sem intermediários, para lhe oferecer o melhor preço e a melhor disponibilidade possível."
+      "overviewExtra": "Trabalhamos com comércios, restaurantes, hotéis, instituições e particulares que precisam de um fornecimento constante e fiável. Gerimos cada encomenda diretamente, sem intermediários, para lhe oferecer o melhor preço e a melhor disponibilidade possível.",
+      "statProducts": "16",
+      "statProductsLabel": "Produtos no catálogo",
+      "statCategories": "4",
+      "statCategoriesLabel": "Categorias",
+      "statAvailability": "100%",
+      "statAvailabilityLabel": "Gestão direta",
+      "categoryFood": "Alimentação",
+      "categoryChildcare": "Cuidado infantil",
+      "categoryWater": "Água",
+      "categoryHome": "Limpeza doméstica",
+      "quote": "Não distribuímos para encher um armazém: distribuímos para que nunca lhe falte o essencial."
     },
     "facilityServices": {
       "overviewExtra": "Adaptamos cada plano de limpeza e manutenção ao tipo de instalação, à sua dimensão e à sua atividade, com pessoal formado e produtos profissionais, para que os seus espaços estejam sempre nas melhores condições.",
@@ -275,7 +286,8 @@
       "process2Title": "Desenhamos o seu plano",
       "process2Text": "Preparamos uma proposta à medida com o pessoal, os produtos e o calendário adequados.",
       "process3Title": "Manutenção contínua",
-      "process3Text": "A nossa equipa trata de tudo de forma recorrente, com acompanhamento e ajustes sempre que precisar."
+      "process3Text": "A nossa equipa trata de tudo de forma recorrente, com acompanhamento e ajustes sempre que precisar.",
+      "quote": "Cuidamos de cada canto para que o seu negócio não tenha de se preocupar com mais nada."
     },
     "events": {
       "overviewExtra": "De congressos corporativos a casamentos e celebrações privadas, a nossa equipa de hospedeiras e protocolo adapta-se a cada tipo de evento, cuidando de cada detalhe para que tudo corra como imaginou.",
@@ -284,7 +296,8 @@
       "process2Title": "Preparamos a proposta",
       "process2Text": "Enviamos-lhe orçamento, pessoal atribuído e plano de mobiliário, ajustado ao seu evento.",
       "process3Title": "O grande dia",
-      "process3Text": "A nossa equipa chega com antecedência, monta o mobiliário e trata dos seus convidados com profissionalismo."
+      "process3Text": "A nossa equipa chega com antecedência, monta o mobiliário e trata dos seus convidados com profissionalismo.",
+      "quote": "Cada evento é único: o nosso trabalho é fazer com que tudo flua sem que o esforço se note."
     }
   }
 }
