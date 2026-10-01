@@ -163,16 +163,14 @@ export default async function HomePage() {
 
         {/* Images + text grid */}
         <div className="relative mt-14 grid items-center gap-16 lg:grid-cols-[1fr_1.2fr] lg:gap-10">
-          <Reveal className="relative mx-auto w-full max-w-sm px-6 py-6 lg:mx-0 lg:max-w-none">
-            <div className="blob-shape relative aspect-square w-full overflow-hidden shadow-xl shadow-black/10 ring-4 ring-white">
-              <Image
-                src="/images/about-team.webp"
-                alt="Equipo de GIVID"
-                fill
-                sizes="(min-width: 1024px) 35vw, 80vw"
-                className="object-cover"
-              />
-            </div>
+          <Reveal className="relative mx-auto aspect-4/5 w-full max-w-sm overflow-hidden rounded-3xl shadow-xl shadow-black/10 lg:mx-0 lg:max-w-none">
+            <Image
+              src="/images/about-team.webp"
+              alt="Equipo de GIVID"
+              fill
+              sizes="(min-width: 1024px) 35vw, 80vw"
+              className="object-cover"
+            />
           </Reveal>
 
           <Reveal delay={100}>
@@ -182,35 +180,6 @@ export default async function HomePage() {
             <p className="mt-4 text-sm leading-relaxed text-neutral-600">
               {t("introExtra")}
             </p>
-
-            <div className="mt-8 space-y-5">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark">
-                {t("introFocusTitle")}
-              </p>
-              {[
-                { label: t("introFocus1Label"), value: t("introFocus1Value") },
-                { label: t("introFocus2Label"), value: t("introFocus2Value") },
-                { label: t("introFocus3Label"), value: t("introFocus3Value") },
-              ].map((focus) => (
-                <div key={focus.label}>
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="font-semibold text-neutral-800">{focus.label}</span>
-                    <span className="font-bold text-brand-dark">{focus.value}%</span>
-                  </div>
-                  <div className="relative mt-2 h-1.5 rounded-full bg-neutral-100">
-                    <div
-                      className="h-full rounded-full bg-brand-dark"
-                      style={{ width: `${focus.value}%` }}
-                    />
-                    <span
-                      className="absolute top-1/2 h-3.5 w-3.5 -translate-y-1/2 rounded-full border-2 border-brand-dark bg-white shadow"
-                      style={{ left: `calc(${focus.value}% - 7px)` }}
-                      aria-hidden="true"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
 
             <Link
               href="/nosotros"
