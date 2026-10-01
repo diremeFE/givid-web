@@ -62,50 +62,11 @@ export default async function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-brand-light py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <ServiceBlock
-            icon={Sparkles}
-            image="/images/placeholder.jpg"
-            tag={t("facilityServices.tag")}
-            title={t("facilityServices.title")}
-            description={t("facilityServices.description")}
-            bullets={[
-              t("facilityServices.bullet1"),
-              t("facilityServices.bullet2"),
-              t("facilityServices.bullet3"),
-              t("facilityServices.bullet4"),
-              t("facilityServices.bullet5"),
-              t("facilityServices.bullet6"),
-            ]}
-          />
-        </div>
-      </section>
-
-      <section className="py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <ServiceBlock
-            icon={Users}
-            image="/images/placeholder.jpg"
-            tag={t("events.tag")}
-            title={t("events.title")}
-            description={t("events.description")}
-            bullets={[
-              t("events.bullet1"),
-              t("events.bullet2"),
-              t("events.bullet3"),
-              t("events.bullet4"),
-            ]}
-            reverse
-          />
-        </div>
-      </section>
-
       <section className="bg-brand-darker py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ServiceBlock
             icon={Boxes}
-            image="/images/placeholder.jpg"
+            image="/images/service-distribution.png"
             tag={t("distribution.tag")}
             title={t("distribution.title")}
             description={t("distribution.description")}
@@ -125,6 +86,45 @@ export default async function ServicesPage() {
               t("distribution.bullet13"),
             ]}
             highlighted
+          />
+        </div>
+      </section>
+
+      <section className="bg-brand-light py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <ServiceBlock
+            icon={Sparkles}
+            image="/images/service-facility.png"
+            tag={t("facilityServices.tag")}
+            title={t("facilityServices.title")}
+            description={t("facilityServices.description")}
+            bullets={[
+              t("facilityServices.bullet1"),
+              t("facilityServices.bullet2"),
+              t("facilityServices.bullet3"),
+              t("facilityServices.bullet4"),
+              t("facilityServices.bullet5"),
+              t("facilityServices.bullet6"),
+            ]}
+            reverse
+          />
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <ServiceBlock
+            icon={Users}
+            image="/images/placeholder.jpg"
+            tag={t("events.tag")}
+            title={t("events.title")}
+            description={t("events.description")}
+            bullets={[
+              t("events.bullet1"),
+              t("events.bullet2"),
+              t("events.bullet3"),
+              t("events.bullet4"),
+            ]}
           />
         </div>
       </section>
