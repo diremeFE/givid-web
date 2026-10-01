@@ -50,11 +50,7 @@ export default async function HomePage() {
           <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/55 to-black/75" aria-hidden="true" />
 
           <Reveal className="relative mx-auto max-w-4xl">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-white ring-1 ring-white/25 backdrop-blur-sm">
-              <Sparkle className="h-3.5 w-3.5" aria-hidden="true" />
-              {t("heroBadge")}
-            </span>
-            <h1 className="mt-6 text-5xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="text-5xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
               {t("heroTitlePrefix")}{" "}
               <span className="relative text-accent-light">
                 {t("heroTitleHighlight")}
