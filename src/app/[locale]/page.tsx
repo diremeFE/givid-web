@@ -14,6 +14,7 @@ import {
   ShoppingBasket,
   PackageCheck,
   X,
+  Quote,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
@@ -180,6 +181,19 @@ export default async function HomePage() {
             <p className="mt-4 text-sm leading-relaxed text-neutral-600">
               {t("introExtra")}
             </p>
+
+            <div className="relative mt-8 border-l-4 border-brand py-1 pl-6">
+              <Quote className="absolute -left-1 -top-1 h-7 w-7 -translate-x-1/2 text-brand/25" strokeWidth={1.5} aria-hidden="true" />
+              <p
+                className="text-lg font-semibold italic leading-snug text-neutral-800 sm:text-xl"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                {t("introQuote")}
+              </p>
+              <p className="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-brand-dark">
+                {t("introQuoteAuthor")}
+              </p>
+            </div>
 
             <Link
               href="/nosotros"
