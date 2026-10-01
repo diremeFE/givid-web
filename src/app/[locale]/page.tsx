@@ -14,7 +14,6 @@ import {
   ShoppingBasket,
   PackageCheck,
   X,
-  ChevronDown,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
@@ -171,7 +170,7 @@ export default async function HomePage() {
           <Reveal className="relative mx-auto w-full max-w-sm px-6 py-6 lg:mx-0 lg:max-w-none">
             <div className="blob-shape relative aspect-square w-full overflow-hidden shadow-xl shadow-black/10 ring-4 ring-white">
               <Image
-                src="/images/placeholder.jpg"
+                src="/images/about-team.webp"
                 alt="Equipo de GIVID"
                 fill
                 sizes="(min-width: 1024px) 35vw, 80vw"
@@ -246,8 +245,8 @@ export default async function HomePage() {
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-10 md:grid-cols-3 lg:gap-12">
-            <Reveal delay={0}>
+          <div className="mt-12 grid gap-8 lg:grid-cols-12">
+            <Reveal delay={0} className="lg:col-span-7">
               <ServiceCard
                 icon={Boxes}
                 image="/images/service-distribution.png"
@@ -257,28 +256,33 @@ export default async function HomePage() {
                 readMore={tServices("readMore")}
                 href="/servicios"
                 highlighted
+                size="lg"
               />
             </Reveal>
-            <Reveal delay={100}>
-              <ServiceCard
-                icon={Sparkles}
-                image="/images/service-facility.png"
-                title={tServices("facilityServices.title")}
-                description={tServices("facilityServices.description")}
-                readMore={tServices("readMore")}
-                href="/servicios"
-              />
-            </Reveal>
-            <Reveal delay={200}>
-              <ServiceCard
-                icon={Ship}
-                image="/images/placeholder.jpg"
-                title={tServices("events.title")}
-                description={tServices("events.description")}
-                readMore={tServices("readMore")}
-                href="/servicios"
-              />
-            </Reveal>
+            <div className="flex flex-col gap-8 lg:col-span-5">
+              <Reveal delay={100}>
+                <ServiceCard
+                  icon={Sparkles}
+                  image="/images/service-facility.png"
+                  title={tServices("facilityServices.title")}
+                  description={tServices("facilityServices.description")}
+                  readMore={tServices("readMore")}
+                  href="/servicios"
+                  horizontal
+                />
+              </Reveal>
+              <Reveal delay={200}>
+                <ServiceCard
+                  icon={Ship}
+                  image="/images/service-events.jpg"
+                  title={tServices("events.title")}
+                  description={tServices("events.description")}
+                  readMore={tServices("readMore")}
+                  href="/servicios"
+                  horizontal
+                />
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>
@@ -439,8 +443,8 @@ export default async function HomePage() {
 
       {/* FAQ */}
       <section className="bg-brand-aurora py-20">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <Reveal className="mx-auto max-w-xl text-center">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <Reveal className="max-w-xl">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark">
             {t("faqEyebrow")}
           </p>
@@ -449,28 +453,23 @@ export default async function HomePage() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 space-y-3">
+        <div className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2">
           {[
             { question: t("faq1Question"), answer: t("faq1Answer") },
             { question: t("faq2Question"), answer: t("faq2Answer") },
             { question: t("faq3Question"), answer: t("faq3Answer") },
             { question: t("faq4Question"), answer: t("faq4Answer") },
           ].map((item, i) => (
-            <Reveal key={item.question} delay={i * 60}>
-              <details className="group rounded-2xl border border-white bg-white p-5 shadow-lg shadow-brand-darker/10 ring-1 ring-black/4 transition-shadow open:shadow-xl open:shadow-brand-darker/15 open:ring-brand/15">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-neutral-900">
-                  {item.question}
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-light transition-transform duration-300 group-open:rotate-180 group-open:bg-brand-dark">
-                    <ChevronDown
-                      className="h-4 w-4 text-brand-dark group-open:text-white"
-                      aria-hidden="true"
-                    />
-                  </span>
-                </summary>
-                <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+            <Reveal key={item.question} delay={i * 60} className="flex gap-4 border-t border-brand-dark/15 pt-5">
+              <span className="shrink-0 text-sm font-black text-brand-dark/30">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <h3 className="font-semibold text-neutral-900">{item.question}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-neutral-600">
                   {item.answer}
                 </p>
-              </details>
+              </div>
             </Reveal>
           ))}
         </div>
@@ -511,6 +510,8 @@ function ServiceCard({
   readMore,
   href,
   highlighted = false,
+  size = "md",
+  horizontal = false,
 }: {
   icon: React.ComponentType<{ className?: string }>;
   image: string;
@@ -520,22 +521,29 @@ function ServiceCard({
   readMore: string;
   href: string;
   highlighted?: boolean;
+  size?: "md" | "lg";
+  horizontal?: boolean;
 }) {
+  const cardClass = `group relative flex h-full overflow-hidden rounded-2xl border bg-white shadow-xl transition-all hover:-translate-y-1.5 hover:shadow-2xl ${
+    horizontal ? "flex-row items-stretch" : "flex-col"
+  } ${
+    highlighted
+      ? "border-accent/40 shadow-accent/25 ring-2 ring-accent/60 hover:shadow-accent/35"
+      : "border-border shadow-brand/25 hover:shadow-brand/35"
+  }`;
+
+  const imageWrapClass = horizontal
+    ? "relative w-2/5 shrink-0 overflow-hidden"
+    : `relative overflow-hidden rounded-2xl m-3 mb-0 ${size === "lg" ? "h-64" : "h-44"}`;
+
   return (
-    <Link
-      href={href}
-      className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-white shadow-xl transition-all hover:-translate-y-1.5 hover:shadow-2xl ${
-        highlighted
-          ? "border-accent/40 shadow-accent/25 ring-2 ring-accent/60 hover:shadow-accent/35"
-          : "border-border shadow-brand/25 hover:shadow-brand/35"
-      }`}
-    >
+    <Link href={href} className={cardClass}>
       {tag && (
         <span className="absolute left-5 top-5 z-10 inline-flex items-center rounded-full bg-accent px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-md">
           {tag}
         </span>
       )}
-      <div className="relative h-44 overflow-hidden rounded-2xl m-3 mb-0">
+      <div className={imageWrapClass}>
         <Image
           src={image}
           alt=""
@@ -543,17 +551,32 @@ function ServiceCard({
           sizes="(min-width: 768px) 33vw, 100vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <span
-          className={`absolute -bottom-5 right-5 flex h-12 w-12 items-center justify-center rounded-full shadow-lg shadow-black/20 ring-4 ring-white transition-transform duration-300 group-hover:scale-110 ${
-            highlighted ? "bg-accent" : "bg-brand-dark"
-          }`}
-        >
-          <Icon className="h-5 w-5 text-white" aria-hidden="true" />
-        </span>
+        {!horizontal && (
+          <span
+            className={`absolute -bottom-5 right-5 flex h-12 w-12 items-center justify-center rounded-full shadow-lg shadow-black/20 ring-4 ring-white transition-transform duration-300 group-hover:scale-110 ${
+              highlighted ? "bg-accent" : "bg-brand-dark"
+            }`}
+          >
+            <Icon className="h-5 w-5 text-white" aria-hidden="true" />
+          </span>
+        )}
       </div>
-      <div className="flex flex-1 flex-col p-6 pt-7">
-        <h3 className="text-lg font-bold text-neutral-900">{title}</h3>
-        <p className="mt-2 line-clamp-3 text-sm text-neutral-600">{description}</p>
+      <div className={`flex flex-1 flex-col ${horizontal ? "justify-center p-5" : "p-6 pt-7"}`}>
+        {horizontal && (
+          <span
+            className={`mb-2 flex h-9 w-9 items-center justify-center rounded-lg ${
+              highlighted ? "bg-accent" : "bg-brand-dark"
+            }`}
+          >
+            <Icon className="h-4 w-4 text-white" aria-hidden="true" />
+          </span>
+        )}
+        <h3 className={`font-bold text-neutral-900 ${size === "lg" ? "text-xl" : "text-lg"}`}>
+          {title}
+        </h3>
+        <p className={`mt-2 text-sm text-neutral-600 ${horizontal ? "line-clamp-2" : "line-clamp-3"}`}>
+          {description}
+        </p>
         <span
           className={`mt-4 inline-flex items-center gap-1.5 text-sm font-semibold ${
             highlighted ? "text-accent-dark" : "text-brand-dark"

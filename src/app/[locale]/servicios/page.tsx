@@ -30,7 +30,7 @@ export default async function ServicesPage() {
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-12">
             <Reveal className="relative aspect-4/3 overflow-hidden rounded-3xl">
               <Image
-                src="/images/placeholder.jpg"
+                src="/images/about-team.webp"
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"
@@ -115,7 +115,7 @@ export default async function ServicesPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ServiceBlock
             icon={Users}
-            image="/images/placeholder.jpg"
+            image="/images/service-events.jpg"
             tag={t("events.tag")}
             title={t("events.title")}
             description={t("events.description")}
@@ -133,7 +133,7 @@ export default async function ServicesPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ServiceBlock
             icon={Package}
-            image="/images/placeholder.jpg"
+            image="/images/ownbrand-arroz.jpg"
             tag={t("ownBrand.tag")}
             title={t("ownBrand.title")}
             description={t("ownBrand.description")}
@@ -147,9 +147,9 @@ export default async function ServicesPage() {
           >
             <div className="mt-6 grid grid-cols-3 gap-4">
               {[
-                { src: "/images/placeholder.jpg", alt: "GIVID Arroz" },
-                { src: "/images/placeholder.jpg", alt: "GIVID Pants" },
-                { src: "/images/placeholder.jpg", alt: "GIVID Toallitas" },
+                { src: "/images/ownbrand-harina.jpg", alt: "GIVID Harina" },
+                { src: "/images/ownbrand-pants.jpg", alt: "GIVID Pants" },
+                { src: "/images/ownbrand-toallitas.jpg", alt: "GIVID Toallitas" },
               ].map((img, i) => (
                 <Reveal
                   key={img.alt}
