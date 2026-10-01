@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -13,8 +13,13 @@ import { GoogleAnalytics } from "@/components/google-analytics";
 import { LocalBusinessSchema } from "@/components/local-business-schema";
 import "./globals.css";
 
-const fontSans = Outfit({
-  variable: "--font-outfit",
+const fontHeading = Plus_Jakarta_Sans({
+  variable: "--font-heading",
+  subsets: ["latin"],
+});
+
+const fontBody = Inter({
+  variable: "--font-body",
   subsets: ["latin"],
 });
 
@@ -76,7 +81,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${fontSans.variable} h-full antialiased`}
+      className={`${fontHeading.variable} ${fontBody.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <LocalBusinessSchema />
