@@ -18,11 +18,11 @@ export default async function ServicesPage() {
   return (
     <div>
       <PageHero
-        eyebrow={tHome("heroTagline")}
         title={t("pageTitle")}
         subtitle={t("pageSubtitle")}
         icon={Boxes}
-        image="/images/about-team.webp"
+        image="/images/hero-production.jpg"
+        size="full"
       />
 
       <section className="py-16">
