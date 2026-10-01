@@ -18,9 +18,9 @@ export function SiteHeader() {
   const solid = useHeroCleared(headerRef, pathname);
 
   const serviceLinks = [
-    { href: "/servicios#distribucion", label: tServices("distribution.title") },
-    { href: "/servicios#facility-services", label: tServices("facilityServices.title") },
-    { href: "/servicios#events", label: tServices("events.title") },
+    { href: "/servicios/distribucion", label: tServices("distribution.title") },
+    { href: "/servicios/facility-services", label: tServices("facilityServices.title") },
+    { href: "/servicios/eventos", label: tServices("events.title") },
   ];
 
   const links = [

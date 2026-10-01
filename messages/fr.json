@@ -259,5 +259,32 @@
   "common": {
     "loading": "Chargement...",
     "requiredField": "Ce champ est obligatoire"
+  },
+  "servicesDetail": {
+    "includesTitle": "Ce que comprend ce service",
+    "processTitle": "Comment ça marche",
+    "whyTitle": "Pourquoi nous choisir",
+    "backToServices": "Retour aux services",
+    "distribution": {
+      "overviewExtra": "Nous travaillons avec des commerces, restaurants, hôtels, institutions et particuliers ayant besoin d'un approvisionnement constant et fiable. Nous gérons chaque commande directement, sans intermédiaires, pour vous offrir le meilleur prix et la meilleure disponibilité possible."
+    },
+    "facilityServices": {
+      "overviewExtra": "Nous adaptons chaque plan de nettoyage et d'entretien au type d'installation, à sa taille et à son activité, avec un personnel formé et des produits professionnels, pour que vos espaces soient toujours dans les meilleures conditions.",
+      "process1Title": "Demandez un diagnostic",
+      "process1Text": "Nous visitons vos installations et évaluons vos besoins : fréquence, portée et type de service.",
+      "process2Title": "Nous concevons votre plan",
+      "process2Text": "Nous préparons une proposition sur mesure avec le personnel, les produits et le calendrier adaptés.",
+      "process3Title": "Entretien continu",
+      "process3Text": "Notre équipe s'occupe de tout de façon récurrente, avec suivi et ajustements selon vos besoins."
+    },
+    "events": {
+      "overviewExtra": "Des congrès d'entreprise aux mariages et célébrations privées, notre équipe d'hôtesses et de protocole s'adapte à chaque type d'événement, en soignant chaque détail pour que tout se déroule comme vous l'aviez imaginé.",
+      "process1Title": "Parlez-nous de votre événement",
+      "process1Text": "Date, type d'événement, nombre d'invités et vos besoins : hôtesses, mobilier, ou les deux.",
+      "process2Title": "Nous préparons la proposition",
+      "process2Text": "Nous vous envoyons un devis, le personnel assigné et le plan de mobilier, adaptés à votre événement.",
+      "process3Title": "Le grand jour",
+      "process3Text": "Notre équipe arrive à l'avance, installe le mobilier et accueille vos invités avec professionnalisme."
+    }
   }
 }

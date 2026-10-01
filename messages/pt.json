@@ -259,5 +259,32 @@
   "common": {
     "loading": "A carregar...",
     "requiredField": "Este campo é obrigatório"
+  },
+  "servicesDetail": {
+    "includesTitle": "O que inclui este serviço",
+    "processTitle": "Como funciona",
+    "whyTitle": "Porquê escolher-nos",
+    "backToServices": "Voltar aos serviços",
+    "distribution": {
+      "overviewExtra": "Trabalhamos com comércios, restaurantes, hotéis, instituições e particulares que precisam de um fornecimento constante e fiável. Gerimos cada encomenda diretamente, sem intermediários, para lhe oferecer o melhor preço e a melhor disponibilidade possível."
+    },
+    "facilityServices": {
+      "overviewExtra": "Adaptamos cada plano de limpeza e manutenção ao tipo de instalação, à sua dimensão e à sua atividade, com pessoal formado e produtos profissionais, para que os seus espaços estejam sempre nas melhores condições.",
+      "process1Title": "Peça um diagnóstico",
+      "process1Text": "Visitamos as suas instalações e avaliamos o que precisa: frequência, âmbito e tipo de serviço.",
+      "process2Title": "Desenhamos o seu plano",
+      "process2Text": "Preparamos uma proposta à medida com o pessoal, os produtos e o calendário adequados.",
+      "process3Title": "Manutenção contínua",
+      "process3Text": "A nossa equipa trata de tudo de forma recorrente, com acompanhamento e ajustes sempre que precisar."
+    },
+    "events": {
+      "overviewExtra": "De congressos corporativos a casamentos e celebrações privadas, a nossa equipa de hospedeiras e protocolo adapta-se a cada tipo de evento, cuidando de cada detalhe para que tudo corra como imaginou.",
+      "process1Title": "Conte-nos o seu evento",
+      "process1Text": "Data, tipo de evento, número de convidados e o que precisa: hospedeiras, mobiliário, ou ambos.",
+      "process2Title": "Preparamos a proposta",
+      "process2Text": "Enviamos-lhe orçamento, pessoal atribuído e plano de mobiliário, ajustado ao seu evento.",
+      "process3Title": "O grande dia",
+      "process3Text": "A nossa equipa chega com antecedência, monta o mobiliário e trata dos seus convidados com profissionalismo."
+    }
   }
 }

@@ -3,7 +3,17 @@ import { routing } from "@/i18n/routing";
 import { siteConfig } from "@/lib/site-config";
 import { getPublishedPosts, getProducts } from "@/lib/data";
 
-const staticPaths = ["", "/nosotros", "/servicios", "/productos", "/blog", "/contacto"];
+const staticPaths = [
+  "",
+  "/nosotros",
+  "/servicios",
+  "/servicios/distribucion",
+  "/servicios/facility-services",
+  "/servicios/eventos",
+  "/productos",
+  "/blog",
+  "/contacto",
+];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = siteConfig.siteUrl;
