@@ -241,7 +241,10 @@
     "close": "Fechar",
     "title": "Falamos?",
     "text": "Escreva-nos por WhatsApp e respondemos de imediato: encomendas, orçamentos ou qualquer dúvida.",
-    "message": "Olá, tenho uma pergunta para a GIVID."
+    "message": "Olá, tenho uma pergunta para a GIVID.",
+    "onlineLabel": "Online",
+    "typingLabel": "A escrever",
+    "timeLabel": "agora"
   },
   "cookies": {
     "title": "Utilizamos cookies",
