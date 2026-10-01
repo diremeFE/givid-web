@@ -86,7 +86,7 @@ export default async function AboutPage() {
 
         <div className="mt-12 grid gap-4 sm:grid-cols-3">
           {[
-            { src: "/images/about-team.webp", alt: "Equipo de GIVID" },
+            { src: "/images/about-team-v2.jpg", alt: "Equipo de GIVID" },
             { src: "/images/service-distribution.png", alt: "Almacén de distribución GIVID" },
             { src: "/images/service-facility.png", alt: "Servicio de limpieza GIVID" },
           ].map((img, i) => (
