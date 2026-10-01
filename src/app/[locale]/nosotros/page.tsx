@@ -188,7 +188,7 @@ export default async function AboutPage() {
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
           <Reveal className="relative min-h-100 overflow-hidden rounded-3xl">
             <Image
-              src="/images/hero-warehouse.png"
+              src="/images/malabo-harbor.jpg"
               alt=""
               fill
               sizes="(min-width: 1024px) 45vw, 100vw"
