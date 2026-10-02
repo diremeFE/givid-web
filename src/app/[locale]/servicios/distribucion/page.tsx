@@ -62,7 +62,7 @@ export default async function DistribucionPage() {
         title={t("distribution.title")}
         subtitle={t("distribution.description")}
         icon={Boxes}
-        image="/images/service-distribution-v2.jpg"
+        image="/images/givid-silkscreen.jpg"
         size="lg"
       />
 
@@ -189,7 +189,7 @@ export default async function DistribucionPage() {
       <section className="px-4 pb-20 sm:px-6">
         <Reveal className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 overflow-hidden rounded-3xl bg-brand-darker px-6 py-16 text-center shadow-xl shadow-brand-darker/20 sm:py-20">
           <div className="relative aspect-4/3 w-full max-w-xs overflow-hidden rounded-2xl shadow-lg shadow-black/30 sm:hidden">
-            <Image src="/images/service-distribution-v2.jpg" alt="" fill sizes="320px" className="object-cover" />
+            <Image src="/images/givid-silkscreen.jpg" alt="" fill sizes="320px" className="object-cover" />
           </div>
           <h2 className="relative max-w-2xl text-2xl font-black leading-tight text-white sm:text-4xl">
             {t("ctaText")}
