@@ -239,6 +239,17 @@ export default async function AboutPage() {
               <p>{t("historyExtra3")}</p>
               <p>{t("historyExtra4")}</p>
             </div>
+
+            <p className="mt-6 border-l-4 border-brand pl-4 text-lg font-bold italic leading-snug text-neutral-900">
+              {t("historyQuote")}
+            </p>
+
+            <div className="mt-6">
+              <h3 className="font-bold text-neutral-900">{t("fromGuineaTitle")}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+                {t("fromGuineaText")}
+              </p>
+            </div>
           </Reveal>
 
           <div className="flex flex-col gap-6">
