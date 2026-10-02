@@ -123,7 +123,7 @@ export default async function ServicesPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ServiceBlock
             icon={Package}
-            image="/images/ownbrand-arroz.jpg"
+            image="/images/ownbrand-rice-production.jpg"
             tag={t("ownBrand.tag")}
             title={t("ownBrand.title")}
             description={t("ownBrand.description")}
