@@ -105,6 +105,8 @@ export default async function ServicesPage() {
               t("facilityServices.bullet4"),
               t("facilityServices.bullet5"),
               t("facilityServices.bullet6"),
+              t("facilityServices.bullet7"),
+              t("facilityServices.bullet8"),
             ]}
             reverse
           />
