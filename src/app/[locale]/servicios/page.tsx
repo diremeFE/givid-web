@@ -54,7 +54,7 @@ export default async function ServicesPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ServiceBlock
             icon={Boxes}
-            image="/images/service-distribution.png"
+            image="/images/givid-silkscreen.jpg"
             tag={t("distribution.tag")}
             title={t("distribution.title")}
             description={t("distribution.description")}
@@ -82,7 +82,7 @@ export default async function ServicesPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ServiceBlock
             icon={Sparkles}
-            image="/images/service-facility.png"
+            image="/images/facility-floor-polish.jpg"
             tag={t("facilityServices.tag")}
             title={t("facilityServices.title")}
             description={t("facilityServices.description")}
@@ -105,7 +105,7 @@ export default async function ServicesPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ServiceBlock
             icon={Users}
-            image="/images/service-events.jpg"
+            image="/images/service-events-v3.jpg"
             tag={t("events.tag")}
             title={t("events.title")}
             description={t("events.description")}
