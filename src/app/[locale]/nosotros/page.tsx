@@ -7,6 +7,17 @@ import {
   Users,
   Check,
   ArrowRight,
+  Award,
+  Trophy,
+  Lightbulb,
+  Scale,
+  Rocket,
+  Boxes,
+  ClipboardCheck,
+  Headset,
+  Globe2,
+  Zap,
+  Quote,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
@@ -23,9 +34,23 @@ export default async function AboutPage() {
   const tServices = await getTranslations("services");
 
   const values = [
-    { icon: ShieldCheck, label: t("value1"), text: t("value1Text") },
-    { icon: Handshake, label: t("value2"), text: t("value2Text") },
-    { icon: Heart, label: t("value3"), text: t("value3Text") },
+    { icon: Handshake, label: t("value1"), text: t("value1Text") },
+    { icon: Award, label: t("value2"), text: t("value2Text") },
+    { icon: ShieldCheck, label: t("value3"), text: t("value3Text") },
+    { icon: Trophy, label: t("value4"), text: t("value4Text") },
+    { icon: Heart, label: t("value5"), text: t("value5Text") },
+    { icon: Lightbulb, label: t("value6"), text: t("value6Text") },
+    { icon: Scale, label: t("value7"), text: t("value7Text") },
+    { icon: Rocket, label: t("value8"), text: t("value8Text") },
+  ];
+
+  const whyGivid = [
+    { icon: Boxes, title: t("whyGivid1Title"), text: t("whyGivid1Text") },
+    { icon: ClipboardCheck, title: t("whyGivid2Title"), text: t("whyGivid2Text") },
+    { icon: Headset, title: t("whyGivid3Title"), text: t("whyGivid3Text") },
+    { icon: ShieldCheck, title: t("whyGivid4Title"), text: t("whyGivid4Text") },
+    { icon: Zap, title: t("whyGivid5Title"), text: t("whyGivid5Text") },
+    { icon: Globe2, title: t("whyGivid6Title"), text: t("whyGivid6Text") },
   ];
 
   const facilitiesBullets = [
@@ -112,6 +137,46 @@ export default async function AboutPage() {
         </div>
       </section>
 
+      {/* Por qué GIVID */}
+      <section className="bg-brand-aurora py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark">
+              {t("whyGividEyebrow")}
+            </p>
+            <h2 className="mt-3 text-2xl font-black text-neutral-900 sm:text-3xl">
+              {t("whyGividTitle")}
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-neutral-600">
+              {t("whyGividIntro")}
+            </p>
+          </Reveal>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {whyGivid.map(({ icon: Icon, title, text }, i) => (
+              <Reveal
+                key={title}
+                delay={i * 70}
+                className="flex flex-col rounded-2xl border border-white bg-white p-6 shadow-lg shadow-brand-darker/10 ring-1 ring-black/4"
+              >
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-light">
+                  <Icon className="h-5 w-5 text-brand-dark" aria-hidden="true" />
+                </span>
+                <h3 className="mt-4 font-bold text-neutral-900">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-neutral-600">{text}</p>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={420} className="mx-auto mt-14 max-w-2xl text-center">
+            <Quote className="mx-auto h-8 w-8 text-brand/30" aria-hidden="true" />
+            <p className="mt-3 text-lg font-bold leading-snug text-neutral-900 sm:text-xl">
+              {t("whyGividQuote")}
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Misión y visión */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
@@ -156,6 +221,48 @@ export default async function AboutPage() {
             <Reveal delay={200} className="flex flex-col justify-center rounded-3xl bg-brand-dark p-8 text-white">
               <h3 className="text-lg font-bold">{t("visionTitle")}</h3>
               <p className="mt-2 text-sm leading-relaxed text-white/85">{t("visionText")}</p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Historia completa */}
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+          <Reveal>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark">
+              {t("historyTitle")}
+            </p>
+            <div className="mt-4 space-y-4 text-sm leading-relaxed text-neutral-600">
+              <p>{t("historyExtra1")}</p>
+              <p>{t("historyExtra2")}</p>
+              <p>{t("historyExtra3")}</p>
+              <p>{t("historyExtra4")}</p>
+            </div>
+
+            <p className="mt-6 text-sm leading-relaxed text-neutral-600">
+              {t("fromGuineaTitle")}. {t("fromGuineaText")}
+            </p>
+          </Reveal>
+
+          <div className="flex flex-col gap-6">
+            <Reveal delay={100} className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-lg shadow-black/10">
+              <Image
+                src="/images/hero-production.jpg"
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 35vw, 100vw"
+                className="object-cover"
+              />
+            </Reveal>
+            <Reveal delay={200} className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-lg shadow-black/10">
+              <Image
+                src="/images/servicios-hero.jpg"
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 35vw, 100vw"
+                className="object-cover"
+              />
             </Reveal>
           </div>
         </div>
@@ -223,22 +330,18 @@ export default async function AboutPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+          <div className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
             {values.map(({ icon: Icon, label, text }, i) => (
-              <Reveal key={label} delay={i * 80} className="h-full">
-                <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/4 p-7 shadow-xl shadow-black/20 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/7">
-                  <span className="absolute right-6 top-6 text-sm font-black text-white/10">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-brand to-brand-dark shadow-lg shadow-brand-darker/40 ring-1 ring-white/20 transition-transform duration-300 group-hover:scale-105">
-                    <span className="absolute -inset-2 -z-10 rounded-full bg-brand/30 blur-lg" aria-hidden="true" />
-                    <Icon className="h-6 w-6 text-white" aria-hidden="true" />
-                  </span>
-                  <h3 className="mt-5 font-bold text-white">{label}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-neutral-300">
-                    {text}
-                  </p>
-                </div>
+              <Reveal
+                key={label}
+                delay={i * 50}
+                className="border-t border-white/10 pt-5"
+              >
+                <Icon className="h-5 w-5 text-brand-light" strokeWidth={1.75} aria-hidden="true" />
+                <h3 className="mt-3 font-bold text-white">{label}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-neutral-400">
+                  {text}
+                </p>
               </Reveal>
             ))}
           </div>
