@@ -240,12 +240,9 @@ export default async function AboutPage() {
               <p>{t("historyExtra4")}</p>
             </div>
 
-            <div className="mt-6">
-              <h3 className="font-bold text-neutral-900">{t("fromGuineaTitle")}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-neutral-600">
-                {t("fromGuineaText")}
-              </p>
-            </div>
+            <p className="mt-6 text-sm leading-relaxed text-neutral-600">
+              {t("fromGuineaTitle")}. {t("fromGuineaText")}
+            </p>
           </Reveal>
 
           <div className="flex flex-col gap-6">
