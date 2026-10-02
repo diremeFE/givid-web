@@ -29,7 +29,7 @@ export default async function ServicesPage() {
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-12">
             <Reveal className="relative aspect-4/3 overflow-hidden rounded-3xl">
               <Image
-                src="/images/about-team.webp"
+                src="/images/servicios-intro.jpg"
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"
