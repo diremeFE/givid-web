@@ -45,7 +45,7 @@ export default async function FacilityServicesPage() {
         title={t("facilityServices.title")}
         subtitle={t("facilityServices.description")}
         icon={Sparkles}
-        image="/images/service-facility-v2.jpg"
+        image="/images/facility-floor-polish.jpg"
         size="lg"
       />
 
@@ -64,7 +64,7 @@ export default async function FacilityServicesPage() {
             <div className="relative aspect-4/5 w-full">
               <div className="absolute inset-0 right-10 top-0 overflow-hidden rounded-3xl shadow-xl shadow-black/15">
                 <Image
-                  src="/images/service-facility-v2.jpg"
+                  src="/images/facility-floor-polish.jpg"
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 28vw, 70vw"
