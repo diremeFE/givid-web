@@ -137,9 +137,9 @@ export default async function ServicesPage() {
           >
             <div className="mt-6 grid grid-cols-3 gap-4">
               {[
-                { src: "/images/ownbrand-harina.jpg", alt: "GIVID Harina" },
-                { src: "/images/ownbrand-pants.jpg", alt: "GIVID Pants" },
-                { src: "/images/ownbrand-toallitas.jpg", alt: "GIVID Toallitas" },
+                { src: "/images/ownbrand-quality-control.jpg", alt: "Control de calidad de productos GIVID" },
+                { src: "/images/ownbrand-warehouse-shelf.jpg", alt: "Almacén con productos de marca propia GIVID" },
+                { src: "/images/ownbrand-labeling.jpg", alt: "Etiquetado de cajas con el logotipo GIVID" },
               ].map((img, i) => (
                 <Reveal
                   key={img.alt}
