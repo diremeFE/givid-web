@@ -240,10 +240,6 @@ export default async function AboutPage() {
               <p>{t("historyExtra4")}</p>
             </div>
 
-            <p className="mt-6 border-l-4 border-brand pl-4 text-lg font-bold italic leading-snug text-neutral-900">
-              {t("historyQuote")}
-            </p>
-
             <div className="mt-6">
               <h3 className="font-bold text-neutral-900">{t("fromGuineaTitle")}</h3>
               <p className="mt-2 text-sm leading-relaxed text-neutral-600">
@@ -337,22 +333,18 @@ export default async function AboutPage() {
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
             {values.map(({ icon: Icon, label, text }, i) => (
-              <Reveal key={label} delay={i * 60} className="h-full">
-                <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/4 p-6 shadow-xl shadow-black/20 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/7">
-                  <span className="absolute right-5 top-5 text-xs font-black text-white/10">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-brand to-brand-dark shadow-lg shadow-brand-darker/40 ring-1 ring-white/20 transition-transform duration-300 group-hover:scale-105">
-                    <span className="absolute -inset-2 -z-10 rounded-full bg-brand/30 blur-lg" aria-hidden="true" />
-                    <Icon className="h-5 w-5 text-white" aria-hidden="true" />
-                  </span>
-                  <h3 className="mt-4 font-bold text-white">{label}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-neutral-300">
-                    {text}
-                  </p>
-                </div>
+              <Reveal
+                key={label}
+                delay={i * 50}
+                className="border-t border-white/10 pt-5"
+              >
+                <Icon className="h-5 w-5 text-brand-light" strokeWidth={1.75} aria-hidden="true" />
+                <h3 className="mt-3 font-bold text-white">{label}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-neutral-400">
+                  {text}
+                </p>
               </Reveal>
             ))}
           </div>
