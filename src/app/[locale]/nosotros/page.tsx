@@ -348,13 +348,6 @@ export default async function AboutPage() {
               </Reveal>
             ))}
           </div>
-
-          <Reveal delay={480} className="relative mx-auto mt-14 max-w-2xl text-center">
-            <Quote className="mx-auto h-8 w-8 text-white/20" aria-hidden="true" />
-            <p className="mt-3 text-lg font-bold italic leading-snug text-white sm:text-xl">
-              {t("valuesQuote")}
-            </p>
-          </Reveal>
         </div>
       </section>
     </div>
