@@ -18,7 +18,6 @@ import {
   Globe2,
   Zap,
   Quote,
-  MapPin,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
@@ -243,23 +242,23 @@ export default async function AboutPage() {
           </Reveal>
 
           <div className="flex flex-col gap-6">
-            <Reveal delay={100} className="relative overflow-hidden rounded-3xl bg-brand-darker p-8 text-white">
-              <Quote className="h-7 w-7 text-white/30" aria-hidden="true" />
-              <p className="mt-3 text-lg font-bold leading-snug sm:text-xl">
-                {t("historyQuote")}
-              </p>
+            <Reveal delay={100} className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-lg shadow-black/10">
+              <Image
+                src="/images/hero-production.jpg"
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 35vw, 100vw"
+                className="object-cover"
+              />
             </Reveal>
-            <Reveal
-              delay={200}
-              className="rounded-3xl border border-brand/15 border-b-4 border-b-brand-dark bg-brand-light p-8"
-            >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white">
-                <MapPin className="h-5 w-5 text-brand-dark" aria-hidden="true" />
-              </span>
-              <h3 className="mt-4 font-bold text-neutral-900">{t("fromGuineaTitle")}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-neutral-700">
-                {t("fromGuineaText")}
-              </p>
+            <Reveal delay={200} className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-lg shadow-black/10">
+              <Image
+                src="/images/servicios-hero.jpg"
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 35vw, 100vw"
+                className="object-cover"
+              />
             </Reveal>
           </div>
         </div>
