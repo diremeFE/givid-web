@@ -3,7 +3,6 @@ import { getTranslations } from "next-intl/server";
 import { Boxes, Sparkles, Users, Package, ArrowRight, Check } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
-import { CountUpStat } from "@/components/count-up-stat";
 import { PageHero } from "@/components/page-hero";
 
 export async function generateMetadata() {
@@ -47,17 +46,6 @@ export default async function ServicesPage() {
               <p className="mt-4 text-sm leading-relaxed text-neutral-600">{t("aboutText1")}</p>
               <p className="mt-4 text-sm leading-relaxed text-neutral-600">{t("aboutText2")}</p>
             </Reveal>
-          </div>
-
-          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {[
-              { value: t("stat1Value"), label: t("stat1Label") },
-              { value: t("stat2Value"), label: t("stat2Label") },
-              { value: t("stat3Value"), label: t("stat3Label") },
-              { value: t("stat4Value"), label: t("stat4Label") },
-            ].map((stat, i) => (
-              <CountUpStat key={stat.label} value={stat.value} label={stat.label} delay={i * 60} />
-            ))}
           </div>
         </div>
       </section>
