@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import type { BlogPost } from "@/generated/prisma/client";
 
 export function PostForm({
@@ -7,6 +10,8 @@ export function PostForm({
   action: (formData: FormData) => void;
   post?: BlogPost;
 }) {
+  const [preview, setPreview] = useState<string | null>(post?.coverImageUrl ?? null);
+  const [removeExisting, setRemoveExisting] = useState(false);
   return (
     <form action={action} className="max-w-3xl space-y-4">
       <div className="grid gap-4 sm:grid-cols-4">
@@ -30,11 +35,48 @@ export function PostForm({
         <TextAreaField label="Contenido (PT)" name="contentPt" defaultValue={post?.contentPt} rows={8} required />
       </div>
 
-      <Field
-        label="URL de imagen de portada (opcional)"
-        name="coverImageUrl"
-        defaultValue={post?.coverImageUrl ?? ""}
-      />
+      <div>
+        <label className="block text-sm font-medium text-neutral-700">
+          Imagen destacada (opcional)
+        </label>
+
+        {preview && !removeExisting && (
+          <div className="mt-2 flex items-center gap-4">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={preview}
+              alt=""
+              className="h-24 w-24 rounded-lg border border-neutral-300 object-cover"
+            />
+            {post?.coverImageUrl && preview === post.coverImageUrl && (
+              <label className="flex items-center gap-2 text-sm text-neutral-700">
+                <input
+                  type="checkbox"
+                  name="removeCoverImage"
+                  checked={removeExisting}
+                  onChange={(e) => setRemoveExisting(e.target.checked)}
+                  className="h-4 w-4 rounded border-neutral-300 text-brand focus:ring-brand"
+                />
+                Quitar imagen
+              </label>
+            )}
+          </div>
+        )}
+
+        <input
+          type="file"
+          name="coverImage"
+          accept="image/*"
+          onChange={(e) => {
+            const file = e.target.files?.[0];
+            if (file) {
+              setRemoveExisting(false);
+              setPreview(URL.createObjectURL(file));
+            }
+          }}
+          className="mt-2 block w-full text-sm text-neutral-700 file:mr-4 file:rounded file:border-0 file:bg-brand file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-brand-dark"
+        />
+      </div>
 
       <Field
         label="Slug (opcional, se genera automáticamente)"

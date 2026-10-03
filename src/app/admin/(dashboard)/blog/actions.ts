@@ -2,7 +2,33 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { put, del } from "@vercel/blob";
 import { prisma } from "@/lib/prisma";
+
+async function resolveCoverImage(formData: FormData, existingUrl: string | null) {
+  const file = formData.get("coverImage");
+  const removeExisting = formData.get("removeCoverImage") === "on";
+
+  if (file instanceof File && file.size > 0) {
+    const blob = await put(`blog/${file.name}`, file, {
+      access: "public",
+      addRandomSuffix: true,
+    });
+    if (existingUrl) {
+      await del(existingUrl).catch(() => {});
+    }
+    return blob.url;
+  }
+
+  if (removeExisting) {
+    if (existingUrl) {
+      await del(existingUrl).catch(() => {});
+    }
+    return null;
+  }
+
+  return existingUrl;
+}
 
 function slugify(value: string) {
   return value
@@ -27,7 +53,6 @@ function readPostForm(formData: FormData) {
   const contentEn = String(formData.get("contentEn") || "").trim();
   const contentFr = String(formData.get("contentFr") || "").trim();
   const contentPt = String(formData.get("contentPt") || "").trim();
-  const coverImageUrl = String(formData.get("coverImageUrl") || "").trim();
   const published = formData.get("published") === "on";
 
   return {
@@ -44,7 +69,6 @@ function readPostForm(formData: FormData) {
     contentEn,
     contentFr,
     contentPt,
-    coverImageUrl: coverImageUrl || null,
     published,
     publishedAt: published ? new Date() : null,
   };
@@ -52,7 +76,8 @@ function readPostForm(formData: FormData) {
 
 export async function createPost(formData: FormData) {
   const data = readPostForm(formData);
-  await prisma.blogPost.create({ data });
+  const coverImageUrl = await resolveCoverImage(formData, null);
+  await prisma.blogPost.create({ data: { ...data, coverImageUrl } });
   revalidatePath("/admin/blog");
   revalidatePath("/[locale]/blog", "page");
   redirect("/admin/blog");
@@ -61,11 +86,13 @@ export async function createPost(formData: FormData) {
 export async function updatePost(id: string, formData: FormData) {
   const data = readPostForm(formData);
   const existing = await prisma.blogPost.findUnique({ where: { id } });
+  const coverImageUrl = await resolveCoverImage(formData, existing?.coverImageUrl ?? null);
 
   await prisma.blogPost.update({
     where: { id },
     data: {
       ...data,
+      coverImageUrl,
       // keep original publish date if it was already published
       publishedAt:
         existing?.published && data.published
@@ -79,6 +106,10 @@ export async function updatePost(id: string, formData: FormData) {
 }
 
 export async function deletePost(id: string) {
+  const existing = await prisma.blogPost.findUnique({ where: { id } });
+  if (existing?.coverImageUrl) {
+    await del(existing.coverImageUrl).catch(() => {});
+  }
   await prisma.blogPost.delete({ where: { id } });
   revalidatePath("/admin/blog");
   revalidatePath("/[locale]/blog", "page");
