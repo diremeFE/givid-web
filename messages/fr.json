@@ -318,7 +318,14 @@
       "categoryChildcare": "Puériculture",
       "categoryWater": "Eau",
       "categoryHome": "Entretien du foyer",
-      "quote": "Nous ne distribuons pas pour remplir un entrepôt : nous distribuons pour que l'essentiel ne vous manque jamais."
+      "quote": "Nous ne distribuons pas pour remplir un entrepôt : nous distribuons pour que l'essentiel ne vous manque jamais.",
+      "faqTitle": "Questions fréquentes",
+      "faqQ1": "Livrez-vous, ou vendez-vous uniquement en magasin ?",
+      "faqA1": "Nous gérons les commandes directement : vous pouvez récupérer votre commande dans notre magasin de Timbabe, à Malabo, ou nous demander la disponibilité d'une livraison selon le volume et la zone.",
+      "faqQ2": "Y a-t-il une commande minimale pour l'achat en gros ?",
+      "faqA2": "Nous n'avons pas de minimum fixe publié : nous travaillons aussi bien avec des commerces qui achètent à la palette qu'avec des particuliers qui achètent au sac ou au carton. Écrivez-nous et nous vous indiquerons la meilleure option pour votre volume.",
+      "faqQ3": "Les prix du catalogue sont-ils définitifs ?",
+      "faqA3": "Les prix affichés dans le catalogue sont indicatifs. Pour les commandes importantes ou récurrentes, contactez-nous et nous vous préparerons une proposition aux meilleures conditions."
     },
     "facilityServices": {
       "overviewExtra": "Nous ne nous limitons pas à fournir un service de nettoyage. Nous cherchons à devenir un partenaire de confiance pour l'entretien et le soin des installations de nos clients, leur permettant de se concentrer sur leur activité principale pendant que nous nous occupons de leurs espaces.",
@@ -328,7 +335,14 @@
       "process2Text": "Nous préparons une proposition sur mesure avec le personnel, les produits et le calendrier adaptés.",
       "process3Title": "Entretien continu",
       "process3Text": "Notre équipe s'occupe de tout de façon récurrente, avec suivi et ajustements selon vos besoins.",
-      "quote": "Nous prenons soin de vos espaces. Vous vous concentrez sur votre croissance."
+      "quote": "Nous prenons soin de vos espaces. Vous vous concentrez sur votre croissance.",
+      "faqTitle": "Questions fréquentes",
+      "faqQ1": "À quelle fréquence le nettoyage est-il effectué ?",
+      "faqA1": "Cela dépend de chaque installation : cela peut être quotidien, plusieurs fois par semaine, ou ponctuel. Nous le définissons ensemble lors du diagnostic initial, selon le type d'espace et son usage.",
+      "faqQ2": "Travaillez-vous en dehors des horaires de bureau ?",
+      "faqA2": "Oui, dans la mesure du possible, nous programmons le nettoyage en dehors de vos horaires de travail pour ne pas perturber votre activité quotidienne.",
+      "faqQ3": "L'entretien des jardins et espaces verts est-il inclus ?",
+      "faqA3": "L'entretien des espaces verts fait partie de nos services. Vous pouvez le souscrire avec le nettoyage de bâtiments ou de façon indépendante."
     },
     "events": {
       "overviewExtra": "Nous adaptons nos services aux caractéristiques et besoins de chaque événement, des congrès, conférences, salons et lancements de produits aux inaugurations, réceptions, dîners, mariages et célébrations privées. Nous proposons également des solutions complémentaires d'équipement, dont la location de tables et chaises élégantes, pour centraliser différents besoins auprès d'un seul prestataire.",
@@ -338,7 +352,14 @@
       "process2Text": "Nous vous envoyons un devis, le personnel assigné et le plan de mobilier, adaptés à votre événement.",
       "process3Title": "Le grand jour",
       "process3Text": "Notre équipe arrive à l'avance, installe le mobilier et accueille vos invités avec professionnalisme.",
-      "quote": "Nous soignons chaque détail pour que votre événement soit une expérience mémorable."
+      "quote": "Nous soignons chaque détail pour que votre événement soit une expérience mémorable.",
+      "faqTitle": "Questions fréquentes",
+      "faqQ1": "Avec combien d'avance dois-je réserver des hôtesses ou du mobilier ?",
+      "faqA1": "Le plus tôt sera le mieux, surtout aux dates de forte demande. Néanmoins, indiquez-nous votre date et nous ferons de notre mieux pour nous adapter à votre événement.",
+      "faqQ2": "Vous occupez-vous du montage et du démontage du mobilier ?",
+      "faqA2": "Oui, notre équipe se charge du montage avant l'événement et de la récupération du mobilier à la fin.",
+      "faqQ3": "Pour combien de personnes puis-je louer des tables et des chaises ?",
+      "faqA3": "Nous nous adaptons aussi bien aux petits événements qu'aux grandes affluences. Indiquez-nous le nombre d'invités et nous vous proposerons la quantité de mobilier nécessaire."
     }
   }
 }

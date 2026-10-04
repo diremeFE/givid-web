@@ -318,7 +318,14 @@
       "categoryChildcare": "Childcare",
       "categoryWater": "Water",
       "categoryHome": "Household cleaning",
-      "quote": "We don't distribute to fill a warehouse: we distribute so you never run out of the essentials."
+      "quote": "We don't distribute to fill a warehouse: we distribute so you never run out of the essentials.",
+      "faqTitle": "Frequently asked questions",
+      "faqQ1": "Do you deliver, or only sell in-store?",
+      "faqA1": "We handle orders directly: you can collect from our store in Timbabe, Malabo, or ask us about delivery depending on volume and area.",
+      "faqQ2": "Is there a minimum order for wholesale purchases?",
+      "faqA2": "We don't have a fixed published minimum: we work with businesses buying by the pallet and individuals buying by the sack or box. Message us and we'll tell you the best option for your volume.",
+      "faqQ3": "Are the catalog prices final?",
+      "faqA3": "The prices shown in the catalog are indicative. For large or recurring orders, contact us and we'll prepare a proposal with the best terms."
     },
     "facilityServices": {
       "overviewExtra": "We don't just provide a cleaning service. We aim to become a trusted partner for the upkeep and care of our clients' facilities, letting them focus on their core business while we take care of their spaces.",
@@ -328,7 +335,14 @@
       "process2Text": "We prepare a tailored proposal with the right staff, products and schedule.",
       "process3Title": "Ongoing maintenance",
       "process3Text": "Our team takes care of everything on a recurring basis, with follow-up and adjustments whenever you need them.",
-      "quote": "We take care of your spaces. You focus on growing."
+      "quote": "We take care of your spaces. You focus on growing.",
+      "faqTitle": "Frequently asked questions",
+      "faqQ1": "How often is the cleaning done?",
+      "faqA1": "It depends on each facility: it can be daily, several times a week, or a one-off service. We define it together during the initial assessment, based on the type of space and its use.",
+      "faqQ2": "Do you work outside business hours?",
+      "faqA2": "Yes, whenever possible we schedule cleaning outside your working hours so it doesn't interfere with your day-to-day business.",
+      "faqQ3": "Is garden and green space maintenance included?",
+      "faqA3": "Caring for green spaces is one of our service lines. You can hire it together with building cleaning or on its own."
     },
     "events": {
       "overviewExtra": "We adapt our services to the specifics of each event, from congresses, conferences, trade fairs and product launches to openings, receptions, dinners, weddings and private celebrations. We also offer complementary equipment solutions, including rental of elegant tables and chairs, so clients can cover several needs with a single provider.",
@@ -338,7 +352,14 @@
       "process2Text": "We send you a quote, assigned staff and furniture plan, tailored to your event.",
       "process3Title": "The big day",
       "process3Text": "Our team arrives early, sets up the furniture and looks after your guests with professionalism.",
-      "quote": "We take care of every detail so your event becomes a memorable experience."
+      "quote": "We take care of every detail so your event becomes a memorable experience.",
+      "faqTitle": "Frequently asked questions",
+      "faqQ1": "How far in advance should I book hostesses or furniture?",
+      "faqA1": "The sooner the better, especially on high-demand dates. Even so, send us your date and we'll do our best to accommodate your event.",
+      "faqQ2": "Do you handle setup and teardown of the furniture?",
+      "faqA2": "Yes, our team handles setup before the event and collection of the furniture afterwards.",
+      "faqQ3": "How many people can I rent tables and chairs for?",
+      "faqA3": "We adapt to both small events and large gatherings. Tell us the number of guests and we'll propose the amount of furniture you need."
     }
   }
 }

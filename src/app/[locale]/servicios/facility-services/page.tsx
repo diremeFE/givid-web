@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
 import { BreadcrumbSchema } from "@/components/breadcrumb-schema";
+import { FaqSection, faqSchema } from "@/components/faq-section";
 import { pageAlternates } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
@@ -48,6 +49,12 @@ export default async function FacilityServicesPage() {
     { icon: Heart, label: tAbout("value3") },
   ];
 
+  const faqItems = [
+    { question: tDetail("facilityServices.faqQ1"), answer: tDetail("facilityServices.faqA1") },
+    { question: tDetail("facilityServices.faqQ2"), answer: tDetail("facilityServices.faqA2") },
+    { question: tDetail("facilityServices.faqQ3"), answer: tDetail("facilityServices.faqA3") },
+  ];
+
   return (
     <div>
       <BreadcrumbSchema
@@ -57,6 +64,11 @@ export default async function FacilityServicesPage() {
           { name: tNav("services"), path: "/servicios" },
           { name: t("facilityServices.title"), path: "/servicios/facility-services" },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqItems)) }}
       />
       <PageHero
         eyebrow={t("facilityServices.tag")}
@@ -214,6 +226,8 @@ export default async function FacilityServicesPage() {
           </div>
         </div>
       </section>
+
+      <FaqSection title={tDetail("facilityServices.faqTitle")} items={faqItems} />
 
       {/* CTA */}
       <section className="px-4 py-20 sm:px-6">

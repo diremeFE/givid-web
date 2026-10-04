@@ -318,7 +318,14 @@
       "categoryChildcare": "Cuidado infantil",
       "categoryWater": "Agua",
       "categoryHome": "Limpieza del hogar",
-      "quote": "No distribuimos para quedarnos en el almacén: distribuimos para que nunca te falte lo esencial."
+      "quote": "No distribuimos para quedarnos en el almacén: distribuimos para que nunca te falte lo esencial.",
+      "faqTitle": "Preguntas frecuentes",
+      "faqQ1": "¿Hacen entregas a domicilio o solo venta en tienda?",
+      "faqA1": "Gestionamos los pedidos de forma directa: puedes recoger en nuestra tienda de Timbabe, Malabo, o consultarnos la disponibilidad de entrega según el volumen y la zona.",
+      "faqQ2": "¿Cuál es el pedido mínimo para comprar al por mayor?",
+      "faqA2": "No tenemos un mínimo fijo publicado: trabajamos tanto con comercios que compran por palés como con particulares que compran por sacos o cajas sueltas. Escríbenos y te indicamos la mejor opción para tu volumen.",
+      "faqQ3": "¿Los precios del catálogo son definitivos?",
+      "faqA3": "Los precios que ves en el catálogo son orientativos. Para pedidos grandes o recurrentes, contáctanos y te preparamos una propuesta con las mejores condiciones."
     },
     "facilityServices": {
       "overviewExtra": "No nos limitamos a prestar un servicio de limpieza. Buscamos convertirnos en un socio de confianza para el mantenimiento y cuidado de las instalaciones de nuestros clientes, permitiéndoles concentrarse en su actividad principal mientras nosotros nos ocupamos de sus espacios.",
@@ -328,7 +335,14 @@
       "process2Text": "Preparamos una propuesta a medida con el personal, los productos y el calendario adecuados.",
       "process3Title": "Mantenimiento continuo",
       "process3Text": "Nuestro equipo se encarga de todo de forma recurrente, con seguimiento y ajustes cuando lo necesites.",
-      "quote": "Cuidamos tus espacios. Tú te ocupas de crecer."
+      "quote": "Cuidamos tus espacios. Tú te ocupas de crecer.",
+      "faqTitle": "Preguntas frecuentes",
+      "faqQ1": "¿Con qué frecuencia se realiza la limpieza?",
+      "faqA1": "Depende de cada instalación: puede ser diaria, varias veces por semana o puntual. Lo definimos juntos durante el diagnóstico inicial, según el tipo de espacio y su uso.",
+      "faqQ2": "¿Trabajan fuera del horario laboral?",
+      "faqA2": "Sí, siempre que sea posible ajustamos la limpieza a horarios fuera de tu actividad para no interferir en el día a día de tu empresa.",
+      "faqQ3": "¿El mantenimiento de jardines y espacios verdes está incluido?",
+      "faqA3": "El cuidado de espacios verdes es una de nuestras líneas de servicio. Puedes contratarlo junto con la limpieza de edificios o de forma independiente."
     },
     "events": {
       "overviewExtra": "Adaptamos nuestros servicios a las características y necesidades de cada evento, desde congresos, conferencias, ferias y presentaciones de productos hasta inauguraciones, recepciones, cenas, bodas y celebraciones privadas. Además, ofrecemos soluciones complementarias de equipamiento, incluyendo el alquiler de mesas y sillas elegantes, para centralizar diferentes necesidades en un único proveedor.",
@@ -338,7 +352,14 @@
       "process2Text": "Te enviamos presupuesto, personal asignado y plan de mobiliario, ajustado a tu evento.",
       "process3Title": "El gran día",
       "process3Text": "Nuestro equipo llega con antelación, monta el mobiliario y atiende a tus invitados con profesionalidad.",
-      "quote": "Cuidamos cada detalle para que tu evento sea una experiencia memorable."
+      "quote": "Cuidamos cada detalle para que tu evento sea una experiencia memorable.",
+      "faqTitle": "Preguntas frecuentes",
+      "faqQ1": "¿Con cuánta antelación debo reservar azafatas o mobiliario?",
+      "faqA1": "Cuanto antes mejor, especialmente en fechas de alta demanda. Aun así, escríbenos tu fecha y haremos lo posible por ajustarnos a tu evento.",
+      "faqQ2": "¿Incluyen el montaje y desmontaje del mobiliario?",
+      "faqA2": "Sí, nuestro equipo se encarga del montaje antes del evento y de la recogida del mobiliario al finalizar.",
+      "faqQ3": "¿Para cuántas personas puedo alquilar mesas y sillas?",
+      "faqA3": "Nos adaptamos tanto a eventos pequeños como a grandes aforos. Cuéntanos el número de invitados y te proponemos la cantidad de mobiliario necesaria."
     }
   }
 }

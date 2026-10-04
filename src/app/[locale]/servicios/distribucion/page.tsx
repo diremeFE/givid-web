@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
 import { BreadcrumbSchema } from "@/components/breadcrumb-schema";
+import { FaqSection, faqSchema } from "@/components/faq-section";
 import { pageAlternates } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
@@ -65,6 +66,12 @@ export default async function DistribucionPage() {
     { title: tHome("process3Title"), text: tHome("process3Text") },
   ];
 
+  const faqItems = [
+    { question: tDetail("distribution.faqQ1"), answer: tDetail("distribution.faqA1") },
+    { question: tDetail("distribution.faqQ2"), answer: tDetail("distribution.faqA2") },
+    { question: tDetail("distribution.faqQ3"), answer: tDetail("distribution.faqA3") },
+  ];
+
   return (
     <div>
       <BreadcrumbSchema
@@ -74,6 +81,11 @@ export default async function DistribucionPage() {
           { name: tNav("services"), path: "/servicios" },
           { name: t("distribution.title"), path: "/servicios/distribucion" },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqItems)) }}
       />
       <PageHero
         eyebrow={t("distribution.tag")}
@@ -202,6 +214,8 @@ export default async function DistribucionPage() {
           </div>
         </div>
       </section>
+
+      <FaqSection title={tDetail("distribution.faqTitle")} items={faqItems} />
 
       {/* CTA */}
       <section className="px-4 pb-20 sm:px-6">
