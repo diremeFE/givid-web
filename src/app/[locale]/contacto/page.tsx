@@ -4,14 +4,14 @@ import { ContactForm } from "@/components/contact-form";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
 import { siteConfig, whatsappLink } from "@/lib/site-config";
-import { pageAlternates } from "@/lib/seo";
+import { pageAlternates, seoTitle } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata() {
   const t = await getTranslations("contact");
   const locale = (await getLocale()) as Locale;
   return {
-    title: t("pageTitle"),
+    title: seoTitle("contact", locale),
     description: t("pageSubtitle"),
     alternates: pageAlternates(locale, "/contacto"),
   };

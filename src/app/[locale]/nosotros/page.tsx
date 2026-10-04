@@ -22,14 +22,14 @@ import {
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
-import { pageAlternates } from "@/lib/seo";
+import { pageAlternates, seoTitle } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata() {
   const t = await getTranslations("about");
   const locale = (await getLocale()) as Locale;
   return {
-    title: t("pageTitle"),
+    title: seoTitle("about", locale),
     description: t("intro"),
     alternates: pageAlternates(locale, "/nosotros"),
   };

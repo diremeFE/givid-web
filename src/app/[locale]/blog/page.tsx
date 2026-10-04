@@ -6,7 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
 import { getPublishedPosts } from "@/lib/data";
 import { localizedField } from "@/lib/localized";
-import { pageAlternates } from "@/lib/seo";
+import { pageAlternates, seoTitle } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 import type { BlogPost } from "@/generated/prisma/client";
 
@@ -14,7 +14,7 @@ export async function generateMetadata() {
   const t = await getTranslations("blog");
   const locale = (await getLocale()) as Locale;
   return {
-    title: t("pageTitle"),
+    title: seoTitle("blog", locale),
     description: t("pageSubtitle"),
     alternates: pageAlternates(locale, "/blog"),
   };

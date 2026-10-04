@@ -4,14 +4,14 @@ import { Boxes, Sparkles, Users, Package, ArrowRight, Check } from "lucide-react
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
-import { pageAlternates } from "@/lib/seo";
+import { pageAlternates, seoTitle } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata() {
   const t = await getTranslations("services");
   const locale = (await getLocale()) as Locale;
   return {
-    title: t("pageTitle"),
+    title: seoTitle("services", locale),
     description: t("pageSubtitle"),
     alternates: pageAlternates(locale, "/servicios"),
   };

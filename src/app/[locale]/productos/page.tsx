@@ -6,14 +6,14 @@ import { PageHero } from "@/components/page-hero";
 import { ProductCard } from "@/components/product-card";
 import { getCategories, getProducts } from "@/lib/data";
 import { localizedField } from "@/lib/localized";
-import { pageAlternates } from "@/lib/seo";
+import { pageAlternates, seoTitle } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata() {
   const t = await getTranslations("products");
   const locale = (await getLocale()) as Locale;
   return {
-    title: t("pageTitle"),
+    title: seoTitle("products", locale),
     description: t("pageSubtitle"),
     alternates: pageAlternates(locale, "/productos"),
   };

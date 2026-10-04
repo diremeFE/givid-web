@@ -9,7 +9,7 @@ import { BreadcrumbSchema } from "@/components/breadcrumb-schema";
 import { getProductBySlug, getProducts } from "@/lib/data";
 import { localizedField } from "@/lib/localized";
 import { siteConfig, whatsappLink } from "@/lib/site-config";
-import { pageAlternates } from "@/lib/seo";
+import { pageAlternates, productSeoTitle } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata({
@@ -20,7 +20,8 @@ export async function generateMetadata({
   const locale = (await getLocale()) as Locale;
   if (!product) return {};
 
-  const title = localizedField(product, "name", locale);
+  const name = localizedField(product, "name", locale);
+  const title = productSeoTitle(name, locale);
   const description = localizedField(product, "description", locale) ?? undefined;
 
   return {

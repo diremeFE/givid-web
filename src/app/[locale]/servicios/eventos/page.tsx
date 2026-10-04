@@ -6,14 +6,14 @@ import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
 import { BreadcrumbSchema } from "@/components/breadcrumb-schema";
 import { FaqSection, faqSchema } from "@/components/faq-section";
-import { pageAlternates } from "@/lib/seo";
+import { pageAlternates, seoTitle } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata() {
   const t = await getTranslations("services");
   const locale = (await getLocale()) as Locale;
   return {
-    title: t("events.title"),
+    title: seoTitle("events", locale),
     description: t("events.description"),
     alternates: pageAlternates(locale, "/servicios/eventos"),
   };
