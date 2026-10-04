@@ -1,7 +1,9 @@
 import { getTranslations, getLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Newspaper } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { Reveal } from "@/components/reveal";
+import { PageHero } from "@/components/page-hero";
 import { getPostBySlug } from "@/lib/data";
 import { localizedField } from "@/lib/localized";
 import { renderContent } from "@/lib/render-content";
@@ -36,31 +38,33 @@ export default async function BlogPostPage({
     notFound();
   }
 
+  const formattedDate = post.publishedAt
+    ? new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", year: "numeric" }).format(post.publishedAt)
+    : undefined;
+
   return (
-    <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-      <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-dark hover:underline">
-        <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-        {t("backToBlog")}
-      </Link>
-      <h1 className="mt-4 text-3xl font-black text-neutral-900 sm:text-4xl">
-        {localizedField(post, "title", locale)}
-      </h1>
-      {post.publishedAt && (
-        <p className="mt-2 text-sm text-neutral-500">
-          {new Intl.DateTimeFormat(locale).format(post.publishedAt)}
-        </p>
-      )}
-      {post.coverImageUrl && (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={post.coverImageUrl}
-          alt={localizedField(post, "title", locale)}
-          className="mt-6 w-full rounded-lg object-cover"
-        />
-      )}
-      <div className="prose prose-neutral mt-8 max-w-none">
-        {renderContent(localizedField(post, "content", locale))}
-      </div>
-    </article>
+    <div>
+      <PageHero
+        eyebrow={formattedDate}
+        title={localizedField(post, "title", locale)}
+        subtitle={localizedField(post, "excerpt", locale) || undefined}
+        icon={Newspaper}
+        image={post.coverImageUrl ?? undefined}
+        size="lg"
+      />
+
+      <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+        <Reveal>
+          <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-dark hover:underline">
+            <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+            {t("backToBlog")}
+          </Link>
+
+          <div className="prose prose-neutral mt-6 max-w-none">
+            {renderContent(localizedField(post, "content", locale))}
+          </div>
+        </Reveal>
+      </article>
+    </div>
   );
 }
