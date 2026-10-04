@@ -7,7 +7,7 @@ import { PageHero } from "@/components/page-hero";
 import { BreadcrumbSchema } from "@/components/breadcrumb-schema";
 import { getPostBySlug } from "@/lib/data";
 import { localizedField } from "@/lib/localized";
-import { renderContent } from "@/lib/render-content";
+import { renderContent, extractFaq } from "@/lib/render-content";
 import { pageAlternates } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 import type { Locale } from "@/i18n/routing";
@@ -53,7 +53,20 @@ export default async function BlogPostPage({
     : undefined;
 
   const postTitle = localizedField(post, "title", locale);
+  const postContent = localizedField(post, "content", locale);
   const postUrl = `${siteConfig.siteUrl}/${locale}/blog/${slug}`;
+  const faq = extractFaq(postContent);
+  const faqSchema = faq.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.map(({ question, answer }) => ({
+          "@type": "Question",
+          name: question,
+          acceptedAnswer: { "@type": "Answer", text: answer },
+        })),
+      }
+    : null;
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -86,6 +99,13 @@ export default async function BlogPostPage({
           { name: postTitle, path: `/blog/${slug}` },
         ]}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <PageHero
         eyebrow={formattedDate}
         title={localizedField(post, "title", locale)}
@@ -103,7 +123,7 @@ export default async function BlogPostPage({
           </Link>
 
           <div className="prose prose-neutral mt-6 max-w-none">
-            {renderContent(localizedField(post, "content", locale))}
+            {renderContent(postContent)}
           </div>
         </Reveal>
       </article>
