@@ -1,13 +1,20 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { MessageCircle, Mail, MapPin, Clock, Phone, type LucideIcon } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
 import { siteConfig, whatsappLink } from "@/lib/site-config";
+import { pageAlternates } from "@/lib/seo";
+import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata() {
   const t = await getTranslations("contact");
-  return { title: t("pageTitle"), description: t("pageSubtitle") };
+  const locale = (await getLocale()) as Locale;
+  return {
+    title: t("pageTitle"),
+    description: t("pageSubtitle"),
+    alternates: pageAlternates(locale, "/contacto"),
+  };
 }
 
 export default async function ContactPage() {

@@ -1,19 +1,29 @@
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Boxes, Wheat, Baby, Droplets, SprayCan, ArrowRight, ArrowLeft, Quote } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
+import { BreadcrumbSchema } from "@/components/breadcrumb-schema";
+import { pageAlternates } from "@/lib/seo";
+import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata() {
   const t = await getTranslations("services");
-  return { title: t("distribution.title"), description: t("distribution.description") };
+  const locale = (await getLocale()) as Locale;
+  return {
+    title: t("distribution.title"),
+    description: t("distribution.description"),
+    alternates: pageAlternates(locale, "/servicios/distribucion"),
+  };
 }
 
 export default async function DistribucionPage() {
   const t = await getTranslations("services");
   const tHome = await getTranslations("home");
+  const tNav = await getTranslations("nav");
   const tDetail = await getTranslations("servicesDetail");
+  const locale = (await getLocale()) as Locale;
 
   const stats = [
     { value: tDetail("distribution.statProducts"), label: tDetail("distribution.statProductsLabel") },
@@ -57,6 +67,14 @@ export default async function DistribucionPage() {
 
   return (
     <div>
+      <BreadcrumbSchema
+        locale={locale}
+        items={[
+          { name: tNav("home"), path: "" },
+          { name: tNav("services"), path: "/servicios" },
+          { name: t("distribution.title"), path: "/servicios/distribucion" },
+        ]}
+      />
       <PageHero
         eyebrow={t("distribution.tag")}
         title={t("distribution.title")}
@@ -189,7 +207,7 @@ export default async function DistribucionPage() {
       <section className="px-4 pb-20 sm:px-6">
         <Reveal className="relative mx-auto flex max-w-6xl flex-col items-center gap-6 overflow-hidden rounded-3xl bg-brand-darker px-6 py-16 text-center shadow-xl shadow-brand-darker/20 sm:py-20">
           <div className="relative aspect-4/3 w-full max-w-xs overflow-hidden rounded-2xl shadow-lg shadow-black/30 sm:hidden">
-            <Image src="/images/givid-silkscreen.jpg" alt="" fill sizes="320px" className="object-cover" />
+            <Image src="/images/givid-silkscreen.jpg" alt="Serigrafía del logotipo GIVID" fill sizes="320px" className="object-cover" />
           </div>
           <h2 className="relative max-w-2xl text-2xl font-black leading-tight text-white sm:text-4xl">
             {t("ctaText")}

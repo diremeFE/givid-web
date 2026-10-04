@@ -228,7 +228,7 @@ export default async function HomePage() {
             <Reveal delay={0} className="lg:col-span-7">
               <ServiceCard
                 icon={Boxes}
-                image="/images/service-distribution-v2.jpg"
+                image="/images/givid-silkscreen.jpg"
                 tag={tServices("distribution.tag")}
                 title={tServices("distribution.title")}
                 description={tServices("distribution.description")}
@@ -242,7 +242,7 @@ export default async function HomePage() {
               <Reveal delay={100}>
                 <ServiceCard
                   icon={Sparkles}
-                  image="/images/service-facility-v2.jpg"
+                  image="/images/facility-floor-polish.jpg"
                   title={tServices("facilityServices.title")}
                   description={tServices("facilityServices.description")}
                   readMore={tServices("readMore")}
@@ -503,12 +503,48 @@ function ServiceCard({
   size?: "md" | "lg";
   horizontal?: boolean;
 }) {
-  const cardClass = `group relative flex h-full overflow-hidden rounded-2xl border bg-white shadow-xl transition-all hover:-translate-y-1.5 hover:shadow-2xl ${
+  if (highlighted && !horizontal) {
+    return (
+      <Link
+        href={href}
+        className="group relative flex h-full min-h-96 flex-col justify-end overflow-hidden rounded-3xl shadow-xl shadow-black/20 transition-all hover:-translate-y-1.5 hover:shadow-2xl"
+      >
+        <Image
+          src={image}
+          alt={title}
+          fill
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-black/5" />
+
+        <span className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 ring-1 ring-white/30 backdrop-blur-sm">
+          <Icon className="h-5 w-5 text-white" aria-hidden="true" />
+        </span>
+
+        <div className="relative p-7 sm:p-8">
+          {tag && (
+            <span className="inline-flex items-center rounded-full bg-accent px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-md">
+              {tag}
+            </span>
+          )}
+          <h3 className="mt-4 text-2xl font-black leading-tight text-white">
+            {title}
+          </h3>
+          <p className="mt-2 max-w-md text-sm text-white/85 line-clamp-2">
+            {description}
+          </p>
+          <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-white">
+            {readMore}
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+          </span>
+        </div>
+      </Link>
+    );
+  }
+
+  const cardClass = `group relative flex h-full overflow-hidden rounded-2xl border border-border bg-white shadow-xl shadow-brand/25 transition-all hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-brand/35 ${
     horizontal ? "flex-row items-stretch" : "flex-col"
-  } ${
-    highlighted
-      ? "border-accent/40 shadow-accent/25 ring-2 ring-accent/60 hover:shadow-accent/35"
-      : "border-border shadow-brand/25 hover:shadow-brand/35"
   }`;
 
   const imageWrapClass = horizontal
@@ -525,28 +561,20 @@ function ServiceCard({
       <div className={imageWrapClass}>
         <Image
           src={image}
-          alt=""
+          alt={title}
           fill
           sizes="(min-width: 768px) 33vw, 100vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
         {!horizontal && (
-          <span
-            className={`absolute -bottom-5 right-5 flex h-12 w-12 items-center justify-center rounded-full shadow-lg shadow-black/20 ring-4 ring-white transition-transform duration-300 group-hover:scale-110 ${
-              highlighted ? "bg-accent" : "bg-brand-dark"
-            }`}
-          >
+          <span className="absolute -bottom-5 right-5 flex h-12 w-12 items-center justify-center rounded-full bg-brand-dark shadow-lg shadow-black/20 ring-4 ring-white transition-transform duration-300 group-hover:scale-110">
             <Icon className="h-5 w-5 text-white" aria-hidden="true" />
           </span>
         )}
       </div>
       <div className={`flex flex-1 flex-col ${horizontal ? "justify-center p-5" : "p-6 pt-7"}`}>
         {horizontal && (
-          <span
-            className={`mb-2 flex h-9 w-9 items-center justify-center rounded-lg ${
-              highlighted ? "bg-accent" : "bg-brand-dark"
-            }`}
-          >
+          <span className="mb-2 flex h-9 w-9 items-center justify-center rounded-lg bg-brand-dark">
             <Icon className="h-4 w-4 text-white" aria-hidden="true" />
           </span>
         )}
@@ -556,11 +584,7 @@ function ServiceCard({
         <p className={`mt-2 text-sm text-neutral-600 ${horizontal ? "line-clamp-2" : "line-clamp-3"}`}>
           {description}
         </p>
-        <span
-          className={`mt-4 inline-flex items-center gap-1.5 text-sm font-semibold ${
-            highlighted ? "text-accent-dark" : "text-brand-dark"
-          }`}
-        >
+        <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-dark">
           {readMore}
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
         </span>

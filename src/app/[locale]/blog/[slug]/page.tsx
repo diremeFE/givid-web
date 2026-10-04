@@ -4,9 +4,12 @@ import { ArrowLeft, Newspaper } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
+import { BreadcrumbSchema } from "@/components/breadcrumb-schema";
 import { getPostBySlug } from "@/lib/data";
 import { localizedField } from "@/lib/localized";
 import { renderContent } from "@/lib/render-content";
+import { pageAlternates } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
 import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata({
@@ -22,7 +25,13 @@ export async function generateMetadata({
   return {
     title,
     description,
-    openGraph: { title, description, type: "article" },
+    alternates: pageAlternates(locale, `/blog/${slug}`),
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      images: post.coverImageUrl ? [{ url: post.coverImageUrl }] : undefined,
+    },
   };
 }
 
@@ -31,6 +40,7 @@ export default async function BlogPostPage({
 }: PageProps<"/[locale]/blog/[slug]">) {
   const { slug } = await params;
   const t = await getTranslations("blog");
+  const tNav = await getTranslations("nav");
   const locale = (await getLocale()) as Locale;
   const post = await getPostBySlug(slug);
 
@@ -42,8 +52,40 @@ export default async function BlogPostPage({
     ? new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", year: "numeric" }).format(post.publishedAt)
     : undefined;
 
+  const postTitle = localizedField(post, "title", locale);
+  const postUrl = `${siteConfig.siteUrl}/${locale}/blog/${slug}`;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
+    headline: postTitle,
+    description: localizedField(post, "excerpt", locale) ?? undefined,
+    image: post.coverImageUrl ?? undefined,
+    datePublished: post.publishedAt?.toISOString(),
+    dateModified: post.updatedAt.toISOString(),
+    author: { "@type": "Organization", name: siteConfig.brandName, url: siteConfig.siteUrl },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.brandName,
+      logo: { "@type": "ImageObject", url: `${siteConfig.siteUrl}/icon.png` },
+    },
+  };
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <BreadcrumbSchema
+        locale={locale}
+        items={[
+          { name: tNav("home"), path: "" },
+          { name: tNav("blog"), path: "/blog" },
+          { name: postTitle, path: `/blog/${slug}` },
+        ]}
+      />
       <PageHero
         eyebrow={formattedDate}
         title={localizedField(post, "title", locale)}

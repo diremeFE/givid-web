@@ -1,19 +1,29 @@
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Users, ArrowRight, ArrowLeft, ShieldCheck, Handshake, Heart } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
+import { BreadcrumbSchema } from "@/components/breadcrumb-schema";
+import { pageAlternates } from "@/lib/seo";
+import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata() {
   const t = await getTranslations("services");
-  return { title: t("events.title"), description: t("events.description") };
+  const locale = (await getLocale()) as Locale;
+  return {
+    title: t("events.title"),
+    description: t("events.description"),
+    alternates: pageAlternates(locale, "/servicios/eventos"),
+  };
 }
 
 export default async function EventosPage() {
   const t = await getTranslations("services");
+  const tNav = await getTranslations("nav");
   const tAbout = await getTranslations("about");
   const tDetail = await getTranslations("servicesDetail");
+  const locale = (await getLocale()) as Locale;
 
   const bullets = [
     t("events.bullet1"),
@@ -36,6 +46,14 @@ export default async function EventosPage() {
 
   return (
     <div>
+      <BreadcrumbSchema
+        locale={locale}
+        items={[
+          { name: tNav("home"), path: "" },
+          { name: tNav("services"), path: "/servicios" },
+          { name: t("events.title"), path: "/servicios/eventos" },
+        ]}
+      />
       <PageHero
         eyebrow={t("events.tag")}
         title={t("events.title")}
@@ -59,7 +77,7 @@ export default async function EventosPage() {
       <section className="relative mt-10 min-h-125 overflow-hidden">
         <Image
           src="/images/service-events-v3.jpg"
-          alt=""
+          alt="Montaje de mobiliario y protocolo para eventos GIVID"
           fill
           sizes="100vw"
           className="object-cover"

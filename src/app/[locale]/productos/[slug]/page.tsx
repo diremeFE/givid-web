@@ -5,9 +5,11 @@ import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { ProductGallery } from "@/components/product-gallery";
 import { ProductCard } from "@/components/product-card";
+import { BreadcrumbSchema } from "@/components/breadcrumb-schema";
 import { getProductBySlug, getProducts } from "@/lib/data";
 import { localizedField } from "@/lib/localized";
 import { siteConfig, whatsappLink } from "@/lib/site-config";
+import { pageAlternates } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata({
@@ -17,7 +19,21 @@ export async function generateMetadata({
   const product = await getProductBySlug(slug);
   const locale = (await getLocale()) as Locale;
   if (!product) return {};
-  return { title: localizedField(product, "name", locale) };
+
+  const title = localizedField(product, "name", locale);
+  const description = localizedField(product, "description", locale) ?? undefined;
+
+  return {
+    title,
+    description,
+    alternates: pageAlternates(locale, `/productos/${slug}`),
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      images: product.imageUrl ? [{ url: product.imageUrl }] : undefined,
+    },
+  };
 }
 
 export default async function ProductDetailPage({
@@ -25,6 +41,7 @@ export default async function ProductDetailPage({
 }: PageProps<"/[locale]/productos/[slug]">) {
   const { slug } = await params;
   const t = await getTranslations("products");
+  const tNav = await getTranslations("nav");
   const locale = (await getLocale()) as Locale;
   const product = await getProductBySlug(slug);
 
@@ -50,8 +67,40 @@ export default async function ProductDetailPage({
     .filter((p) => p.id !== product.id)
     .slice(0, 3);
 
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name,
+    description: description ?? undefined,
+    image: gallery.length > 0 ? gallery : undefined,
+    category: categoryName,
+    offers: {
+      "@type": "Offer",
+      price: product.price,
+      priceCurrency: "XAF",
+      availability: product.isActive
+        ? "https://schema.org/InStock"
+        : "https://schema.org/OutOfStock",
+      url: `${siteConfig.siteUrl}/${locale}/productos/${slug}`,
+      seller: { "@type": "Organization", name: siteConfig.brandName },
+    },
+  };
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <BreadcrumbSchema
+        locale={locale}
+        items={[
+          { name: tNav("home"), path: "" },
+          { name: tNav("products"), path: "/productos" },
+          { name, path: `/productos/${slug}` },
+        ]}
+      />
       <Link
         href="/productos"
         className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-dark hover:underline"

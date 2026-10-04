@@ -1,19 +1,29 @@
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Sparkles, ArrowRight, ArrowLeft, Check, ShieldCheck, Handshake, Heart, Quote } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
+import { BreadcrumbSchema } from "@/components/breadcrumb-schema";
+import { pageAlternates } from "@/lib/seo";
+import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata() {
   const t = await getTranslations("services");
-  return { title: t("facilityServices.title"), description: t("facilityServices.description") };
+  const locale = (await getLocale()) as Locale;
+  return {
+    title: t("facilityServices.title"),
+    description: t("facilityServices.description"),
+    alternates: pageAlternates(locale, "/servicios/facility-services"),
+  };
 }
 
 export default async function FacilityServicesPage() {
   const t = await getTranslations("services");
+  const tNav = await getTranslations("nav");
   const tAbout = await getTranslations("about");
   const tDetail = await getTranslations("servicesDetail");
+  const locale = (await getLocale()) as Locale;
 
   const bullets = [
     t("facilityServices.bullet1"),
@@ -40,6 +50,14 @@ export default async function FacilityServicesPage() {
 
   return (
     <div>
+      <BreadcrumbSchema
+        locale={locale}
+        items={[
+          { name: tNav("home"), path: "" },
+          { name: tNav("services"), path: "/servicios" },
+          { name: t("facilityServices.title"), path: "/servicios/facility-services" },
+        ]}
+      />
       <PageHero
         eyebrow={t("facilityServices.tag")}
         title={t("facilityServices.title")}
@@ -65,7 +83,7 @@ export default async function FacilityServicesPage() {
               <div className="absolute inset-0 right-10 top-0 overflow-hidden rounded-3xl shadow-xl shadow-black/15">
                 <Image
                   src="/images/facility-floor-polish.jpg"
-                  alt=""
+                  alt="Pulido de suelo corporativo por GIVID Facility Services"
                   fill
                   sizes="(min-width: 1024px) 28vw, 70vw"
                   className="object-cover"
@@ -74,7 +92,7 @@ export default async function FacilityServicesPage() {
               <div className="absolute bottom-0 right-0 h-3/5 w-3/5 overflow-hidden rounded-2xl shadow-xl shadow-black/20 ring-4 ring-white">
                 <Image
                   src="/images/facility-glass.jpg"
-                  alt=""
+                  alt="Limpieza de cristales corporativos por GIVID Facility Services"
                   fill
                   sizes="(min-width: 1024px) 18vw, 42vw"
                   className="object-cover"

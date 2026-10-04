@@ -1,13 +1,20 @@
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Boxes, Sparkles, Users, Package, ArrowRight, Check } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
+import { pageAlternates } from "@/lib/seo";
+import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata() {
   const t = await getTranslations("services");
-  return { title: t("pageTitle"), description: t("pageSubtitle") };
+  const locale = (await getLocale()) as Locale;
+  return {
+    title: t("pageTitle"),
+    description: t("pageSubtitle"),
+    alternates: pageAlternates(locale, "/servicios"),
+  };
 }
 
 export default async function ServicesPage() {
@@ -30,7 +37,7 @@ export default async function ServicesPage() {
             <Reveal className="relative aspect-4/3 overflow-hidden rounded-3xl">
               <Image
                 src="/images/servicios-intro.jpg"
-                alt=""
+                alt="Equipo de GIVID cerrando un acuerdo comercial en almacén"
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"
                 className="object-cover"
@@ -55,6 +62,7 @@ export default async function ServicesPage() {
           <ServiceBlock
             icon={Boxes}
             image="/images/givid-silkscreen.jpg"
+            imageAlt="Serigrafía del logotipo GIVID sobre cajas de distribución"
             tag={t("distribution.tag")}
             title={t("distribution.title")}
             description={t("distribution.description")}
@@ -83,6 +91,7 @@ export default async function ServicesPage() {
           <ServiceBlock
             icon={Sparkles}
             image="/images/facility-floor-polish.jpg"
+            imageAlt="Pulido de suelo corporativo por el equipo de GIVID Facility Services"
             tag={t("facilityServices.tag")}
             title={t("facilityServices.title")}
             description={t("facilityServices.description")}
@@ -106,6 +115,7 @@ export default async function ServicesPage() {
           <ServiceBlock
             icon={Users}
             image="/images/service-events-v3.jpg"
+            imageAlt="Montaje de mobiliario para eventos por GIVID Events"
             tag={t("events.tag")}
             title={t("events.title")}
             description={t("events.description")}
@@ -124,6 +134,7 @@ export default async function ServicesPage() {
           <ServiceBlock
             icon={Package}
             image="/images/ownbrand-rice-production.jpg"
+            imageAlt="Línea de envasado de arroz de marca propia GIVID"
             tag={t("ownBrand.tag")}
             title={t("ownBrand.title")}
             description={t("ownBrand.description")}
@@ -176,6 +187,7 @@ export default async function ServicesPage() {
 function ServiceBlock({
   icon: Icon,
   image,
+  imageAlt,
   tag,
   title,
   description,
@@ -186,6 +198,7 @@ function ServiceBlock({
 }: {
   icon: React.ComponentType<{ className?: string }>;
   image: string;
+  imageAlt?: string;
   tag?: string;
   title: string;
   description: string;
@@ -199,7 +212,7 @@ function ServiceBlock({
       <Reveal className={`relative aspect-4/3 overflow-hidden rounded-3xl ${reverse ? "lg:order-2" : ""}`}>
         <Image
           src={image}
-          alt=""
+          alt={imageAlt ?? ""}
           fill
           sizes="(min-width: 1024px) 45vw, 100vw"
           className="object-cover"

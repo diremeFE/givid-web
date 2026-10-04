@@ -1,10 +1,17 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { LegalPage } from "@/components/legal-page";
 import { siteConfig } from "@/lib/site-config";
+import { pageAlternates } from "@/lib/seo";
+import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata() {
   const t = await getTranslations("footer");
-  return { title: t("cookiesPolicy") };
+  const locale = (await getLocale()) as Locale;
+  return {
+    title: t("cookiesPolicy"),
+    alternates: pageAlternates(locale, "/politica-cookies"),
+    robots: { index: false, follow: true },
+  };
 }
 
 export default async function PoliticaCookiesPage() {

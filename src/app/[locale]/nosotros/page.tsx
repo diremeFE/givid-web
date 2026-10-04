@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import {
   ShieldCheck,
   Handshake,
@@ -22,10 +22,17 @@ import {
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
+import { pageAlternates } from "@/lib/seo";
+import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata() {
   const t = await getTranslations("about");
-  return { title: t("pageTitle"), description: t("intro") };
+  const locale = (await getLocale()) as Locale;
+  return {
+    title: t("pageTitle"),
+    description: t("intro"),
+    alternates: pageAlternates(locale, "/nosotros"),
+  };
 }
 
 export default async function AboutPage() {
@@ -201,7 +208,7 @@ export default async function AboutPage() {
           <Reveal className="relative min-h-100 overflow-hidden rounded-3xl">
             <Image
               src="/images/malabo-harbor.jpg"
-              alt=""
+              alt="Puerto de Malabo, Guinea Ecuatorial"
               fill
               sizes="(min-width: 1024px) 45vw, 100vw"
               className="object-cover"
@@ -249,7 +256,7 @@ export default async function AboutPage() {
             <Reveal delay={100} className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-lg shadow-black/10">
               <Image
                 src="/images/hero-production.jpg"
-                alt=""
+                alt="Equipo de GIVID en producción"
                 fill
                 sizes="(min-width: 1024px) 35vw, 100vw"
                 className="object-cover"
@@ -258,7 +265,7 @@ export default async function AboutPage() {
             <Reveal delay={200} className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-lg shadow-black/10">
               <Image
                 src="/images/servicios-hero.jpg"
-                alt=""
+                alt="Servicios de GIVID en Malabo"
                 fill
                 sizes="(min-width: 1024px) 35vw, 100vw"
                 className="object-cover"
@@ -276,7 +283,7 @@ export default async function AboutPage() {
               <div className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-xl shadow-brand-dark/10">
                 <Image
                   src="/images/facility-glass.jpg"
-                  alt=""
+                  alt="Limpieza de cristales corporativos por GIVID Facility Services"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"

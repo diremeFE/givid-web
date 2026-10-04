@@ -6,12 +6,18 @@ import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
 import { getPublishedPosts } from "@/lib/data";
 import { localizedField } from "@/lib/localized";
+import { pageAlternates } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 import type { BlogPost } from "@/generated/prisma/client";
 
 export async function generateMetadata() {
   const t = await getTranslations("blog");
-  return { title: t("pageTitle"), description: t("pageSubtitle") };
+  const locale = (await getLocale()) as Locale;
+  return {
+    title: t("pageTitle"),
+    description: t("pageSubtitle"),
+    alternates: pageAlternates(locale, "/blog"),
+  };
 }
 
 function formatDate(date: Date | null, locale: Locale) {
@@ -19,11 +25,11 @@ function formatDate(date: Date | null, locale: Locale) {
   return new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", year: "numeric" }).format(date);
 }
 
-function PostThumb({ post, fill = true }: { post: BlogPost; fill?: boolean }) {
+function PostThumb({ post, alt, fill = true }: { post: BlogPost; alt: string; fill?: boolean }) {
   return post.coverImageUrl ? (
     <Image
       src={post.coverImageUrl}
-      alt=""
+      alt={alt}
       fill={fill}
       sizes="(min-width: 1024px) 45vw, 100vw"
       className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -64,7 +70,7 @@ export default async function BlogPage() {
                 className="group grid overflow-hidden rounded-3xl border border-border bg-white shadow-sm shadow-black/5 transition-all hover:-translate-y-0.5 hover:shadow-lg lg:grid-cols-2"
               >
                 <div className="relative aspect-16/10 overflow-hidden lg:aspect-auto">
-                  <PostThumb post={featured} />
+                  <PostThumb post={featured} alt={localizedField(featured, "title", locale)} />
                 </div>
                 <div className="flex flex-col justify-center p-8 sm:p-10">
                   {formatDate(featured.publishedAt, locale) && (
@@ -98,7 +104,7 @@ export default async function BlogPage() {
                       className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-sm shadow-black/5 transition-all hover:-translate-y-0.5 hover:shadow-lg"
                     >
                       <div className="relative aspect-16/10 overflow-hidden">
-                        <PostThumb post={post} />
+                        <PostThumb post={post} alt={localizedField(post, "title", locale)} />
                       </div>
                       <div className="flex flex-1 flex-col p-5">
                         {formatDate(post.publishedAt, locale) && (

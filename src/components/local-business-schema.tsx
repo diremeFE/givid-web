@@ -30,7 +30,10 @@ export function LocalBusinessSchema() {
       opens: "08:00",
       closes: "17:00",
     },
-    sameAs: [] as string[],
+    image: `${siteConfig.siteUrl}/icon.png`,
+    logo: `${siteConfig.siteUrl}/icon.png`,
+    ...(siteConfig.geo ? { geo: { "@type": "GeoCoordinates", ...siteConfig.geo } } : {}),
+    sameAs: [siteConfig.googleBusinessProfileUrl, ...siteConfig.socialLinks].filter(Boolean),
   };
 
   return (
