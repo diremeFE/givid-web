@@ -1,10 +1,19 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 
-const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
-const notifyEmail = process.env.CONTACT_NOTIFICATION_EMAIL ?? "supportgivid@gmail.com";
+const gmailUser = process.env.GMAIL_USER;
+const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
+const notifyEmail = process.env.CONTACT_NOTIFICATION_EMAIL ?? gmailUser;
+
+const transporter =
+  gmailUser && gmailAppPassword
+    ? nodemailer.createTransport({
+        service: "gmail",
+        auth: { user: gmailUser, pass: gmailAppPassword },
+      })
+    : null;
 
 const contactSchema = z.object({
   name: z.string().trim().min(1).max(200),
@@ -37,25 +46,27 @@ export async function POST(request: Request) {
     },
   });
 
-  if (resend) {
-    await resend.emails.send({
-      from: "GIVID Web <onboarding@resend.dev>",
-      to: notifyEmail,
-      replyTo: email,
-      subject: `Nuevo mensaje de contacto: ${name}`,
-      text: [
-        `Nombre: ${name}`,
-        `Email: ${email}`,
-        phone ? `Teléfono: ${phone}` : null,
-        service ? `Servicio: ${service}` : null,
-        "",
-        message,
-      ]
-        .filter(Boolean)
-        .join("\n"),
-    }).catch((error) => {
-      console.error("Failed to send contact notification email", error);
-    });
+  if (transporter && notifyEmail) {
+    await transporter
+      .sendMail({
+        from: `GIVID Web <${gmailUser}>`,
+        to: notifyEmail,
+        replyTo: email,
+        subject: `Nuevo mensaje de contacto: ${name}`,
+        text: [
+          `Nombre: ${name}`,
+          `Email: ${email}`,
+          phone ? `Teléfono: ${phone}` : null,
+          service ? `Servicio: ${service}` : null,
+          "",
+          message,
+        ]
+          .filter(Boolean)
+          .join("\n"),
+      })
+      .catch((error) => {
+        console.error("Failed to send contact notification email", error);
+      });
   }
 
   return NextResponse.json({ ok: true });
