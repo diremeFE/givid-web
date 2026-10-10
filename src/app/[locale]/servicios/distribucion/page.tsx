@@ -67,6 +67,7 @@ export default async function DistribucionPage() {
   ];
 
   const faqItems = [
+    { question: tDetail("distribution.faqQ4"), answer: tDetail("distribution.faqA4") },
     { question: tDetail("distribution.faqQ1"), answer: tDetail("distribution.faqA1") },
     { question: tDetail("distribution.faqQ2"), answer: tDetail("distribution.faqA2") },
     { question: tDetail("distribution.faqQ3"), answer: tDetail("distribution.faqA3") },
