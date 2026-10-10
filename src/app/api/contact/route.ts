@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
+import { contactNotificationHtml } from "@/lib/contact-email";
 
 const gmailUser = process.env.GMAIL_USER;
 const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
@@ -63,6 +64,7 @@ export async function POST(request: Request) {
         ]
           .filter(Boolean)
           .join("\n"),
+        html: contactNotificationHtml({ name, email, phone, service, message }),
       })
       .catch((error) => {
         console.error("Failed to send contact notification email", error);
