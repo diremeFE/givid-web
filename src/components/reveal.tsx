@@ -2,13 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 
+type RevealDirection = "up" | "down" | "left" | "right" | "scale" | "fade";
+
 export function Reveal({
   children,
   delay = 0,
+  direction = "up",
   className = "",
 }: {
   children: React.ReactNode;
   delay?: number;
+  direction?: RevealDirection;
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -35,7 +39,7 @@ export function Reveal({
   return (
     <div
       ref={ref}
-      className={`reveal ${visible ? "is-visible" : ""} ${className}`}
+      className={`reveal reveal-${direction} ${visible ? "is-visible" : ""} ${className}`}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}

@@ -50,7 +50,7 @@ export default async function HomePage() {
           />
           <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/55 to-black/75" aria-hidden="true" />
 
-          <Reveal className="relative mx-auto max-w-4xl">
+          <Reveal direction="scale" className="relative mx-auto max-w-4xl">
             <h1 className="text-[2.25rem] font-black leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-7xl lg:leading-[1.05]">
               {t("heroTitlePrefix")}{" "}
               <span className="relative text-accent-light">
@@ -164,7 +164,7 @@ export default async function HomePage() {
 
         {/* Images + text grid */}
         <div className="relative mt-14 grid items-center gap-16 lg:grid-cols-[1fr_1.2fr] lg:gap-10">
-          <Reveal className="relative mx-auto aspect-4/5 w-full max-w-sm overflow-hidden rounded-3xl shadow-xl shadow-black/10 lg:mx-0 lg:max-w-none">
+          <Reveal direction="left" className="relative mx-auto aspect-4/5 w-full max-w-sm overflow-hidden rounded-3xl shadow-xl shadow-black/10 lg:mx-0 lg:max-w-none">
             <Image
               src="/images/about-team.jpg"
               alt="Equipo de GIVID"
@@ -174,7 +174,7 @@ export default async function HomePage() {
             />
           </Reveal>
 
-          <Reveal delay={100}>
+          <Reveal direction="right" delay={100}>
             <p className="text-sm leading-relaxed text-neutral-600">
               {tAbout("intro")}
             </p>
@@ -225,7 +225,7 @@ export default async function HomePage() {
           </Reveal>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-12">
-            <Reveal delay={0} className="lg:col-span-7">
+            <Reveal direction="left" delay={0} className="lg:col-span-7">
               <ServiceCard
                 icon={Boxes}
                 image="/images/givid-silkscreen.jpg"
@@ -239,7 +239,7 @@ export default async function HomePage() {
               />
             </Reveal>
             <div className="flex flex-col gap-8 lg:col-span-5">
-              <Reveal delay={100}>
+              <Reveal direction="right" delay={100}>
                 <ServiceCard
                   icon={Sparkles}
                   image="/images/facility-floor-polish.jpg"
@@ -250,7 +250,7 @@ export default async function HomePage() {
                   horizontal
                 />
               </Reveal>
-              <Reveal delay={200}>
+              <Reveal direction="right" delay={200}>
                 <ServiceCard
                   icon={Ship}
                   image="/images/service-events-v3.jpg"
@@ -385,6 +385,7 @@ export default async function HomePage() {
 
           <div className="mt-14 grid gap-6 overflow-visible sm:grid-cols-3">
             <Reveal
+              direction="scale"
               delay={100}
               className="relative z-10 flex flex-col items-center rounded-3xl bg-brand-darker p-6 text-center text-white shadow-xl shadow-brand-darker/30 sm:-my-3 sm:rotate-2"
             >
@@ -396,6 +397,7 @@ export default async function HomePage() {
             </Reveal>
 
             <Reveal
+              direction="scale"
               delay={200}
               className="flex flex-col items-center rounded-3xl border border-border bg-white p-6 text-center shadow-sm shadow-black/3"
             >
@@ -407,6 +409,7 @@ export default async function HomePage() {
             </Reveal>
 
             <Reveal
+              direction="scale"
               delay={300}
               className="flex flex-col items-center rounded-3xl border border-border bg-white p-6 text-center shadow-sm shadow-black/3"
             >

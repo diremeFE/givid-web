@@ -111,11 +111,11 @@ export default async function ProductDetailPage({
       </Link>
 
       <div className="mt-6 grid gap-10 lg:grid-cols-2">
-        <Reveal>
+        <Reveal direction="left">
           <ProductGallery images={gallery} alt={name} />
         </Reveal>
 
-        <Reveal delay={100}>
+        <Reveal direction="right" delay={100}>
           <span className="inline-block rounded-full bg-brand-dark px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">
             {categoryName}
           </span>

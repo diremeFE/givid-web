@@ -34,7 +34,7 @@ export default async function ServicesPage() {
       <section className="py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-12">
-            <Reveal className="relative aspect-4/3 overflow-hidden rounded-3xl">
+            <Reveal direction="left" className="relative aspect-4/3 overflow-hidden rounded-3xl">
               <Image
                 src="/images/servicios-intro.jpg"
                 alt="Equipo de GIVID cerrando un acuerdo comercial en almacén"
@@ -43,7 +43,7 @@ export default async function ServicesPage() {
                 className="object-cover"
               />
             </Reveal>
-            <Reveal delay={100}>
+            <Reveal direction="right" delay={100}>
               <span className="inline-flex items-center rounded-full bg-brand-light px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-dark">
                 {t("aboutBadge")}
               </span>
@@ -154,6 +154,7 @@ export default async function ServicesPage() {
               ].map((img, i) => (
                 <Reveal
                   key={img.alt}
+                  direction="scale"
                   delay={200 + i * 80}
                   className="relative aspect-3/4 overflow-hidden rounded-xl border border-border"
                 >
@@ -209,7 +210,10 @@ function ServiceBlock({
 }) {
   const content = (
     <>
-      <Reveal className={`relative aspect-4/3 overflow-hidden rounded-3xl ${reverse ? "lg:order-2" : ""}`}>
+      <Reveal
+        direction={reverse ? "right" : "left"}
+        className={`relative aspect-4/3 overflow-hidden rounded-3xl ${reverse ? "lg:order-2" : ""}`}
+      >
         <Image
           src={image}
           alt={imageAlt ?? ""}
@@ -218,7 +222,7 @@ function ServiceBlock({
           className="object-cover"
         />
       </Reveal>
-      <Reveal delay={100} className={reverse ? "lg:order-1" : ""}>
+      <Reveal direction={reverse ? "left" : "right"} delay={100} className={reverse ? "lg:order-1" : ""}>
         <span
           className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${
             highlighted ? "bg-white/15" : "bg-brand-light"

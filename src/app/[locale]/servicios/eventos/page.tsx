@@ -142,6 +142,7 @@ export default async function EventosPage() {
               return (
                 <Reveal
                   key={step.title}
+                  direction={right ? "right" : "left"}
                   delay={i * 100}
                   className={`relative max-w-md ${right ? "ml-auto text-right" : ""}`}
                 >
@@ -174,6 +175,7 @@ export default async function EventosPage() {
             {values.map(({ icon: Icon, label, text }, i) => (
               <Reveal
                 key={label}
+                direction="scale"
                 delay={i * 100}
                 className="rounded-3xl border border-border bg-white p-7 text-center shadow-sm shadow-black/5"
               >

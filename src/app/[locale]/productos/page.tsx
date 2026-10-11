@@ -90,7 +90,7 @@ export default async function ProductsPage({
         ) : (
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((product, i) => (
-              <Reveal key={product.id} delay={(i % 6) * 60}>
+              <Reveal key={product.id} direction="scale" delay={(i % 6) * 60}>
                 <ProductCard
                   product={product}
                   locale={locale}

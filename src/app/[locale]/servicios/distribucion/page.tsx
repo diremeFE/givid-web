@@ -109,14 +109,14 @@ export default async function DistribucionPage() {
           </Link>
 
           <div className="mt-8 grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-16">
-            <Reveal>
+            <Reveal direction="left">
               <p className="max-w-xl text-lg leading-relaxed text-white/85">
                 {tDetail("distribution.overviewExtra")}
               </p>
             </Reveal>
             <div className="grid grid-cols-3 gap-6 border-t border-white/10 pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
               {stats.map((stat, i) => (
-                <Reveal key={stat.label} delay={i * 80} className="text-center lg:text-left">
+                <Reveal key={stat.label} direction="scale" delay={i * 80} className="text-center lg:text-left">
                   <p className="text-3xl font-black text-white sm:text-4xl">{stat.value}</p>
                   <p className="mt-1 text-[11px] font-semibold uppercase tracking-wide text-white/60">
                     {stat.label}
@@ -141,6 +141,7 @@ export default async function DistribucionPage() {
             {categories.map(({ icon: Icon, title, items }, i) => (
               <Reveal
                 key={title}
+                direction="scale"
                 delay={i * 80}
                 className="flex flex-col rounded-3xl border border-border bg-white p-7 shadow-sm shadow-black/3"
               >

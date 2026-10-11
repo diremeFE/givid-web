@@ -25,7 +25,7 @@ export default async function ContactPage() {
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-12 overflow-hidden rounded-[2.5rem] bg-white shadow-xl shadow-brand-dark/10 lg:grid-cols-2">
           {/* Left — form */}
-          <Reveal className="p-8 sm:p-12 lg:p-14">
+          <Reveal direction="left" className="p-8 sm:p-12 lg:p-14">
             <span className="block h-1 w-12 rounded-full bg-brand" />
             <h1 className="mt-4 text-3xl font-black text-neutral-900 sm:text-4xl">
               {t("pageTitle")}
@@ -39,6 +39,7 @@ export default async function ContactPage() {
 
           {/* Right — organic brand panel */}
           <Reveal
+            direction="right"
             delay={100}
             className="relative isolate flex min-h-144 items-center overflow-hidden bg-brand-darker p-6 sm:min-h-160 sm:p-10"
           >

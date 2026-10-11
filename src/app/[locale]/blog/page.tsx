@@ -98,7 +98,7 @@ export default async function BlogPage() {
             {rest.length > 0 && (
               <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {rest.map((post, i) => (
-                  <Reveal key={post.id} delay={i * 60}>
+                  <Reveal key={post.id} direction="scale" delay={i * 60}>
                     <Link
                       href={`/blog/${post.slug}`}
                       className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-sm shadow-black/5 transition-all hover:-translate-y-0.5 hover:shadow-lg"

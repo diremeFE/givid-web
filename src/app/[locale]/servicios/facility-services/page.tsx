@@ -90,7 +90,7 @@ export default async function FacilityServicesPage() {
 
         {/* Overview — photo collage */}
         <div className="mt-10 grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-          <Reveal className="relative mx-auto w-full max-w-sm lg:mx-0">
+          <Reveal direction="left" className="relative mx-auto w-full max-w-sm lg:mx-0">
             <div className="relative aspect-4/5 w-full">
               <div className="absolute inset-0 right-10 top-0 overflow-hidden rounded-3xl shadow-xl shadow-black/15">
                 <Image
@@ -112,7 +112,7 @@ export default async function FacilityServicesPage() {
               </div>
             </div>
           </Reveal>
-          <Reveal delay={100}>
+          <Reveal direction="right" delay={100}>
             <span className="inline-flex items-center rounded-full bg-brand-light px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-brand-dark">
               {t("facilityServices.tag")}
             </span>
@@ -156,6 +156,7 @@ export default async function FacilityServicesPage() {
                 return (
                   <Reveal
                     key={bullet}
+                    direction={left ? "left" : "right"}
                     delay={i * 60}
                     className={`flex sm:w-1/2 ${left ? "sm:pr-8" : "sm:ml-auto sm:pl-8"}`}
                   >

@@ -101,7 +101,7 @@ export default async function AboutPage() {
             { src: "/images/givid-box.jpg", alt: "Caja de producto con el logotipo GIVID" },
             { src: "/images/garden-maintenance.jpg", alt: "Mantenimiento de espacios verdes GIVID" },
           ].map((img, i) => (
-            <Reveal key={img.src} delay={i * 80} className="relative aspect-4/3 overflow-hidden rounded-2xl shadow-lg shadow-black/10">
+            <Reveal key={img.src} direction="scale" delay={i * 80} className="relative aspect-4/3 overflow-hidden rounded-2xl shadow-lg shadow-black/10">
               <Image
                 src={img.src}
                 alt={img.alt}
@@ -187,7 +187,7 @@ export default async function AboutPage() {
       {/* Misión y visión */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-          <Reveal>
+          <Reveal direction="left">
             <h2 className="max-w-md text-2xl font-black leading-tight text-neutral-900 sm:text-3xl">
               {t("storyTitle")}
             </h2>
@@ -199,13 +199,13 @@ export default async function AboutPage() {
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </Reveal>
-          <Reveal delay={100} className="max-w-sm text-sm text-neutral-600 lg:pt-2">
+          <Reveal direction="right" delay={100} className="max-w-sm text-sm text-neutral-600 lg:pt-2">
             {t("storySubtitle")}
           </Reveal>
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
-          <Reveal className="relative min-h-100 overflow-hidden rounded-3xl">
+          <Reveal direction="left" className="relative min-h-100 overflow-hidden rounded-3xl">
             <Image
               src="/images/malabo-harbor.jpg"
               alt="Puerto de Malabo, Guinea Ecuatorial"
@@ -221,11 +221,11 @@ export default async function AboutPage() {
           </Reveal>
 
           <div className="grid gap-6 sm:grid-rows-2">
-            <Reveal delay={100} className="flex flex-col justify-center rounded-3xl border border-brand/15 border-b-4 border-b-brand-dark bg-brand-light p-8 shadow-lg shadow-black/5">
+            <Reveal direction="right" delay={100} className="flex flex-col justify-center rounded-3xl border border-brand/15 border-b-4 border-b-brand-dark bg-brand-light p-8 shadow-lg shadow-black/5">
               <h3 className="text-lg font-bold text-neutral-900">{t("missionTitle")}</h3>
               <p className="mt-2 text-sm leading-relaxed text-neutral-700">{t("missionText")}</p>
             </Reveal>
-            <Reveal delay={200} className="flex flex-col justify-center rounded-3xl bg-brand-dark p-8 text-white">
+            <Reveal direction="right" delay={200} className="flex flex-col justify-center rounded-3xl bg-brand-dark p-8 text-white">
               <h3 className="text-lg font-bold">{t("visionTitle")}</h3>
               <p className="mt-2 text-sm leading-relaxed text-white/85">{t("visionText")}</p>
             </Reveal>
@@ -236,7 +236,7 @@ export default async function AboutPage() {
       {/* Historia completa */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-          <Reveal>
+          <Reveal direction="left">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark">
               {t("historyTitle")}
             </p>
@@ -253,7 +253,7 @@ export default async function AboutPage() {
           </Reveal>
 
           <div className="flex flex-col gap-6">
-            <Reveal delay={100} className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-lg shadow-black/10">
+            <Reveal direction="right" delay={100} className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-lg shadow-black/10">
               <Image
                 src="/images/hero-production.jpg"
                 alt="Equipo de GIVID en producción"
@@ -262,7 +262,7 @@ export default async function AboutPage() {
                 className="object-cover"
               />
             </Reveal>
-            <Reveal delay={200} className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-lg shadow-black/10">
+            <Reveal direction="right" delay={200} className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-lg shadow-black/10">
               <Image
                 src="/images/servicios-hero.jpg"
                 alt="Servicios de GIVID en Malabo"
@@ -279,7 +279,7 @@ export default async function AboutPage() {
       <section className="bg-brand-lighter py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-            <Reveal delay={100} className="order-2 lg:order-1">
+            <Reveal direction="left" delay={100} className="order-2 lg:order-1">
               <div className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-xl shadow-brand-dark/10">
                 <Image
                   src="/images/facility-glass.jpg"
@@ -290,7 +290,7 @@ export default async function AboutPage() {
                 />
               </div>
             </Reveal>
-            <Reveal className="order-1 lg:order-2">
+            <Reveal direction="right" className="order-1 lg:order-2">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark">
                 {tServices("facilityServices.tag")}
               </p>
