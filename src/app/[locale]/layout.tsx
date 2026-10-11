@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Montserrat } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -79,6 +80,19 @@ export default async function LocaleLayout({
       className={`${fontMontserrat.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        {/*
+          Defines window.gtag as a queueing stub immediately on every page,
+          regardless of cookie consent — this never sends anything on its own.
+          It just means any gtag() call made before GoogleAnalytics loads the
+          real script (e.g. right after a quick form submit) gets queued into
+          dataLayer instead of silently being dropped because window.gtag
+          didn't exist yet. GoogleAnalytics still only loads the actual
+          googletagmanager.com script, and only calls gtag('config', ...),
+          after the user accepts cookies — nothing is transmitted until then.
+        */}
+        <Script id="gtag-stub" strategy="beforeInteractive">
+          {`window.dataLayer = window.dataLayer || []; window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };`}
+        </Script>
         <LocalBusinessSchema />
         <NextIntlClientProvider>
           <SiteHeader />
