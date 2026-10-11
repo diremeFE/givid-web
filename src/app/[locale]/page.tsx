@@ -53,22 +53,8 @@ export default async function HomePage() {
           <Reveal direction="scale" className="relative mx-auto max-w-4xl">
             <h1 className="text-[2.25rem] font-black leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-7xl lg:leading-[1.05]">
               {t("heroTitlePrefix")}{" "}
-              <span className="relative text-accent-light">
+              <span className="text-[#34c77d]">
                 {t("heroTitleHighlight")}
-                <svg
-                  viewBox="0 0 200 12"
-                  preserveAspectRatio="none"
-                  className="absolute -bottom-1.5 left-0 h-2.5 w-full text-accent"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M2 9C40 2 160 2 198 9"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                    fill="none"
-                  />
-                </svg>
               </span>
             </h1>
             <p className="mx-auto mt-6 max-w-xl text-lg text-white/85">
@@ -93,11 +79,6 @@ export default async function HomePage() {
               </Link>
             </div>
           </Reveal>
-
-          <div className="absolute bottom-6 left-6 hidden items-center gap-2 text-xs font-semibold uppercase tracking-wide text-white/80 sm:flex">
-            {t("heroScroll")}
-            <ArrowDown className="h-3.5 w-3.5 animate-bounce" aria-hidden="true" />
-          </div>
         </div>
 
         <div className="overflow-hidden bg-accent py-3">
