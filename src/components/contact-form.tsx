@@ -34,6 +34,10 @@ export function ContactForm() {
 
       setStatus("success");
       form.reset();
+      window.gtag?.("event", "generate_lead", {
+        event_category: "contact_form",
+        service: data.get("service"),
+      });
     } catch {
       setStatus("error");
     }
