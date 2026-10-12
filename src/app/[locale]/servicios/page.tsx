@@ -157,53 +157,60 @@ export default async function ServicesPage() {
               t("events.bullet3"),
               t("events.bullet4"),
             ]}
-          >
-            <div className="mt-8">
-              <h3 className="font-bold text-neutral-900">{tDetail("events.furnitureTitle")}</h3>
-              <p className="mt-1.5 text-sm text-neutral-600">{tDetail("events.furnitureIntro")}</p>
+          />
 
-              <div className="mt-5 grid gap-4 sm:grid-cols-3">
-                {furniture.map((item) => (
-                  <div
-                    key={item.name}
-                    className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm shadow-black/3"
-                  >
-                    <div className="relative aspect-4/3 overflow-hidden">
-                      <Image src={item.image} alt={item.name} fill sizes="(min-width: 640px) 200px, 100vw" className="object-cover" />
-                    </div>
-                    <div className="p-3.5">
-                      <h4 className="text-sm font-bold text-neutral-900">{item.name}</h4>
+          {/* Mobiliario de alquiler — seccion propia, a todo el ancho */}
+          <Reveal className="mt-16 rounded-3xl bg-brand-lighter p-6 sm:p-10">
+            <h3 className="text-xl font-black text-neutral-900 sm:text-2xl">
+              {tDetail("events.furnitureTitle")}
+            </h3>
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-neutral-600">
+              {tDetail("events.furnitureIntro")}
+            </p>
 
-                      {item.prices.length > 0 ? (
-                        <ul className="mt-2 space-y-1">
-                          {item.prices.map((p) => (
-                            <li key={p.label} className="flex items-center justify-between text-xs">
-                              <span className="text-neutral-500">{p.label}</span>
-                              <span className="font-bold text-brand-dark">
-                                {currency.format(p.amount)}
-                                <span className="ml-0.5 font-normal text-neutral-400">{tDetail("events.perDay")}</span>
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      ) : (
-                        <p className="mt-2 text-xs font-semibold text-brand-dark">
-                          {tDetail("events.priceOnRequestFurniture")}
-                        </p>
-                      )}
-
-                      {item.availability && (
-                        <p className="mt-2 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wide text-neutral-500">
-                          <PackageCheck className="h-3 w-3 text-brand" aria-hidden="true" />
-                          {item.availability}
-                        </p>
-                      )}
-                    </div>
+            <div className="mt-8 grid gap-6 sm:grid-cols-3">
+              {furniture.map((item, i) => (
+                <Reveal
+                  key={item.name}
+                  direction="scale"
+                  delay={i * 100}
+                  className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm shadow-black/5"
+                >
+                  <div className="relative aspect-4/3 overflow-hidden">
+                    <Image src={item.image} alt={item.name} fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover" />
                   </div>
-                ))}
-              </div>
+                  <div className="p-4">
+                    <h4 className="font-bold text-neutral-900">{item.name}</h4>
+
+                    {item.prices.length > 0 ? (
+                      <ul className="mt-2.5 space-y-1.5">
+                        {item.prices.map((p) => (
+                          <li key={p.label} className="flex items-center justify-between text-sm">
+                            <span className="text-neutral-500">{p.label}</span>
+                            <span className="font-bold text-brand-dark">
+                              {currency.format(p.amount)}
+                              <span className="ml-1 font-normal text-neutral-400">{tDetail("events.perDay")}</span>
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="mt-2.5 text-sm font-semibold text-brand-dark">
+                        {tDetail("events.priceOnRequestFurniture")}
+                      </p>
+                    )}
+
+                    {item.availability && (
+                      <p className="mt-2.5 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-neutral-500">
+                        <PackageCheck className="h-3.5 w-3.5 text-brand" aria-hidden="true" />
+                        {item.availability}
+                      </p>
+                    )}
+                  </div>
+                </Reveal>
+              ))}
             </div>
-          </ServiceBlock>
+          </Reveal>
         </div>
       </section>
 
