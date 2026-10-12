@@ -68,7 +68,6 @@ export default async function AboutPage() {
 
   const introStats = [
     { value: tServices("stat1Value"), label: tServices("stat1Label") },
-    { value: tServices("stat2Value"), label: tServices("stat2Label") },
     { value: tServices("stat3Value"), label: tServices("stat3Label") },
     { value: tServices("stat4Value"), label: tServices("stat4Label") },
   ];
@@ -128,7 +127,7 @@ export default async function AboutPage() {
           </Link>
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-border pt-10 sm:grid-cols-4">
+        <div className="mt-16 grid grid-cols-3 gap-x-6 gap-y-10 border-t border-border pt-10">
           {introStats.map((stat, i) => (
             <Reveal
               key={stat.label}

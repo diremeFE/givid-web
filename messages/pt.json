@@ -175,6 +175,7 @@
     "categoryFood": "Alimentação",
     "categoryHygiene": "Higiene",
     "priceLabel": "Preço",
+    "priceOnRequest": "Preço sob consulta",
     "unitLabel": "Formato",
     "noProducts": "Em breve adicionaremos produtos a este catálogo.",
     "orderNotice": "Estes preços são indicativos e não constituem venda online. Para fazer uma encomenda, contacte-nos por WhatsApp, e-mail ou visite a nossa loja física.",
@@ -361,7 +362,20 @@
       "faqQ2": "Incluem a montagem e desmontagem do mobiliário?",
       "faqA2": "Sim, a nossa equipa trata da montagem antes do evento e da recolha do mobiliário no final.",
       "faqQ3": "Para quantas pessoas posso alugar mesas e cadeiras?",
-      "faqA3": "Adaptamo-nos tanto a eventos pequenos como a grandes capacidades. Diga-nos o número de convidados e propomos a quantidade de mobiliário necessária."
+      "faqA3": "Adaptamo-nos tanto a eventos pequenos como a grandes capacidades. Diga-nos o número de convidados e propomos a quantidade de mobiliário necessária.",
+      "furnitureTitle": "Aluguer de mobiliário para o seu evento",
+      "furnitureIntro": "Mesas e cadeiras elegantes disponíveis para aluguer, em diferentes estilos consoante o seu evento.",
+      "furniture1Name": "Mesa e cadeiras douradas",
+      "furniture1ChairLabel": "Cadeira",
+      "furniture1TableLabel": "Mesa",
+      "furniture1Availability": "8 unidades disponíveis",
+      "furniture2Name": "Mesa de honra",
+      "furniture2TableLabel": "Mesa",
+      "furniture3Name": "Cadeiras de salão",
+      "furniture3Availability": "500 cadeiras disponíveis",
+      "perDay": "/ dia",
+      "availabilityLabel": "Disponibilidade",
+      "priceOnRequestFurniture": "Preço sob consulta"
     }
   }
 }

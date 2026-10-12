@@ -10,11 +10,13 @@ export function ProductCard({
   locale,
   currency,
   orderLabel,
+  priceOnRequestLabel,
 }: {
   product: Product & { category: Category };
   locale: Locale;
   currency: Intl.NumberFormat;
   orderLabel: string;
+  priceOnRequestLabel: string;
 }) {
   const name = localizedField(product, "name", locale);
   const description = localizedField(product, "description", locale);
@@ -52,7 +54,7 @@ export function ProductCard({
             <p className="mt-1 line-clamp-2 text-sm text-neutral-500">{description}</p>
           )}
           <p className="mt-auto pt-3 text-lg font-bold text-brand-dark">
-            {currency.format(product.price)}
+            {product.price != null ? currency.format(product.price) : priceOnRequestLabel}
           </p>
         </div>
       </Link>

@@ -75,7 +75,7 @@ export function ContactForm() {
         <label htmlFor="service" className={labelClass}>
           {t("serviceLabel")}
         </label>
-        <select id="service" name="service" className={`${fieldClass} bg-white`}>
+        <select id="service" name="service" defaultValue="distribution" className={`${fieldClass} bg-white`}>
           <option value="facilityServices">{t("serviceFacilityServices")}</option>
           <option value="events">{t("serviceEvents")}</option>
           <option value="distribution">{t("serviceDistribution")}</option>

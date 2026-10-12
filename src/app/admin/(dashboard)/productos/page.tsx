@@ -47,7 +47,7 @@ export default async function AdminProductsPage() {
                   {product.category.nameEs}
                 </td>
                 <td className="px-4 py-3 text-neutral-500">
-                  {currency.format(product.price)} / {product.unit}
+                  {product.price != null ? currency.format(product.price) : "Precio a consultar"} / {product.unit}
                 </td>
                 <td className="px-4 py-3">
                   <span

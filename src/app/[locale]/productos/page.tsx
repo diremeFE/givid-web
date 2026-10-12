@@ -96,6 +96,7 @@ export default async function ProductsPage({
                   locale={locale}
                   currency={currency}
                   orderLabel={t("orderButton")}
+                  priceOnRequestLabel={t("priceOnRequest")}
                 />
               </Reveal>
             ))}

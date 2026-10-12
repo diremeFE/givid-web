@@ -1,0 +1,10 @@
+-- AlterTable
+ALTER TABLE "BlogPost" ALTER COLUMN "titlePt" DROP DEFAULT,
+ALTER COLUMN "contentPt" DROP DEFAULT;
+
+-- AlterTable
+ALTER TABLE "Category" ALTER COLUMN "namePt" DROP DEFAULT;
+
+-- AlterTable
+ALTER TABLE "Product" ALTER COLUMN "price" DROP NOT NULL,
+ALTER COLUMN "namePt" DROP DEFAULT;

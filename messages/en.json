@@ -175,6 +175,7 @@
     "categoryFood": "Food",
     "categoryHygiene": "Hygiene",
     "priceLabel": "Price",
+    "priceOnRequest": "Price on request",
     "unitLabel": "Format",
     "noProducts": "We'll be adding products to this catalog soon.",
     "orderNotice": "These prices are indicative and do not constitute an online sale. To place an order, contact us via WhatsApp, email, or visit our physical store.",
@@ -361,7 +362,20 @@
       "faqQ2": "Do you handle setup and teardown of the furniture?",
       "faqA2": "Yes, our team handles setup before the event and collection of the furniture afterwards.",
       "faqQ3": "How many people can I rent tables and chairs for?",
-      "faqA3": "We adapt to both small events and large gatherings. Tell us the number of guests and we'll propose the amount of furniture you need."
+      "faqA3": "We adapt to both small events and large gatherings. Tell us the number of guests and we'll propose the amount of furniture you need.",
+      "furnitureTitle": "Furniture rental for your event",
+      "furnitureIntro": "Elegant tables and chairs available for rent, in different styles depending on your event.",
+      "furniture1Name": "Gold table and chairs",
+      "furniture1ChairLabel": "Chair",
+      "furniture1TableLabel": "Table",
+      "furniture1Availability": "8 units available",
+      "furniture2Name": "Sweetheart table",
+      "furniture2TableLabel": "Table",
+      "furniture3Name": "Banquet chairs",
+      "furniture3Availability": "500 chairs available",
+      "perDay": "/ day",
+      "availabilityLabel": "Availability",
+      "priceOnRequestFurniture": "Price on request"
     }
   }
 }

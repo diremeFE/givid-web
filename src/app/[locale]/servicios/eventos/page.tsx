@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getTranslations, getLocale } from "next-intl/server";
-import { Users, ArrowRight, ArrowLeft, ShieldCheck, Handshake, Heart } from "lucide-react";
+import { Users, ArrowRight, ArrowLeft, ShieldCheck, Handshake, Heart, PackageCheck } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
@@ -43,6 +43,30 @@ export default async function EventosPage() {
     { icon: ShieldCheck, label: tAbout("value1"), text: tAbout("value1Text") },
     { icon: Handshake, label: tAbout("value2"), text: tAbout("value2Text") },
     { icon: Heart, label: tAbout("value3"), text: tAbout("value3Text") },
+  ];
+
+  const furniture = [
+    {
+      image: "/images/mobiliario-mesa-sillas-doradas.jpg",
+      name: tDetail("events.furniture1Name"),
+      prices: [
+        { label: tDetail("events.furniture1ChairLabel"), amount: 5000 },
+        { label: tDetail("events.furniture1TableLabel"), amount: 16000 },
+      ],
+      availability: tDetail("events.furniture1Availability"),
+    },
+    {
+      image: "/images/mobiliario-mesa-presidencial.jpg",
+      name: tDetail("events.furniture2Name"),
+      prices: [{ label: tDetail("events.furniture2TableLabel"), amount: 20000 }],
+      availability: null,
+    },
+    {
+      image: "/images/mobiliario-sillas-salon.jpg",
+      name: tDetail("events.furniture3Name"),
+      prices: [],
+      availability: tDetail("events.furniture3Availability"),
+    },
   ];
 
   const faqItems = [
@@ -121,6 +145,63 @@ export default async function EventosPage() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <p className="pt-1 font-semibold text-neutral-800">{bullet}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mobiliario disponible */}
+      <section className="bg-brand-lighter py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <Reveal className="mx-auto max-w-xl text-center">
+            <h2 className="text-2xl font-black text-neutral-900 sm:text-3xl">
+              {tDetail("events.furnitureTitle")}
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+              {tDetail("events.furnitureIntro")}
+            </p>
+          </Reveal>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {furniture.map((item, i) => (
+              <Reveal
+                key={item.name}
+                direction="scale"
+                delay={i * 100}
+                className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm shadow-black/5"
+              >
+                <div className="relative aspect-4/3 overflow-hidden">
+                  <Image src={item.image} alt={item.name} fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover" />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-bold text-neutral-900">{item.name}</h3>
+
+                  {item.prices.length > 0 ? (
+                    <ul className="mt-3 space-y-1.5">
+                      {item.prices.map((p) => (
+                        <li key={p.label} className="flex items-center justify-between text-sm">
+                          <span className="text-neutral-600">{p.label}</span>
+                          <span className="font-bold text-brand-dark">
+                            {new Intl.NumberFormat(locale, { style: "currency", currency: "XAF", maximumFractionDigits: 0 }).format(p.amount)}
+                            <span className="ml-1 font-normal text-neutral-500">{tDetail("events.perDay")}</span>
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="mt-3 text-sm font-semibold text-brand-dark">
+                      {tDetail("events.priceOnRequestFurniture")}
+                    </p>
+                  )}
+
+                  {item.availability && (
+                    <p className="mt-3 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-neutral-500">
+                      <PackageCheck className="h-3.5 w-3.5 text-brand" aria-hidden="true" />
+                      {item.availability}
+                    </p>
+                  )}
+                </div>
               </Reveal>
             ))}
           </div>

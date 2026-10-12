@@ -330,6 +330,7 @@ export default async function HomePage() {
                     locale={locale}
                     currency={currency}
                     orderLabel={tProducts("orderButton")}
+                    priceOnRequestLabel={tProducts("priceOnRequest")}
                   />
                 </Reveal>
               ))}

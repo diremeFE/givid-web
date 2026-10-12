@@ -115,10 +115,12 @@ export function ProductForm({
             name="price"
             step="1"
             min="0"
-            defaultValue={product?.price}
-            required
+            defaultValue={product?.price ?? ""}
             className="mt-1 w-full rounded border border-neutral-300 px-3 py-2 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
           />
+          <p className="mt-1 text-xs text-neutral-500">
+            Déjalo vacío para mostrar &quot;Precio a consultar&quot; en vez de un precio.
+          </p>
         </div>
         <div>
           <label className="block text-sm font-medium text-neutral-700">

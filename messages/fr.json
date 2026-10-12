@@ -175,6 +175,7 @@
     "categoryFood": "Alimentation",
     "categoryHygiene": "Hygiène",
     "priceLabel": "Prix",
+    "priceOnRequest": "Prix sur demande",
     "unitLabel": "Format",
     "noProducts": "Nous ajouterons bientôt des produits à ce catalogue.",
     "orderNotice": "Ces prix sont indicatifs et ne constituent pas une vente en ligne. Pour commander, contactez-nous par WhatsApp, e-mail ou rendez-nous visite en magasin.",
@@ -361,7 +362,20 @@
       "faqQ2": "Vous occupez-vous du montage et du démontage du mobilier ?",
       "faqA2": "Oui, notre équipe se charge du montage avant l'événement et de la récupération du mobilier à la fin.",
       "faqQ3": "Pour combien de personnes puis-je louer des tables et des chaises ?",
-      "faqA3": "Nous nous adaptons aussi bien aux petits événements qu'aux grandes affluences. Indiquez-nous le nombre d'invités et nous vous proposerons la quantité de mobilier nécessaire."
+      "faqA3": "Nous nous adaptons aussi bien aux petits événements qu'aux grandes affluences. Indiquez-nous le nombre d'invités et nous vous proposerons la quantité de mobilier nécessaire.",
+      "furnitureTitle": "Location de mobilier pour votre événement",
+      "furnitureIntro": "Tables et chaises élégantes disponibles à la location, dans différents styles selon votre événement.",
+      "furniture1Name": "Table et chaises dorées",
+      "furniture1ChairLabel": "Chaise",
+      "furniture1TableLabel": "Table",
+      "furniture1Availability": "8 unités disponibles",
+      "furniture2Name": "Table d'honneur",
+      "furniture2TableLabel": "Table",
+      "furniture3Name": "Chaises de banquet",
+      "furniture3Availability": "500 chaises disponibles",
+      "perDay": "/ jour",
+      "availabilityLabel": "Disponibilité",
+      "priceOnRequestFurniture": "Prix sur demande"
     }
   }
 }

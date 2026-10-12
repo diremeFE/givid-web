@@ -42,7 +42,7 @@ model Product {
   descriptionEn String?
   descriptionFr String?
   descriptionPt String?
-  price        Float
+  price        Float?   // null = "price on request" (used for cleaning products without a fixed price)
   unit         String   // e.g. "caja", "saco 25kg", "unidad"
   imageUrl     String?
   images       ProductImage[]

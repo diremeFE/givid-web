@@ -175,6 +175,7 @@
     "categoryFood": "Alimentación",
     "categoryHygiene": "Higiene",
     "priceLabel": "Precio",
+    "priceOnRequest": "Precio a consultar",
     "unitLabel": "Formato",
     "noProducts": "Próximamente añadiremos productos a este catálogo.",
     "orderNotice": "Estos precios son orientativos y no constituyen venta online. Para realizar un pedido, contáctanos por WhatsApp, correo electrónico o visita nuestra tienda física.",
@@ -361,7 +362,20 @@
       "faqQ2": "¿Incluyen el montaje y desmontaje del mobiliario?",
       "faqA2": "Sí, nuestro equipo se encarga del montaje antes del evento y de la recogida del mobiliario al finalizar.",
       "faqQ3": "¿Para cuántas personas puedo alquilar mesas y sillas?",
-      "faqA3": "Nos adaptamos tanto a eventos pequeños como a grandes aforos. Cuéntanos el número de invitados y te proponemos la cantidad de mobiliario necesaria."
+      "faqA3": "Nos adaptamos tanto a eventos pequeños como a grandes aforos. Cuéntanos el número de invitados y te proponemos la cantidad de mobiliario necesaria.",
+      "furnitureTitle": "Alquiler de mobiliario para tu evento",
+      "furnitureIntro": "Mesas y sillas elegantes disponibles para alquilar, en distintos estilos según el tipo de evento.",
+      "furniture1Name": "Mesa y sillas doradas",
+      "furniture1ChairLabel": "Silla",
+      "furniture1TableLabel": "Mesa",
+      "furniture1Availability": "8 unidades disponibles",
+      "furniture2Name": "Mesa presidencial",
+      "furniture2TableLabel": "Mesa",
+      "furniture3Name": "Sillas de salón",
+      "furniture3Availability": "500 sillas disponibles",
+      "perDay": "/ día",
+      "availabilityLabel": "Disponibilidad",
+      "priceOnRequestFurniture": "Precio a consultar"
     }
   }
 }

@@ -75,16 +75,19 @@ export default async function ProductDetailPage({
     description: description ?? undefined,
     image: gallery.length > 0 ? gallery : undefined,
     category: categoryName,
-    offers: {
-      "@type": "Offer",
-      price: product.price,
-      priceCurrency: "XAF",
-      availability: product.isActive
-        ? "https://schema.org/InStock"
-        : "https://schema.org/OutOfStock",
-      url: `${siteConfig.siteUrl}/${locale}/productos/${slug}`,
-      seller: { "@type": "Organization", name: siteConfig.brandName },
-    },
+    offers:
+      product.price != null
+        ? {
+            "@type": "Offer",
+            price: product.price,
+            priceCurrency: "XAF",
+            availability: product.isActive
+              ? "https://schema.org/InStock"
+              : "https://schema.org/OutOfStock",
+            url: `${siteConfig.siteUrl}/${locale}/productos/${slug}`,
+            seller: { "@type": "Organization", name: siteConfig.brandName },
+          }
+        : undefined,
   };
 
   return (
@@ -125,7 +128,7 @@ export default async function ProductDetailPage({
             <p className="mt-4 leading-relaxed text-neutral-600">{description}</p>
           )}
           <p className="mt-6 text-3xl font-bold text-brand-dark">
-            {currency.format(product.price)}
+            {product.price != null ? currency.format(product.price) : t("priceOnRequest")}
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
@@ -167,6 +170,7 @@ export default async function ProductDetailPage({
                   locale={locale}
                   currency={currency}
                   orderLabel={t("orderButton")}
+                  priceOnRequestLabel={t("priceOnRequest")}
                 />
               </Reveal>
             ))}

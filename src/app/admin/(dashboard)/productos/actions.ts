@@ -23,7 +23,8 @@ function readProductForm(formData: FormData) {
   const descriptionEn = String(formData.get("descriptionEn") || "").trim();
   const descriptionFr = String(formData.get("descriptionFr") || "").trim();
   const descriptionPt = String(formData.get("descriptionPt") || "").trim();
-  const price = Number(formData.get("price") || 0);
+  const priceInput = String(formData.get("price") || "").trim();
+  const price = priceInput ? Number(priceInput) : null;
   const unit = String(formData.get("unit") || "").trim();
   const imageUrl = String(formData.get("imageUrl") || "").trim();
   const categoryId = String(formData.get("categoryId") || "");
