@@ -58,8 +58,11 @@ export default async function EventosPage() {
     {
       image: "/images/mobiliario-mesa-presidencial.jpg",
       name: tDetail("events.furniture2Name"),
-      prices: [{ label: tDetail("events.furniture2TableLabel"), amount: 20000 }],
-      availability: null,
+      prices: [
+        { label: tDetail("events.furniture1ChairLabel"), amount: 6000 },
+        { label: tDetail("events.furniture2TableLabel"), amount: 20000 },
+      ],
+      availability: tDetail("events.furniture2Availability"),
     },
     {
       image: "/images/mobiliario-sillas-salon.jpg",
