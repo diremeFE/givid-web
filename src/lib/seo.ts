@@ -26,10 +26,10 @@ export function pageAlternates(locale: string, path: string = "") {
  */
 const SEO_TITLES = {
   services: {
-    es: "Servicios de limpieza, eventos y distribución mayorista en Malabo",
-    en: "Cleaning, events and wholesale distribution services in Malabo",
-    fr: "Services de nettoyage, événementiel et distribution en gros à Malabo",
-    pt: "Serviços de limpeza, eventos e distribuição grossista em Malabo",
+    es: "Servicios de limpieza, mobiliario para eventos y distribución mayorista en Malabo",
+    en: "Cleaning, event furniture rental and wholesale distribution services in Malabo",
+    fr: "Services de nettoyage, mobilier événementiel et distribution en gros à Malabo",
+    pt: "Serviços de limpeza, mobiliário para eventos e distribuição grossista em Malabo",
   },
   distribution: {
     es: "Distribución mayorista en Malabo: alimentación, agua y limpieza",
