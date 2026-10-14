@@ -76,6 +76,8 @@ export default async function ContactPage() {
                 <ul className="mt-6 space-y-4">
                   <ContactDetail icon={MapPin} value={siteConfig.address} />
                   <ContactDetail icon={Phone} value={siteConfig.whatsappNumberDisplay} />
+                  <ContactDetail icon={Phone} value={siteConfig.phoneOffice1Display} />
+                  <ContactDetail icon={Phone} value={siteConfig.phoneOffice2Display} />
                   <ContactDetail icon={Mail} value={siteConfig.email} />
                   <ContactDetail icon={Clock} value={siteConfig.hours} />
                 </ul>
