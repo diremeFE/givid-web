@@ -158,7 +158,6 @@ export default async function ServicesPage() {
               t("events.bullet1"),
               t("events.bullet2"),
               t("events.bullet3"),
-              t("events.bullet4"),
             ]}
           />
 

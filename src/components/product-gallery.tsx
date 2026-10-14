@@ -82,8 +82,11 @@ export function ProductGallery({
             <button
               key={src + i}
               type="button"
-              onClick={() => setActive(i)}
-              className={`relative aspect-square overflow-hidden rounded-lg ring-2 transition-colors ${
+              onClick={() => {
+                setActive(i);
+                setLightboxOpen(true);
+              }}
+              className={`relative aspect-square cursor-zoom-in overflow-hidden rounded-lg ring-2 transition-colors ${
                 i === active ? "ring-brand-dark" : "ring-transparent hover:ring-brand/40"
               }`}
             >
