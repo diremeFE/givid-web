@@ -1,6 +1,6 @@
 import { getTranslations, getLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Info, Mail, MessageCircle } from "lucide-react";
+import { ArrowLeft, Info, Mail, MessageCircle, AlertTriangle } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { ProductGallery } from "@/components/product-gallery";
@@ -8,6 +8,7 @@ import { ProductCard } from "@/components/product-card";
 import { BreadcrumbSchema } from "@/components/breadcrumb-schema";
 import { getProductBySlug, getProducts } from "@/lib/data";
 import { localizedField } from "@/lib/localized";
+import { splitProductAlert } from "@/lib/product-alert";
 import { siteConfig, whatsappLink } from "@/lib/site-config";
 import { pageAlternates, productSeoTitle } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
@@ -53,6 +54,9 @@ export default async function ProductDetailPage({
   const name = localizedField(product, "name", locale);
   const description = localizedField(product, "description", locale);
   const categoryName = localizedField(product.category, "name", locale);
+  const { text: descriptionText, alert: descriptionAlert } = description
+    ? splitProductAlert(description)
+    : { text: null, alert: null };
 
   const gallery = [
     ...(product.imageUrl ? [product.imageUrl] : []),
@@ -124,12 +128,21 @@ export default async function ProductDetailPage({
           </span>
           <h1 className="mt-4 text-3xl font-black text-neutral-900 sm:text-4xl">{name}</h1>
           <p className="mt-1 text-sm text-neutral-500">{product.unit}</p>
-          {description && (
-            <p className="mt-4 leading-relaxed text-neutral-600">{description}</p>
+          {descriptionText && (
+            <p className="mt-4 leading-relaxed text-neutral-600">{descriptionText}</p>
           )}
           <p className="mt-6 text-3xl font-bold text-brand-dark">
             {product.price != null ? currency.format(product.price) : t("priceOnRequest")}
           </p>
+
+          {descriptionAlert && (
+            <div className="mt-4 flex items-start gap-3 rounded-2xl border border-amber-300 bg-amber-50 p-4 shadow-sm shadow-amber-900/5">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white ring-1 ring-amber-300">
+                <AlertTriangle className="h-4 w-4 text-amber-600" aria-hidden="true" />
+              </span>
+              <p className="text-sm font-semibold text-amber-800">{descriptionAlert}</p>
+            </div>
+          )}
 
           <div className="mt-6 flex flex-wrap gap-3">
             <a
