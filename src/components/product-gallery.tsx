@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { ImageOff, ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ImageOff, ChevronLeft, ChevronRight, X } from "lucide-react";
 
 export function ProductGallery({
   images,
@@ -11,6 +11,19 @@ export function ProductGallery({
   alt: string;
 }) {
   const [active, setActive] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setLightboxOpen(false);
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lightboxOpen, images.length]);
 
   if (images.length === 0) {
     return (
@@ -34,7 +47,12 @@ export function ProductGallery({
     <div>
       <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-brand-light">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={current} alt={alt} className="h-full w-full object-cover" />
+        <img
+          src={current}
+          alt={alt}
+          onClick={() => setLightboxOpen(true)}
+          className="h-full w-full cursor-zoom-in object-cover"
+        />
 
         {images.length > 1 && (
           <>
@@ -73,6 +91,57 @@ export function ProductGallery({
               <img src={src} alt="" className="h-full w-full object-cover" />
             </button>
           ))}
+        </div>
+      )}
+
+      {lightboxOpen && (
+        <div
+          className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 p-4 sm:p-10"
+          onClick={() => setLightboxOpen(false)}
+        >
+          <button
+            type="button"
+            onClick={() => setLightboxOpen(false)}
+            aria-label="Cerrar"
+            className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+          >
+            <X className="h-5 w-5" aria-hidden="true" />
+          </button>
+
+          {images.length > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  prev();
+                }}
+                aria-label="Previous image"
+                className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:left-6"
+              >
+                <ChevronLeft className="h-6 w-6" aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  next();
+                }}
+                aria-label="Next image"
+                className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:right-6"
+              >
+                <ChevronRight className="h-6 w-6" aria-hidden="true" />
+              </button>
+            </>
+          )}
+
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={current}
+            alt={alt}
+            onClick={(e) => e.stopPropagation()}
+            className="max-h-full max-w-full cursor-default rounded-lg object-contain shadow-2xl"
+          />
         </div>
       )}
     </div>
