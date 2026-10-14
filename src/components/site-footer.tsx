@@ -85,6 +85,13 @@ export function SiteFooter() {
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-light" aria-hidden="true" />
               {siteConfig.address}
             </li>
+            <li className="flex items-start gap-2.5">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-light" aria-hidden="true" />
+              <span>
+                <span className="font-semibold text-neutral-200">Oficina ejecutiva: </span>
+                {siteConfig.executiveOfficeAddress}
+              </span>
+            </li>
           </ul>
         </div>
 
