@@ -8,6 +8,8 @@ export function PageHero({
   subtitle,
   icon: Icon,
   image,
+  imagePosition = "center",
+  hideIcon = false,
   size = "md",
   children,
 }: {
@@ -16,26 +18,34 @@ export function PageHero({
   subtitle?: string;
   icon: LucideIcon;
   image?: string;
-  size?: "md" | "lg" | "full" | "video";
+  imagePosition?: string;
+  hideIcon?: boolean;
+  size?: "md" | "lg" | "full";
   children?: React.ReactNode;
 }) {
   const full = size === "full";
-  const video = size === "video";
-  const big = full || video;
 
   return (
     <section
       data-hero
       className={`relative flex items-center overflow-hidden ${
-        video ? "aspect-video" : full ? "min-h-dvh" : "min-h-105 sm:min-h-125"
+        full ? "min-h-dvh" : "min-h-105 sm:min-h-125"
       }`}
     >
       {image ? (
         <>
-          <Image src={image} alt="" fill priority sizes="100vw" className="object-cover" />
+          <Image
+            src={image}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+            style={{ objectPosition: imagePosition }}
+          />
           <div
             className={
-              big
+              full
                 ? "absolute inset-0 bg-linear-to-b from-black/70 via-black/55 to-black/75"
                 : "bg-brand-gradient absolute inset-0 opacity-90"
             }
@@ -44,13 +54,15 @@ export function PageHero({
       ) : (
         <div className="bg-brand-gradient absolute inset-0" />
       )}
-      {!big && <div className="bg-noise absolute inset-0 opacity-30" />}
+      {!full && <div className="bg-noise absolute inset-0 opacity-30" />}
 
-      <Icon
-        className="pointer-events-none absolute -right-8 -top-10 h-56 w-56 rotate-12 text-white/10 sm:h-64 sm:w-64"
-        strokeWidth={1}
-        aria-hidden="true"
-      />
+      {!hideIcon && (
+        <Icon
+          className="pointer-events-none absolute -right-8 -top-10 h-56 w-56 rotate-12 text-white/10 sm:h-64 sm:w-64"
+          strokeWidth={1}
+          aria-hidden="true"
+        />
+      )}
 
       <Reveal className="relative mx-auto w-full max-w-6xl px-4 py-24 text-center sm:px-6 sm:py-28">
         {eyebrow && (
@@ -60,7 +72,7 @@ export function PageHero({
         )}
         <h1
           className={`mx-auto font-black tracking-tight text-white ${eyebrow ? "mt-5" : ""} ${
-            big
+            full
               ? "max-w-4xl text-[2.25rem] leading-[1.1] sm:text-6xl lg:text-7xl lg:leading-[1.05]"
               : size === "lg"
                 ? "max-w-3xl text-4xl sm:text-5xl"
@@ -72,7 +84,7 @@ export function PageHero({
         {subtitle && (
           <p
             className={`mx-auto mt-4 max-w-2xl text-white/85 ${
-              big ? "max-w-xl text-lg" : size === "lg" ? "text-lg" : ""
+              full ? "max-w-xl text-lg" : size === "lg" ? "text-lg" : ""
             }`}
           >
             {subtitle}
