@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { ImageOff, ChevronLeft, ChevronRight, X } from "lucide-react";
 
 export function ProductGallery({
@@ -12,6 +13,11 @@ export function ProductGallery({
 }) {
   const [active, setActive] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!lightboxOpen) return;
@@ -21,7 +27,12 @@ export function ProductGallery({
       if (e.key === "ArrowRight") next();
     }
     window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lightboxOpen, images.length]);
 
@@ -97,56 +108,59 @@ export function ProductGallery({
         </div>
       )}
 
-      {lightboxOpen && (
-        <div
-          className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 p-4 sm:p-10"
-          onClick={() => setLightboxOpen(false)}
-        >
-          <button
-            type="button"
+      {mounted &&
+        lightboxOpen &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 p-4 sm:p-10"
             onClick={() => setLightboxOpen(false)}
-            aria-label="Cerrar"
-            className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
           >
-            <X className="h-5 w-5" aria-hidden="true" />
-          </button>
+            <button
+              type="button"
+              onClick={() => setLightboxOpen(false)}
+              aria-label="Cerrar"
+              className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+            >
+              <X className="h-5 w-5" aria-hidden="true" />
+            </button>
 
-          {images.length > 1 && (
-            <>
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  prev();
-                }}
-                aria-label="Previous image"
-                className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:left-6"
-              >
-                <ChevronLeft className="h-6 w-6" aria-hidden="true" />
-              </button>
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  next();
-                }}
-                aria-label="Next image"
-                className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:right-6"
-              >
-                <ChevronRight className="h-6 w-6" aria-hidden="true" />
-              </button>
-            </>
-          )}
+            {images.length > 1 && (
+              <>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    prev();
+                  }}
+                  aria-label="Previous image"
+                  className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:left-6"
+                >
+                  <ChevronLeft className="h-6 w-6" aria-hidden="true" />
+                </button>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    next();
+                  }}
+                  aria-label="Next image"
+                  className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 sm:right-6"
+                >
+                  <ChevronRight className="h-6 w-6" aria-hidden="true" />
+                </button>
+              </>
+            )}
 
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={current}
-            alt={alt}
-            onClick={(e) => e.stopPropagation()}
-            className="max-h-full max-w-full cursor-default rounded-lg object-contain shadow-2xl"
-          />
-        </div>
-      )}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={current}
+              alt={alt}
+              onClick={(e) => e.stopPropagation()}
+              className="max-h-full max-w-full cursor-default rounded-lg object-contain shadow-2xl"
+            />
+          </div>,
+          document.body,
+        )}
     </div>
   );
 }
