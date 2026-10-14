@@ -44,10 +44,10 @@ const SEO_TITLES = {
     pt: "Limpeza e manutenção de edifícios em Malabo",
   },
   events: {
-    es: "Azafatas y alquiler de mobiliario para eventos en Malabo",
-    en: "Hostesses and furniture rental for events in Malabo",
-    fr: "Hôtesses et location de mobilier pour événements à Malabo",
-    pt: "Hospedeiras e aluguer de mobiliário para eventos em Malabo",
+    es: "Alquiler de mesas y sillas para eventos en Malabo",
+    en: "Table and chair rental for events in Malabo",
+    fr: "Location de tables et chaises pour événements à Malabo",
+    pt: "Aluguer de mesas e cadeiras para eventos em Malabo",
   },
   products: {
     es: "Catálogo mayorista en Malabo: alimentación, agua y limpieza",
