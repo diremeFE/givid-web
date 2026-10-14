@@ -3,7 +3,7 @@ import { getTranslations, getLocale } from "next-intl/server";
 import {
   Boxes,
   Sparkles,
-  Ship,
+  Armchair,
   BadgePercent,
   MapPinned,
   ClipboardCheck,
@@ -233,7 +233,7 @@ export default async function HomePage() {
               </Reveal>
               <Reveal direction="right" delay={200}>
                 <ServiceCard
-                  icon={Ship}
+                  icon={Armchair}
                   image="/images/service-events-v3.jpg"
                   title={tServices("events.title")}
                   description={tServices("events.description")}

@@ -34,7 +34,7 @@ export default async function AvisoLegalPage() {
 
 ## 2. Objeto y ámbito de aplicación
 
-El sitio web tiene carácter informativo: presenta los servicios de ${siteConfig.brandName} (limpieza y mantenimiento, azafatas y eventos, y distribución mayorista) y un catálogo orientativo de productos. El sitio web no dispone de venta ni contratación online: los pedidos y presupuestos se gestionan siempre de forma directa por WhatsApp, correo electrónico o en la tienda física, donde se confirman precio, disponibilidad y condiciones finales.
+El sitio web tiene carácter informativo: presenta los servicios de ${siteConfig.brandName} (limpieza y mantenimiento, alquiler de mobiliario para eventos, y distribución mayorista) y un catálogo orientativo de productos. El sitio web no dispone de venta ni contratación online: los pedidos y presupuestos se gestionan siempre de forma directa por WhatsApp, correo electrónico o en la tienda física, donde se confirman precio, disponibilidad y condiciones finales.
 
 ## 3. Condiciones de uso
 

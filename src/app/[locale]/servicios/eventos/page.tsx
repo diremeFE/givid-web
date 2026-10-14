@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getTranslations, getLocale } from "next-intl/server";
-import { Users, ArrowRight, ArrowLeft, ShieldCheck, Handshake, Heart, PackageCheck } from "lucide-react";
+import { Armchair, ArrowRight, ArrowLeft, ShieldCheck, Handshake, Heart, PackageCheck } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
@@ -97,7 +97,7 @@ export default async function EventosPage() {
         eyebrow={t("events.tag")}
         title={t("events.title")}
         subtitle={t("events.description")}
-        icon={Users}
+        icon={Armchair}
         image="/images/service-events-v3.jpg"
         size="lg"
       />
@@ -116,7 +116,7 @@ export default async function EventosPage() {
       <section className="relative mt-10 min-h-125 overflow-hidden">
         <Image
           src="/images/service-events-v3.jpg"
-          alt="Montaje de mobiliario y protocolo para eventos GIVID"
+          alt="Montaje de mobiliario para eventos GIVID"
           fill
           sizes="100vw"
           className="object-cover"

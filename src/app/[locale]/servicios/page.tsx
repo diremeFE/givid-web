@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getTranslations, getLocale } from "next-intl/server";
-import { Boxes, Sparkles, Users, Package, ArrowRight, Check, PackageCheck } from "lucide-react";
+import { Boxes, Sparkles, Armchair, Package, ArrowRight, Check, PackageCheck } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/reveal";
 import { PageHero } from "@/components/page-hero";
@@ -148,9 +148,9 @@ export default async function ServicesPage() {
       <section id="events" className="py-20 scroll-mt-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ServiceBlock
-            icon={Users}
+            icon={Armchair}
             image="/images/service-events-v3.jpg"
-            imageAlt="Montaje de mobiliario para eventos por GIVID Events"
+            imageAlt="Montaje de mobiliario para eventos"
             tag={t("events.tag")}
             title={t("events.title")}
             description={t("events.description")}

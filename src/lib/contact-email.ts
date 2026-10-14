@@ -10,7 +10,7 @@ type ContactNotification = {
 
 const SERVICE_LABELS: Record<string, string> = {
   facilityServices: "GIVID Facility Services (limpieza y mantenimiento)",
-  events: "GIVID Events (azafatas y mobiliario)",
+  events: "GIVID Mobiliario (alquiler de mesas y sillas)",
   distribution: "GIVID Distribution (venta al por mayor)",
   other: "Otro / No especificado",
 };
