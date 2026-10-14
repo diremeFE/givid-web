@@ -16,16 +16,18 @@ export function PageHero({
   subtitle?: string;
   icon: LucideIcon;
   image?: string;
-  size?: "md" | "lg" | "full";
+  size?: "md" | "lg" | "full" | "video";
   children?: React.ReactNode;
 }) {
   const full = size === "full";
+  const video = size === "video";
+  const big = full || video;
 
   return (
     <section
       data-hero
       className={`relative flex items-center overflow-hidden ${
-        full ? "min-h-dvh" : "min-h-105 sm:min-h-125"
+        video ? "aspect-video" : full ? "min-h-dvh" : "min-h-105 sm:min-h-125"
       }`}
     >
       {image ? (
@@ -33,7 +35,7 @@ export function PageHero({
           <Image src={image} alt="" fill priority sizes="100vw" className="object-cover" />
           <div
             className={
-              full
+              big
                 ? "absolute inset-0 bg-linear-to-b from-black/70 via-black/55 to-black/75"
                 : "bg-brand-gradient absolute inset-0 opacity-90"
             }
@@ -42,7 +44,7 @@ export function PageHero({
       ) : (
         <div className="bg-brand-gradient absolute inset-0" />
       )}
-      {!full && <div className="bg-noise absolute inset-0 opacity-30" />}
+      {!big && <div className="bg-noise absolute inset-0 opacity-30" />}
 
       <Icon
         className="pointer-events-none absolute -right-8 -top-10 h-56 w-56 rotate-12 text-white/10 sm:h-64 sm:w-64"
@@ -58,7 +60,7 @@ export function PageHero({
         )}
         <h1
           className={`mx-auto font-black tracking-tight text-white ${eyebrow ? "mt-5" : ""} ${
-            full
+            big
               ? "max-w-4xl text-[2.25rem] leading-[1.1] sm:text-6xl lg:text-7xl lg:leading-[1.05]"
               : size === "lg"
                 ? "max-w-3xl text-4xl sm:text-5xl"
@@ -70,7 +72,7 @@ export function PageHero({
         {subtitle && (
           <p
             className={`mx-auto mt-4 max-w-2xl text-white/85 ${
-              full ? "max-w-xl text-lg" : size === "lg" ? "text-lg" : ""
+              big ? "max-w-xl text-lg" : size === "lg" ? "text-lg" : ""
             }`}
           >
             {subtitle}

@@ -63,7 +63,7 @@ export default async function ServicesPage() {
         subtitle={t("pageSubtitle")}
         icon={Boxes}
         image="/images/servicios-hero-limpieza.jpg"
-        size="full"
+        size="video"
       />
 
       <section className="py-16">
