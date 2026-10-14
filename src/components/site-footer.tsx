@@ -101,7 +101,10 @@ export function SiteFooter() {
             </li>
             <li className="flex items-start gap-2.5">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-light" aria-hidden="true" />
-              {siteConfig.address}
+              <span>
+                <span className="font-semibold text-neutral-200">Almacén central: </span>
+                {siteConfig.address}
+              </span>
             </li>
             <li className="flex items-start gap-2.5">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-light" aria-hidden="true" />
