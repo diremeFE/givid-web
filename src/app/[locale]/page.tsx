@@ -147,8 +147,8 @@ export default async function HomePage() {
         <div className="relative mt-14 grid items-center gap-16 lg:grid-cols-[1fr_1.2fr] lg:gap-10">
           <Reveal direction="left" className="relative mx-auto aspect-4/5 w-full max-w-sm overflow-hidden rounded-3xl shadow-xl shadow-black/10 lg:mx-0 lg:max-w-none">
             <Image
-              src="/images/socio-local-apreton-manos.jpg"
-              alt="Acuerdo comercial entre GIVID y un socio local en Guinea Ecuatorial"
+              src="/images/socio-local-reunion-oficina.jpg"
+              alt="Reunión de GIVID con un socio local en Malabo"
               fill
               sizes="(min-width: 1024px) 35vw, 80vw"
               className="object-cover"
