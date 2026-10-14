@@ -125,7 +125,7 @@ export default async function ServicesPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ServiceBlock
             icon={Sparkles}
-            image="/images/facility-services-team-entrance.jpg"
+            image="/images/facility-services-entrada-v2.jpg"
             imageAlt="Equipo de GIVID Facility Services en la entrada de un edificio corporativo"
             tag={t("facilityServices.tag")}
             title={t("facilityServices.title")}
