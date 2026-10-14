@@ -75,7 +75,7 @@ export default async function FacilityServicesPage() {
         title={t("facilityServices.title")}
         subtitle={t("facilityServices.description")}
         icon={Sparkles}
-        image="/images/facility-floor-polish.jpg"
+        image="/images/facility-services-team-entrance.jpg"
         size="lg"
       />
 
@@ -94,8 +94,8 @@ export default async function FacilityServicesPage() {
             <div className="relative aspect-4/5 w-full">
               <div className="absolute inset-0 right-10 top-0 overflow-hidden rounded-3xl shadow-xl shadow-black/15">
                 <Image
-                  src="/images/facility-floor-polish.jpg"
-                  alt="Pulido de suelo corporativo por GIVID Facility Services"
+                  src="/images/facility-services-team-entrance.jpg"
+                  alt="Equipo de GIVID Facility Services en la entrada de un edificio corporativo"
                   fill
                   sizes="(min-width: 1024px) 28vw, 70vw"
                   className="object-cover"
