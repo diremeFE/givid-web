@@ -62,7 +62,7 @@ export default async function ServicesPage() {
         title={t("pageTitle")}
         subtitle={t("pageSubtitle")}
         icon={Boxes}
-        image="/images/servicios-hero-limpieza.jpg"
+        image="/images/servicios-hero.jpg"
         size="full"
       />
 
