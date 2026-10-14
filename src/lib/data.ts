@@ -17,7 +17,7 @@ export function getProducts(categorySlug?: string) {
 
 export function getFeaturedProducts(limit = 4) {
   return prisma.product.findMany({
-    where: { isActive: true },
+    where: { isActive: true, imageUrl: { not: null } },
     include: { category: true },
     orderBy: { createdAt: "desc" },
     take: limit,
