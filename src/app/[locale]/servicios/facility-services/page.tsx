@@ -103,8 +103,8 @@ export default async function FacilityServicesPage() {
               </div>
               <div className="absolute bottom-0 right-0 h-3/5 w-3/5 overflow-hidden rounded-2xl shadow-xl shadow-black/20 ring-4 ring-white">
                 <Image
-                  src="/images/facility-glass.jpg"
-                  alt="Limpieza de cristales corporativos por GIVID Facility Services"
+                  src="/images/service-facility-v2.jpg"
+                  alt="Carro de limpieza profesional de GIVID Facility Services"
                   fill
                   sizes="(min-width: 1024px) 18vw, 42vw"
                   className="object-cover"

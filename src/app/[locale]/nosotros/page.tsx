@@ -5,7 +5,6 @@ import {
   Handshake,
   Heart,
   Users,
-  Check,
   ArrowRight,
   Award,
   Trophy,
@@ -58,12 +57,6 @@ export default async function AboutPage() {
     { icon: ShieldCheck, title: t("whyGivid4Title"), text: t("whyGivid4Text") },
     { icon: Zap, title: t("whyGivid5Title"), text: t("whyGivid5Text") },
     { icon: Globe2, title: t("whyGivid6Title"), text: t("whyGivid6Text") },
-  ];
-
-  const facilitiesBullets = [
-    tServices("facilityServices.bullet1"),
-    tServices("facilityServices.bullet4"),
-    tServices("facilityServices.bullet5"),
   ];
 
   const introStats = [
@@ -269,46 +262,6 @@ export default async function AboutPage() {
                 sizes="(min-width: 1024px) 35vw, 100vw"
                 className="object-cover"
               />
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Facilities */}
-      <section className="bg-brand-lighter py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <Reveal direction="left" delay={100} className="order-2 lg:order-1">
-              <div className="relative aspect-4/3 overflow-hidden rounded-3xl shadow-xl shadow-brand-dark/10">
-                <Image
-                  src="/images/facility-glass.jpg"
-                  alt="Limpieza de cristales corporativos por GIVID Facility Services"
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            </Reveal>
-            <Reveal direction="right" className="order-1 lg:order-2">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-dark">
-                {tServices("facilityServices.tag")}
-              </p>
-              <h2 className="mt-3 text-2xl font-black text-neutral-900 sm:text-3xl">
-                {tServices("facilityServices.title")}
-              </h2>
-              <p className="mt-4 leading-relaxed text-neutral-600">
-                {tServices("facilityServices.description")}
-              </p>
-              <ul className="mt-6 space-y-3">
-                {facilitiesBullets.map((bullet) => (
-                  <li key={bullet} className="flex items-center gap-2.5 text-sm font-semibold text-neutral-800">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-dark text-white">
-                      <Check className="h-3.5 w-3.5" aria-hidden="true" />
-                    </span>
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
             </Reveal>
           </div>
         </div>
