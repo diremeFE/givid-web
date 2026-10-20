@@ -71,7 +71,7 @@ export default async function AboutPage() {
         title={t("pageTitle")}
         subtitle={t("intro")}
         icon={Users}
-        image="/images/nosotros-hero-team.jpg"
+        image="/images/nosotros-hero-givid-trade.jpg"
         size="full"
       />
 
