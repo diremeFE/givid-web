@@ -1,5 +1,5 @@
 import { getTranslations, getLocale } from "next-intl/server";
-import { MessageCircle, Mail, MapPin, Clock, Phone, type LucideIcon } from "lucide-react";
+import { MessageCircle, Mail, MapPin, Clock, Phone, Megaphone, type LucideIcon } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { Reveal } from "@/components/reveal";
 import { siteConfig, whatsappLink } from "@/lib/site-config";
@@ -97,6 +97,11 @@ export default async function ContactPage() {
                     href={`mailto:${siteConfig.email}`}
                     icon={Mail}
                     label={t("emailContactLabel")}
+                  />
+                  <SocialIconLink
+                    href={siteConfig.whatsappChannelUrl}
+                    icon={Megaphone}
+                    label="Canal de WhatsApp GIVID Trade"
                   />
                 </div>
               </div>

@@ -16,7 +16,8 @@ export const siteConfig = {
   hours: "Lunes a viernes, 8:00 - 17:00", // TODO: confirmar horario real con la clienta
   // TODO: rellenar con las URLs reales en cuanto las tengamos (refuerza el perfil de empresa en Google)
   googleBusinessProfileUrl: "",
-  socialLinks: [] as string[],
+  whatsappChannelUrl: "https://whatsapp.com/channel/0029Vb7ZmYi4o7qFyaUK6a0W",
+  socialLinks: ["https://whatsapp.com/channel/0029Vb7ZmYi4o7qFyaUK6a0W"] as string[],
   // TODO: coordenadas reales del local (Google Maps > clic derecho > "¿Qué hay aquí?")
   geo: undefined as { latitude: number; longitude: number } | undefined,
 };

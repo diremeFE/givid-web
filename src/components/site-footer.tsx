@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MessageCircle, Mail, MapPin, Phone } from "lucide-react";
+import { MessageCircle, Mail, MapPin, Phone, Megaphone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { siteConfig, whatsappLink } from "@/lib/site-config";
@@ -70,6 +70,17 @@ export function SiteFooter() {
               >
                 <MessageCircle className="h-4 w-4 shrink-0 text-brand-light" aria-hidden="true" />
                 {siteConfig.whatsappNumberDisplay}
+              </a>
+            </li>
+            <li>
+              <a
+                href={siteConfig.whatsappChannelUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 text-neutral-400 transition-colors hover:text-white"
+              >
+                <Megaphone className="h-4 w-4 shrink-0 text-brand-light" aria-hidden="true" />
+                Canal de WhatsApp — GIVID Trade
               </a>
             </li>
             <li>
