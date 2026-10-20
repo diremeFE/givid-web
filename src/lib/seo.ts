@@ -32,10 +32,10 @@ const SEO_TITLES = {
     pt: "Serviços de limpeza, mobiliário para eventos e distribuição grossista em Malabo",
   },
   distribution: {
-    es: "Distribución mayorista en Malabo: alimentación, agua y limpieza",
-    en: "Wholesale distribution in Malabo: food, water and cleaning products",
-    fr: "Distribution en gros à Malabo : alimentation, eau et entretien",
-    pt: "Distribuição grossista em Malabo: alimentação, água e limpeza",
+    es: "Comercio mayorista en Malabo: alimentación, agua y limpieza",
+    en: "Wholesale trading company in Malabo: food, water and cleaning products",
+    fr: "Commerce de gros à Malabo : alimentation, eau et entretien",
+    pt: "Comércio por grosso em Malabo: alimentação, água e limpeza",
   },
   facilityServices: {
     es: "Limpieza y mantenimiento de edificios en Malabo",

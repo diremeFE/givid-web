@@ -9,7 +9,7 @@ export function LocalBusinessSchema() {
     legalName: siteConfig.legalName,
     alternateName: "Preser Gisvalida SL",
     description:
-      "Empresa multiservicios en Malabo, Guinea Ecuatorial: limpieza y mantenimiento de edificios y espacios verdes, alquiler de mobiliario para eventos, y distribución mayorista de productos de primera necesidad.",
+      "Comercio mayorista en Malabo, Guinea Ecuatorial: distribución de productos de primera necesidad, limpieza y mantenimiento de edificios y espacios verdes, y alquiler de mobiliario para eventos.",
     url: siteConfig.siteUrl,
     telephone: `+${siteConfig.whatsappNumber}`,
     email: siteConfig.email,
