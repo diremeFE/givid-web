@@ -2,14 +2,18 @@ import { prisma } from "@/lib/prisma";
 import { saveMaintenanceLog } from "./actions";
 
 const CHECK_ITEMS = [
-  { key: "contactFormOk", label: "Formulario de contacto funciona" },
-  { key: "brokenLinksOk", label: "Sin enlaces rotos" },
-  { key: "languagesOk", label: "Las 4 versiones de idioma están bien" },
-  { key: "sslOk", label: "Certificado SSL válido" },
-  { key: "speedOk", label: "Velocidad de carga revisada" },
-  { key: "searchConsoleOk", label: "Search Console revisado (sin errores de indexación)" },
-  { key: "securityUpdatesOk", label: "Dependencias actualizadas (parches de seguridad)" },
-  { key: "backupsOk", label: "Copias de seguridad recientes verificadas" },
+  { key: "contactFormOk", label: "Formulario de contacto funciona", auto: true },
+  { key: "brokenLinksOk", label: "Sin enlaces rotos", auto: true },
+  { key: "languagesOk", label: "Las 4 versiones de idioma están bien", auto: true },
+  { key: "sslOk", label: "Certificado SSL válido", auto: true },
+  { key: "speedOk", label: "Velocidad de carga revisada", auto: true },
+  {
+    key: "searchConsoleOk",
+    label: "Search Console revisado (sin errores de indexación)",
+    auto: false,
+  },
+  { key: "securityUpdatesOk", label: "Dependencias actualizadas (parches de seguridad)", auto: true },
+  { key: "backupsOk", label: "Copias de seguridad recientes verificadas", auto: true },
 ] as const;
 
 function currentMonth() {
@@ -42,7 +46,11 @@ export default async function MantenimientoPage() {
     <div>
       <h1 className="text-2xl font-bold text-neutral-900">Mantenimiento</h1>
       <p className="mt-1 text-sm text-neutral-500">
-        Checklist de la revisión mensual prometida en el contrato de mantenimiento.
+        Checklist de la revisión mensual prometida en el contrato de mantenimiento. Las
+        casillas marcadas como <span className="font-semibold text-brand-dark">automático</span>{" "}
+        las rellena solas la comprobación mensual (día 1 de cada mes); la de Search Console es
+        manual porque requiere revisar tu cuenta de Google. Puedes corregir cualquier casilla
+        a mano si hace falta.
       </p>
 
       <div className="mt-6 max-w-2xl rounded-lg border border-neutral-200 bg-white p-6">
@@ -66,6 +74,13 @@ export default async function MantenimientoPage() {
                   className="h-4 w-4 rounded border-neutral-300 text-brand focus:ring-brand"
                 />
                 {item.label}
+                <span
+                  className={`rounded-full px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide ${
+                    item.auto ? "bg-brand-light text-brand-dark" : "bg-amber-100 text-amber-700"
+                  }`}
+                >
+                  {item.auto ? "automático" : "manual"}
+                </span>
               </label>
             ))}
           </div>
