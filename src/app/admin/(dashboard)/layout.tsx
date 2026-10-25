@@ -6,6 +6,7 @@ import {
   Tags,
   Newspaper,
   MessageSquare,
+  ClipboardCheck,
   LogOut,
 } from "lucide-react";
 import { logoutAction } from "../login/actions";
@@ -16,6 +17,7 @@ const links = [
   { href: "/admin/categorias", label: "Categorías", icon: Tags },
   { href: "/admin/blog", label: "Noticias", icon: Newspaper },
   { href: "/admin/mensajes", label: "Mensajes", icon: MessageSquare },
+  { href: "/admin/mantenimiento", label: "Mantenimiento", icon: ClipboardCheck },
 ];
 
 export default function DashboardLayout({

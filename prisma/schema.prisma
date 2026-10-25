@@ -84,6 +84,23 @@ model BlogPost {
   updatedAt     DateTime  @updatedAt
 }
 
+model MaintenanceLog {
+  id                String    @id @default(cuid())
+  month             String    @unique // "2026-10"
+  contactFormOk     Boolean   @default(false)
+  brokenLinksOk     Boolean   @default(false)
+  languagesOk       Boolean   @default(false)
+  sslOk             Boolean   @default(false)
+  speedOk           Boolean   @default(false)
+  searchConsoleOk   Boolean   @default(false)
+  securityUpdatesOk Boolean   @default(false)
+  backupsOk         Boolean   @default(false)
+  notes             String?
+  completedAt       DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+}
+
 model ContactMessage {
   id        String   @id @default(cuid())
   name      String
